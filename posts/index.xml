@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Luxcgo Blog</title>
+    <title>Posts on 源泉的小站</title>
     <link>https://luxcgo.github.io/posts/</link>
-    <description>Recent content in Posts on Luxcgo Blog</description>
+    <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 05 May 2021 18:46:18 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <lastBuildDate>Sat, 13 Mar 2021 16:48:30 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Automate</title>
-      <link>https://luxcgo.github.io/posts/automate/</link>
-      <pubDate>Wed, 05 May 2021 18:46:18 +0800</pubDate>
+      <title>docker基本使用</title>
+      <link>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sat, 13 Mar 2021 16:48:30 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/automate/</guid>
-      <description>automate everything</description>
-    </item>
-    
-    <item>
-      <title>Mypost</title>
-      <link>https://luxcgo.github.io/posts/mypost/</link>
-      <pubDate>Wed, 05 May 2021 18:03:30 +0800</pubDate>
-      
-      <guid>https://luxcgo.github.io/posts/mypost/</guid>
-      <description>strange
-nice Simple tryout!</description>
+      <guid>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>1. 容器的基础命令 使用docker的好处  便于构建各种依赖关系 快速构建 快速迁移 和宿主主机互不影响  初步使用 $ docker run busybox echo hello world hello world $ docker run -ti ubuntu root@3cc1d9fcadda:/# apt-get update root@3cc1d9fcadda:/# apt-get install figlet root@3cc1d9fcadda:/# figlet LuxcGo _ ____ | | _ ___ _____ / ___| ___ | | | | | \ \/ / __| | _ / _ \ | |__| |_| |&amp;gt; &amp;lt; (__| |_| | (_) | |_____\__,_/_/\_\___|\____|\___/ root@3cc1d9fcadda:/# dpkg -l root@3cc1d9fcadda:/# dpkg -l | wc -l 98 lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l 1877 运行一个容器 $ docker run jpetazzo/clock $ sleep 10 &amp;amp; [1] 18495 $ [1] + 18495 done sleep 10 # 后台创建并启动和sleep命令类似 $ docker run -d jpetazzo/clock # 只显示运行着的容器 $ docker ps # 显示所有容器 $ docker ps -a # 查看最后一个启动的容器 $ docker ps -l # 查看所有正在运行的容器的id（--quiet） $ docker ps -q # 可以同时合并多条命令 $ docker ps -ql $ docker ps -q -l # 查看日志 $ docker logs &amp;lt;container ID&amp;gt; # --follow $ docker logs 82 -f # --tail $ docker logs 82 -f -n 10 # polite shutdown（传递一个关闭的信号） $ docker stop 49 # 强制关闭 $ docker kill 82 48 后台运行的容器 $ docker run -ti ubuntu root@3cc1d9fcadda:/# top # 退出容器 ^p^q # 重新进入容器 $ docker attach 34 # 或者用个 子命令 $ docker attach $(docker ps -ql) # 如果想要进入容器输入内容的话使用docker attach  # 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器 $ docker logs --tail 1 --follow $(docker ps -ql) # 重启停止的容器 $ docker start &amp;lt;containerID&amp;gt; 2.</description>
     </item>
     
   </channel>

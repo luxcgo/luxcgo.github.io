@@ -1,38 +1,152 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Luxcgo Blog</title>
+    <title>源泉的小站</title>
     <link>https://luxcgo.github.io/</link>
-    <description>Recent content on Luxcgo Blog</description>
+    <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 05 May 2021 18:46:18 +0800</lastBuildDate>
+    <language>zh</language>
+    <lastBuildDate>Sat, 13 Mar 2021 16:48:30 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
-        <title>Automate</title>
-        <link>https://luxcgo.github.io/posts/automate/</link>
-        <pubDate>Wed, 05 May 2021 18:46:18 +0800</pubDate>
+        <title>docker基本使用</title>
+        <link>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sat, 13 Mar 2021 16:48:30 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/automate/</guid>
-        <description>Luxcgo Blog https://luxcgo.github.io/posts/automate/ -&lt;p&gt;automate everything&lt;/p&gt;
-- https://luxcgo.github.io/posts/automate/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Mypost</title>
-        <link>https://luxcgo.github.io/posts/mypost/</link>
-        <pubDate>Wed, 05 May 2021 18:03:30 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/mypost/</guid>
-        <description>Luxcgo Blog https://luxcgo.github.io/posts/mypost/ -&lt;p&gt;strange&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;nice
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Simple tryout!&lt;/p&gt;
-- https://luxcgo.github.io/posts/mypost/ - </description>
+        <guid>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/ -&lt;h1 id=&#34;1-容器的基础命令&#34;&gt;1. 容器的基础命令&lt;/h1&gt;
+&lt;h2 id=&#34;使用docker的好处&#34;&gt;使用docker的好处&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;便于构建各种依赖关系&lt;/li&gt;
+&lt;li&gt;快速构建&lt;/li&gt;
+&lt;li&gt;快速迁移&lt;/li&gt;
+&lt;li&gt;和宿主主机互不影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run busybox &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; hello world
+hello world
+
+$ docker run -ti ubuntu
+root@3cc1d9fcadda:/# apt-get update
+root@3cc1d9fcadda:/# apt-get install figlet
+root@3cc1d9fcadda:/# figlet LuxcGo
+ _                    ____
+| |   _   ___  _____ / ___| ___
+| |  | | | &lt;span style=&#34;color:#cd5555&#34;&gt;\ \/&lt;/span&gt; / __| |  _ / _ &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;| |__| |_| |&amp;gt;  &amp;lt; (__| |_| | (_) |
+|_____&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;_,_/_/&lt;span style=&#34;color:#cd5555&#34;&gt;\_\_&lt;/span&gt;__|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;___|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;__/
+root@3cc1d9fcadda:/# dpkg -l
+root@3cc1d9fcadda:/# dpkg -l | wc -l
+&lt;span style=&#34;color:#b452cd&#34;&gt;98&lt;/span&gt;
+
+lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l
+&lt;span style=&#34;color:#b452cd&#34;&gt;1877&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;运行一个容器&#34;&gt;运行一个容器&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run jpetazzo/clock
+
+$ sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt; &amp;amp;
+[1] &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt;
+$
+[1]  + &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;done&lt;/span&gt;       sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 后台创建并启动和sleep命令类似&lt;/span&gt;
+$ docker run -d jpetazzo/clock
+&lt;span style=&#34;color:#228b22&#34;&gt;# 只显示运行着的容器&lt;/span&gt;
+$ docker ps
+&lt;span style=&#34;color:#228b22&#34;&gt;# 显示所有容器&lt;/span&gt;
+$ docker ps -a
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看最后一个启动的容器&lt;/span&gt;
+$ docker ps -l
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看所有正在运行的容器的id（--quiet）&lt;/span&gt;
+$ docker ps -q
+&lt;span style=&#34;color:#228b22&#34;&gt;# 可以同时合并多条命令&lt;/span&gt;
+$ docker ps -ql
+$ docker ps -q -l
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看日志&lt;/span&gt;
+$ docker logs &amp;lt;container ID&amp;gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# --follow&lt;/span&gt;
+$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f
+&lt;span style=&#34;color:#228b22&#34;&gt;# --tail&lt;/span&gt;
+$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f -n &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# polite shutdown（传递一个关闭的信号）&lt;/span&gt;
+$ docker stop &lt;span style=&#34;color:#b452cd&#34;&gt;49&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 强制关闭&lt;/span&gt;
+$ docker &lt;span style=&#34;color:#658b00&#34;&gt;kill&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;48&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;后台运行的容器&#34;&gt;后台运行的容器&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run -ti ubuntu
+root@3cc1d9fcadda:/# top
+&lt;span style=&#34;color:#228b22&#34;&gt;# 退出容器&lt;/span&gt;
+^p^q
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重新进入容器&lt;/span&gt;
+$ docker attach &lt;span style=&#34;color:#b452cd&#34;&gt;34&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 或者用个 子命令&lt;/span&gt;
+$ docker attach &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 如果想要进入容器输入内容的话使用docker attach &lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器&lt;/span&gt;
+$ docker logs --tail &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; --follow &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重启停止的容器&lt;/span&gt;
+$ docker start &amp;lt;containerID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2-构建容器镜像&#34;&gt;2. 构建容器镜像&lt;/h1&gt;
+&lt;h2 id=&#34;简单介绍&#34;&gt;简单介绍&lt;/h2&gt;
+&lt;p&gt;一个容器包含一个底层的只读的镜像层和一个上层的可读可写的容器层
+使用了copy-on-write技术加快启动时间
+多个容器共享一个底层的镜像层，只需要根据需求修改上层的读写层即可
+如果确认修改了可以在此基础上再创建一个image&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker commit
+$ docker build
+$ docker search marathon
+&lt;span style=&#34;color:#228b22&#34;&gt;# version tag&lt;/span&gt;
+$ docker pull debian:jessie
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实际操作&#34;&gt;实际操作&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看新装了什么内容&lt;/span&gt;
+$ docker diff &amp;lt;containerID&amp;gt; 
+&lt;span style=&#34;color:#228b22&#34;&gt;# 使用修改后的容器新建一个镜像&lt;/span&gt;
+$ docker commit &amp;lt;containerID&amp;gt; 
+&lt;span style=&#34;color:#228b22&#34;&gt;# 为新镜像起名&lt;/span&gt;
+$ docker tag ab580f989221 myfiglet
+&lt;span style=&#34;color:#228b22&#34;&gt;# 直接使用新镜像&lt;/span&gt;
+$ docker run myfiglet figlet hello
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 可以在创建时直接起名&lt;/span&gt;
+$ docker commit ab580f989 newfiglet 
+$ docker run -ti newfiglet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;写dockerfile&#34;&gt;写Dockerfile&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get install figlet&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t figlet .
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 不使用缓存&lt;/span&gt;
+$ docker build --no-cache ...
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看镜像的所有层的内容&lt;/span&gt;
+$ docker &lt;span style=&#34;color:#658b00&#34;&gt;history&lt;/span&gt; figlet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;CMD&lt;/code&gt;和&lt;code&gt;ENTRYPOINT&lt;/code&gt;
+注意要使用json syntax&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apt-get&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;install&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;-f&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;script&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t myfiglet .
+$ docker run myfiglet
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重写了cmd保留了entrypoint&lt;/span&gt;
+$ docker run myfiglet hola mundo
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重写entrypoint&lt;/span&gt;
+$ docker run -it --entrypoint bash myfiglet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://container.training/intro-selfpaced.yml.html&#34;&gt;container.training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://education.ardanlabs.com/courses/ultimate-docker&#34;&gt;Ardan Labs - Ultimate Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/ - </description>
         </item>
     
     
