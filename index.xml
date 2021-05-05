@@ -1,0 +1,28 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Luxcgo Blog</title>
+    <link>http://luxcgo.github.io/</link>
+    <description>Recent content on Luxcgo Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 May 2021 18:03:30 +0800</lastBuildDate>
+    
+        <atom:link href="http://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Mypost</title>
+        <link>http://luxcgo.github.io/posts/mypost/</link>
+        <pubDate>Wed, 05 May 2021 18:03:30 +0800</pubDate>
+        
+        <guid>http://luxcgo.github.io/posts/mypost/</guid>
+        <description>Luxcgo Blog http://luxcgo.github.io/posts/mypost/ -&lt;p&gt;strange&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nice
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Simple tryout!&lt;/p&gt;
+- http://luxcgo.github.io/posts/mypost/ - </description>
+        </item>
+    
+    
+  </channel>
+</rss> 
