@@ -5,9 +5,116 @@
     <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 13 Mar 2021 16:48:30 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 May 2021 15:32:48 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Go Test</title>
+        <link>https://luxcgo.github.io/posts/go-test/</link>
+        <pubDate>Sun, 09 May 2021 15:32:48 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/go-test/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go-test/ -&lt;h2 id=&#34;go-test的好处&#34;&gt;go test的好处：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;寻找不易发现的bug、edge case、side effect&lt;/li&gt;
+&lt;li&gt;记录目标行为，可作为一个文档帮助他人理解代码&lt;/li&gt;
+&lt;li&gt;自动化可重复&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;basic-usage&#34;&gt;Basic usage：&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/testing/#pkg-overview&#34;&gt;https://golang.org/pkg/testing/#pkg-overview&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math.go
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; math
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;Sum&lt;/span&gt;(numbers []&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; {
+	sum := &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; _, n := &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;range&lt;/span&gt; numbers {
+		sum += n
+	}
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; sum
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math_test.go
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; math
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestSum&lt;/span&gt;(t *testing.T) {
+	sum := &lt;span style=&#34;color:#008b45&#34;&gt;Sum&lt;/span&gt;([]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;{&lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;, -&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;})
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; sum != &lt;span style=&#34;color:#b452cd&#34;&gt;11&lt;/span&gt; {
+		t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fail want 11 bug got %d&amp;#34;&lt;/span&gt;, sum)
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下
+满足上述要求，运行go test命令就可以看到测试函数的运行结果。&lt;/p&gt;
+&lt;h2 id=&#34;test包实现原理&#34;&gt;test包实现原理&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; sleep
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;time&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestTmpExcutable&lt;/span&gt;(t *testing.T) {
+	t.&lt;span style=&#34;color:#008b45&#34;&gt;Log&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;TestTmpExcutable&amp;#34;&lt;/span&gt;)
+	time.&lt;span style=&#34;color:#008b45&#34;&gt;Sleep&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; * time.Minute)
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;![image-20210509181957708](go test/image-20210509181957708.png)&lt;/p&gt;
+&lt;p&gt;运行&lt;code&gt;go test -v&lt;/code&gt;后可以看到进程中运行着一个临时的二进制文件，它就是由&lt;code&gt;go test&lt;/code&gt;命令生成出来的可执行程序，我们可以直接运行该文件。当go test程序执行完成后，该临时文件就会被删除。
+可见测试程序没有什么特别之处，我们完全可以不使用该包写出类似检验程序正确性的代码，但该包简化了我们实现的步骤。&lt;/p&gt;
+&lt;h2 id=&#34;命名约定&#34;&gt;命名约定&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;文件名以&lt;code&gt;_test.go&lt;/code&gt;结尾&lt;/li&gt;
+&lt;li&gt;函数名格式类似&lt;code&gt;TestXxx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;变量名一般使用&lt;code&gt;arg&lt;/code&gt;、&lt;code&gt;want&lt;/code&gt;、&lt;code&gt;got&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数名例子
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数签名：Test接受者类型_方法名_参数类型
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestDog_Bark_muzzled&lt;/span&gt;(t *testing.T) {
+
+}
+
+&lt;span style=&#34;color:#228b22&#34;&gt;// 变量名例子
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestColor&lt;/span&gt;(t *testing.T) {
+	arg := &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt;
+	want := &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;#00000FF&amp;#34;&lt;/span&gt;
+	got := &lt;span style=&#34;color:#008b45&#34;&gt;Color&lt;/span&gt;(arg)
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; got != want {
+		t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Color(%q) = %q; want %q&amp;#34;&lt;/span&gt;, arg, got, want)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/fmt/&#34;&gt;https://golang.org/pkg/fmt/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Integer:
+%q	a single-quoted character literal safely escaped with Go syntax.
+String and slice of bytes (treated equivalently with these verbs):
+%q	a double-quoted string safely escaped with Go syntax
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;testingt的方法使用&#34;&gt;testing.T的方法使用&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/testing/#T&#34;&gt;https://golang.org/pkg/testing/#T&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fail: 测试失败但继续运行&lt;/li&gt;
+&lt;li&gt;FailNow: 测试失败并停止执行当前goroutine的test&lt;/li&gt;
+&lt;li&gt;Log: 测试失败或者以verbose模式执行test时将内容打印到终端&lt;/li&gt;
+&lt;li&gt;Error: Log + Fail&lt;/li&gt;
+&lt;li&gt;Fatal: Log +FailNow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;on-the-list&#34;&gt;on the list&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;subtests&lt;/li&gt;
+&lt;li&gt;![image-20210510004538186](go test/image-20210510004538186.png)&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/go-test/ - </description>
+        </item>
     
     
     
