@@ -561,8 +561,15 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             
             
             
+                
+            
 
-            <div class="post-head-wrapper-text-only"
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://luxcgo.github.io/posts/go%20test/feature.png')"
+                    
                 
             >
                 <div class="post-title">
@@ -638,7 +645,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 	time.<span style="color:#008b45">Sleep</span>(<span style="color:#b452cd">2</span> * time.Minute)
 }
 
-</code></pre></div><p>![image-20210509181957708](go test/image-20210509181957708.png)</p>
+</code></pre></div><p><img src="/posts/go%20test/image-20210509181957708.png" alt="image-20210509181957708"></p>
 <p>运行<code>go test -v</code>后可以看到进程中运行着一个临时的二进制文件，它就是由<code>go test</code>命令生成出来的可执行程序，我们可以直接运行该文件。当go test程序执行完成后，该临时文件就会被删除。
 可见测试程序没有什么特别之处，我们完全可以不使用该包写出类似检验程序正确性的代码，但该包简化了我们实现的步骤。</p>
 <h2 id="命名约定">命名约定</h2>
@@ -681,7 +688,7 @@ String and slice of bytes (treated equivalently with these verbs):
 <h2 id="on-the-list">on the list</h2>
 <ul>
 <li>subtests</li>
-<li>![image-20210510004538186](go test/image-20210510004538186.png)</li>
+<li>naming conventions<img src="/posts/go%20test/image-20210510004538186.png" alt="image-20210510004538186"></li>
 </ul>
 
                     

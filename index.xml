@@ -68,7 +68,7 @@
 	time.&lt;span style=&#34;color:#008b45&#34;&gt;Sleep&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; * time.Minute)
 }
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;![image-20210509181957708](go test/image-20210509181957708.png)&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210509181957708.png&#34; alt=&#34;image-20210509181957708&#34;&gt;&lt;/p&gt;
 &lt;p&gt;运行&lt;code&gt;go test -v&lt;/code&gt;后可以看到进程中运行着一个临时的二进制文件，它就是由&lt;code&gt;go test&lt;/code&gt;命令生成出来的可执行程序，我们可以直接运行该文件。当go test程序执行完成后，该临时文件就会被删除。
 可见测试程序没有什么特别之处，我们完全可以不使用该包写出类似检验程序正确性的代码，但该包简化了我们实现的步骤。&lt;/p&gt;
 &lt;h2 id=&#34;命名约定&#34;&gt;命名约定&lt;/h2&gt;
@@ -111,7 +111,7 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;h2 id=&#34;on-the-list&#34;&gt;on the list&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;subtests&lt;/li&gt;
-&lt;li&gt;![image-20210510004538186](go test/image-20210510004538186.png)&lt;/li&gt;
+&lt;li&gt;naming conventions&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210510004538186.png&#34; alt=&#34;image-20210510004538186&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 - https://luxcgo.github.io/posts/go-test/ - </description>
         </item>
