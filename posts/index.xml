@@ -6,14 +6,23 @@
     <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 09 May 2021 15:32:48 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 May 2021 17:13:54 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Algorithms</title>
+      <link>https://luxcgo.github.io/posts/go-algorithms/</link>
+      <pubDate>Sat, 22 May 2021 17:13:54 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go-algorithms/</guid>
+      <description>// version 1: with jiuzhang template public class Solution { /** * @param A an integer array sorted in ascending order * @param target an integer * @return an integer */ public int findPosition(int[] nums, int target) { if (nums == null || nums.length == 0) { return -1; } int start = 0, end = nums.length - 1; while (start + 1 &amp;lt; end) { int mid = start + (end - start) / 2; if (nums[mid] == target) { return mid; } else if (nums[mid] &amp;lt; target) { start = mid; } else { end = mid; } } if (nums[start] == target) { return start; } if (nums[end] == target) { return end; } return -1; } } public class Solution { /** * @param A an integer array * @return void */ public void sortIntegers2(int[] A) { // use a shared temp array, the extra memory is O(n) at least  int[] temp = new int[A.</description>
+    </item>
+    
     <item>
       <title>Go Test</title>
       <link>https://luxcgo.github.io/posts/go-test/</link>
       <pubDate>Sun, 09 May 2021 15:32:48 +0800</pubDate>
       
       <guid>https://luxcgo.github.io/posts/go-test/</guid>
-      <description>go test的好处：  寻找不易发现的bug、edge case、side effect 记录目标行为，可作为一个文档帮助他人理解代码 自动化可重复  Basic usage： https://golang.org/pkg/testing/#pkg-overview
+      <description>写test的好处  寻找不易发现的bug、edge case、side effect 记录目标行为，可作为一个文档帮助他人理解代码 自动化可重复  test包基本使用 https://golang.org/pkg/testing/#pkg-overview
 // math/math.go  package math func Sum(numbers []int) int { sum := 0 for _, n := range numbers { sum += n } return sum } // math/math_test.go  package math import ( &amp;#34;testing&amp;#34; ) func TestSum(t *testing.T) { sum := Sum([]int{10, -2, 3}) if sum != 11 { t.Errorf(&amp;#34;fail want 11 bug got %d&amp;#34;, sum) } } test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下 满足上述要求，运行go test命令就可以看到测试函数的运行结果。</description>
     </item>
     
