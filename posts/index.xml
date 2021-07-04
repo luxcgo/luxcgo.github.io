@@ -6,14 +6,25 @@
     <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 22 May 2021 17:13:54 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Jul 2021 11:35:06 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用VsCode正则表达式批量替换</title>
+      <link>https://luxcgo.github.io/posts/%E4%BD%BF%E7%94%A8vscode%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%B9%E9%87%8F%E6%9B%BF%E6%8D%A2/</link>
+      <pubDate>Sun, 04 Jul 2021 11:35:06 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E4%BD%BF%E7%94%A8vscode%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%B9%E9%87%8F%E6%9B%BF%E6%8D%A2/</guid>
+      <description>vscode
+\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 148 occurrences</description>
+    </item>
+    
     <item>
       <title>Go Algorithms</title>
       <link>https://luxcgo.github.io/posts/go-algorithms/</link>
       <pubDate>Sat, 22 May 2021 17:13:54 +0800</pubDate>
       
       <guid>https://luxcgo.github.io/posts/go-algorithms/</guid>
-      <description>// version 1: with jiuzhang template public class Solution { /** * @param A an integer array sorted in ascending order * @param target an integer * @return an integer */ public int findPosition(int[] nums, int target) { if (nums == null || nums.length == 0) { return -1; } int start = 0, end = nums.length - 1; while (start + 1 &amp;lt; end) { int mid = start + (end - start) / 2; if (nums[mid] == target) { return mid; } else if (nums[mid] &amp;lt; target) { start = mid; } else { end = mid; } } if (nums[start] == target) { return start; } if (nums[end] == target) { return end; } return -1; } } public class Solution { /** * @param A an integer array * @return void */ public void sortIntegers2(int[] A) { // use a shared temp array, the extra memory is O(n) at least  int[] temp = new int[A.</description>
+      <description>DFS和BFS的对比：
+    数据结构 空间      DFS Stack O(h) 不具最短性   BFS queue O(2^h) 最短路    </description>
     </item>
     
     <item>

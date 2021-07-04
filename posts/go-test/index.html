@@ -21,8 +21,8 @@
 // math/math.go  package math func Sum(numbers []int) int { sum := 0 for _, n := range numbers { sum &#43;= n } return sum } // math/math_test.go  package math import ( &#34;testing&#34; ) func TestSum(t *testing.T) { sum := Sum([]int{10, -2, 3}) if sum != 11 { t.Errorf(&#34;fail want 11 bug got %d&#34;, sum) } } test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下 满足上述要求，运行go test命令就可以看到测试函数的运行结果。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luxcgo.github.io/posts/go-test/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-09T15:32:48&#43;08:00" />
-<meta property="article:modified_time" content="2021-05-09T15:32:48&#43;08:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="article:published_time" content="2021-05-09T15:32:48+08:00" />
+<meta property="article:modified_time" content="2021-05-09T15:32:48+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -461,6 +461,24 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
+								<a href="#%e7%b1%bb%e5%9e%8b%e6%af%94%e8%be%83" onclick="onNavClick(`#类型比较-nav`)" id="类型比较-nav">
+									类型比较
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#references" onclick="onNavClick(`#references-nav`)" id="references-nav">
 									References
 								</a>
@@ -838,6 +856,24 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
+								<a href="#%e7%b1%bb%e5%9e%8b%e6%af%94%e8%be%83" onclick="onNavClick(`#类型比较-nav`)" id="类型比较-nav">
+									类型比较
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#references" onclick="onNavClick(`#references-nav`)" id="references-nav">
 									References
 								</a>
@@ -1061,29 +1097,29 @@ String and slice of bytes (treated equivalently with these verbs):
 <p>输出的内容尽可能简洁，易于理解，最重要的是通过错误信息可以方便的复现出整个出错的过程，更好的 debug 。
 正如下面的例子只需要<code>seed</code>就可以复现出整个流程，但若只打印出整个数组就不易于理解。</p>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> random
-   
+
 <span style="color:#8b008b;font-weight:bold">import</span> (
-    <span style="color:#cd5555">&#34;math/rand&#34;</span>
-    <span style="color:#cd5555">&#34;testing&#34;</span>
-    <span style="color:#cd5555">&#34;time&#34;</span>
+	<span style="color:#cd5555">&#34;math/rand&#34;</span>
+	<span style="color:#cd5555">&#34;testing&#34;</span>
+	<span style="color:#cd5555">&#34;time&#34;</span>
 )
-   
+
 <span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestPick</span>(t *testing.T) {
-    seed := time.<span style="color:#008b45">Now</span>().<span style="color:#008b45">UnixNano</span>()
-    r := rand.<span style="color:#008b45">New</span>(rand.<span style="color:#008b45">NewSource</span>(seed))
-    arg := <span style="color:#658b00">make</span>([]<span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#b452cd">25</span>)
-    <span style="color:#8b008b;font-weight:bold">for</span> i := <span style="color:#b452cd">0</span>; i &lt; <span style="color:#b452cd">25</span>; i++ {
+	seed := time.<span style="color:#008b45">Now</span>().<span style="color:#008b45">UnixNano</span>()
+	r := rand.<span style="color:#008b45">New</span>(rand.<span style="color:#008b45">NewSource</span>(seed))
+	arg := <span style="color:#658b00">make</span>([]<span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#b452cd">25</span>)
+	<span style="color:#8b008b;font-weight:bold">for</span> i := <span style="color:#b452cd">0</span>; i &lt; <span style="color:#b452cd">25</span>; i++ {
         arg[i] = r.<span style="color:#008b45">Int</span>()
-    }
-    got := <span style="color:#008b45">Pick</span>(arg)
-    <span style="color:#8b008b;font-weight:bold">for</span> _, v := <span style="color:#8b008b;font-weight:bold">range</span> arg {
+	}
+	got := <span style="color:#008b45">Pick</span>(arg)
+	<span style="color:#8b008b;font-weight:bold">for</span> _, v := <span style="color:#8b008b;font-weight:bold">range</span> arg {
         <span style="color:#8b008b;font-weight:bold">if</span> got == v {
             <span style="color:#8b008b;font-weight:bold">return</span>
         }
-    }
-    t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;Pick(seed=%d) = %d; not in slice&#34;</span>, seed, got)
+	}
+	t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;Pick(seed=%d) = %d; not in slice&#34;</span>, seed, got)
 }
-   
+
 </code></pre></div></li>
 </ol>
 <h2 id="example-可测试的案例代码">Example: 可测试的案例代码</h2>
@@ -1104,7 +1140,7 @@ String and slice of bytes (treated equivalently with these verbs):
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleT</span>() { ... }
 <span style="color:#228b22">// T类型的M方法
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleT_M</span>() { ... }
-  
+
 <span style="color:#228b22">// 若有多个example函数，可加后缀以示区分。
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Example_suffix</span>() { ... }
 <span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleF_suffix</span>() { ... }
@@ -1130,10 +1166,10 @@ String and slice of bytes (treated equivalently with these verbs):
 </span></code></pre></div></li>
 <li>
 <p>使用如下格式，在go test时会检测example函数的输出是否与Unordered output下面的内容相符，但检测顺序是无序的。</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#228b22">// Unordered output:
-</span><span style="color:#228b22"></span>    <span style="color:#228b22">// BTC 比特币
-</span><span style="color:#228b22"></span>    <span style="color:#228b22">// ETH 以太坊
-</span><span style="color:#228b22"></span>    <span style="color:#228b22">// DOGE 狗狗币
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#228b22">// Unordered output:
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// BTC 比特币
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// ETH 以太坊
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// DOGE 狗狗币
 </span></code></pre></div></li>
 </ul>
 <h3 id="example小案例">Example小案例</h3>
@@ -1193,6 +1229,10 @@ String and slice of bytes (treated equivalently with these verbs):
 
 </code></pre></div><p><img src="/posts/go%20test/image-20210522144118126.png" alt="image-20210522144118126"></p>
 <p><img src="/posts/go%20test/image-20210522144008859.png" alt="image-20210522144008859"></p>
+<h2 id="类型比较">类型比较</h2>
+<p><a href="https://golang.org/ref/spec#Comparison_operators">https://golang.org/ref/spec#Comparison_operators</a></p>
+<p><a href="https://golang.org/pkg/reflect/#DeepEqual">https://golang.org/pkg/reflect/#DeepEqual</a></p>
+<p><a href="http://www.luffy.vip/post/2020-10-17-golang-comparison/">http://www.luffy.vip/post/2020-10-17-golang-comparison/</a></p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://golang.org/pkg/testing/">https://golang.org/pkg/testing/</a></li>
@@ -1202,14 +1242,17 @@ String and slice of bytes (treated equivalently with these verbs):
 <li><a href="https://golang.org/src/sort/example_interface_test.go">https://golang.org/src/sort/example_interface_test.go</a></li>
 <li><a href="https://github.com/fluhus/godoc-tricks">https://github.com/fluhus/godoc-tricks</a></li>
 <li><a href="https://github.com/joncalhoun/twg">https://github.com/joncalhoun/twg</a></li>
+<li><a href="https://testwithgo.com/">https://testwithgo.com/</a></li>
+<li><a href="https://dave.cheney.net/2019/05/07/prefer-table-driven-tests">https://dave.cheney.net/2019/05/07/prefer-table-driven-tests</a></li>
+<li><a href="https://blog.golang.org/subtests">https://blog.golang.org/subtests</a></li>
 </ul>
 <h2 id="on-the-list">on the list</h2>
 <ul>
 <li>subtests</li>
 <li>naming conventions<img src="/posts/go%20test/image-20210510004538186.png" alt="image-20210510004538186"></li>
+<li><a href="https://github.com/stretchr/testify">https://github.com/stretchr/testify</a></li>
 </ul>
-<pre><code>
-</code></pre>
+
                     
                     <HR width="100%" id="EOF">
 		    <p style="color:#777;">Last modified on 2021-05-09</p>

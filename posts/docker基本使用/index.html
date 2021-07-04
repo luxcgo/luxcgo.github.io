@@ -20,8 +20,8 @@
 <meta property="og:description" content="1. 容器的基础命令 使用docker的好处  便于构建各种依赖关系 快速构建 快速迁移 和宿主主机互不影响  初步使用 $ docker run busybox echo hello world hello world $ docker run -ti ubuntu root@3cc1d9fcadda:/# apt-get update root@3cc1d9fcadda:/# apt-get install figlet root@3cc1d9fcadda:/# figlet LuxcGo _ ____ | | _ ___ _____ / ___| ___ | | | | | \ \/ / __| | _ / _ \ | |__| |_| |&gt; &lt; (__| |_| | (_) | |_____\__,_/_/\_\___|\____|\___/ root@3cc1d9fcadda:/# dpkg -l root@3cc1d9fcadda:/# dpkg -l | wc -l 98 lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l 1877 运行一个容器 $ docker run jpetazzo/clock $ sleep 10 &amp; [1] 18495 $ [1] &#43; 18495 done sleep 10 # 后台创建并启动和sleep命令类似 $ docker run -d jpetazzo/clock # 只显示运行着的容器 $ docker ps # 显示所有容器 $ docker ps -a # 查看最后一个启动的容器 $ docker ps -l # 查看所有正在运行的容器的id（--quiet） $ docker ps -q # 可以同时合并多条命令 $ docker ps -ql $ docker ps -q -l # 查看日志 $ docker logs &lt;container ID&gt; # --follow $ docker logs 82 -f # --tail $ docker logs 82 -f -n 10 # polite shutdown（传递一个关闭的信号） $ docker stop 49 # 强制关闭 $ docker kill 82 48 后台运行的容器 $ docker run -ti ubuntu root@3cc1d9fcadda:/# top # 退出容器 ^p^q # 重新进入容器 $ docker attach 34 # 或者用个 子命令 $ docker attach $(docker ps -ql) # 如果想要进入容器输入内容的话使用docker attach  # 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器 $ docker logs --tail 1 --follow $(docker ps -ql) # 重启停止的容器 $ docker start &lt;containerID&gt; 2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-03-13T16:48:30&#43;08:00" />
-<meta property="article:modified_time" content="2021-03-13T16:48:30&#43;08:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="article:published_time" content="2021-03-13T16:48:30+08:00" />
+<meta property="article:modified_time" content="2021-03-13T16:48:30+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
