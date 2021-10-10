@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>扯闲篇儿 on 源泉的小站</title>
+    <link>https://luxcgo.github.io/categories/%E6%89%AF%E9%97%B2%E7%AF%87%E5%84%BF/</link>
+    <description>Recent content in 扯闲篇儿 on 源泉的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 19 Sep 2021 23:40:39 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/%E6%89%AF%E9%97%B2%E7%AF%87%E5%84%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dns污染</title>
+      <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
+      <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
+      <description>Failed to connect to raw.githubusercontent.com:443 下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0
+域名的解析过程是：
+Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器
+方法一：在第一步解析时解决问题 获取真实的ip地址后加到hosts文件中就可以避免dns污染了
+$ cat /etc/hosts 直接修改的话比较麻烦，下面这个软件SwitchHosts方便很多
+方法二：在第四步解析时解决问题 直接修改本机网络用到的DNS服务器，
+在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题
+223.5.5.5 223.6.6.6 119.29.29.29 119.28.28.28 </description>
+    </item>
+    
+  </channel>
+</rss>

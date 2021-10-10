@@ -6,25 +6,60 @@
     <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 04 Jul 2021 11:35:06 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 19:29:19 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用VsCode正则表达式批量替换</title>
-      <link>https://luxcgo.github.io/posts/%E4%BD%BF%E7%94%A8vscode%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%B9%E9%87%8F%E6%9B%BF%E6%8D%A2/</link>
-      <pubDate>Sun, 04 Jul 2021 11:35:06 +0800</pubDate>
+      <title>git使用笔记</title>
+      <link>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 01 Oct 2021 19:29:19 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/%E4%BD%BF%E7%94%A8vscode%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%B9%E9%87%8F%E6%9B%BF%E6%8D%A2/</guid>
-      <description>vscode
-\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 148 occurrences</description>
+      <guid>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>Configuring Git   Settings
+ Name Email Default Editor Line Ending    Levels
+ System: All users Global: All repositories of the current user Local: The current repository    $ git config --global user.name &amp;#34;hackcraker&amp;#34; $ git config --global user.email mgyuchen@163.com $ git config --global core.editor vim # 用于多平台协作 $ git config --global core.autocrlf input Creating Snapshots Initializing a repository
+ git init  Staging files</description>
     </item>
     
     <item>
-      <title>Go Algorithms</title>
-      <link>https://luxcgo.github.io/posts/go-algorithms/</link>
-      <pubDate>Sat, 22 May 2021 17:13:54 +0800</pubDate>
+      <title>Dns污染</title>
+      <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
+      <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/go-algorithms/</guid>
-      <description>DFS和BFS的对比：
-    数据结构 空间      DFS Stack O(h) 不具最短性   BFS queue O(2^h) 最短路    </description>
+      <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
+      <description>Failed to connect to raw.githubusercontent.com:443 下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0
+域名的解析过程是：
+Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器
+方法一：在第一步解析时解决问题 获取真实的ip地址后加到hosts文件中就可以避免dns污染了
+$ cat /etc/hosts 直接修改的话比较麻烦，下面这个软件SwitchHosts方便很多
+方法二：在第四步解析时解决问题 直接修改本机网络用到的DNS服务器，
+在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题
+223.5.5.5 223.6.6.6 119.29.29.29 119.28.28.28 </description>
+    </item>
+    
+    <item>
+      <title>Terminal</title>
+      <link>https://luxcgo.github.io/posts/terminal/</link>
+      <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/terminal/</guid>
+      <description>zsh  framework: ohmyzsh  Plugin:  docker docker-compose z zsh-completions zsh-syntax-highlighting   Theme:  powerlevel10k  How do I add username and/or hostname to prompt?        </description>
+    </item>
+    
+    <item>
+      <title>Docker使用笔记</title>
+      <link>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Sep 2021 15:27:19 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>初识docker # 查看版本并顺便检查docker server正常启动，cli可以连接到engine $ docker version # 查看engine的一些配置项 $ docker info # 查看docker command line structure # docker command的格式，为了解决激增的命令数量难以记忆的问题，推出Management Commands模式 # 1. 使用Management Commands: docker &amp;lt;command&amp;gt; &amp;lt;sub-command&amp;gt; (options) # 2. 使用Commands: docker &amp;lt;command&amp;gt; (options) $ docker # 例子，如下两种模式的命令目的是一样的 $ docker container run $ docker run 创建一个Nginx服务器  Downloaded image nginx from Docker Hub Started a new container from that image Opened port 80 on the host IP Routes that traffic to the container IP, port 80  # --publish(or -p) 是一种映射host port到container port的方法 $ docker container run --publish 80:80 nginx # 在后台运行 # 可以使用docker container run --help查看更多详细内容 $ docker container run --publish 80:80 --detach nginx # docker ps亦可 $ docker container ls # 停止容器但不删除 # docker stop亦可 $ docker container stop 690 # docker container run总是开启一个新的容器 # docker container start是开启一个已经存在的停止的容器 $ docker container start 690 $ docker container ls $ docker container ls -a # 在不手动设置容器名称的情况下docker会随机生成一个adj+n的名称 # detail: https://github.</description>
+    </item>
+    
+    <item>
+      <title>Tmux精简指南</title>
+      <link>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Thu, 09 Sep 2021 21:20:53 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
     </item>
     
     <item>
