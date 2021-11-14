@@ -6,7 +6,99 @@
     <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 01 Oct 2021 19:29:19 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何从豆瓣FM转移到网易云音乐？</title>
+      <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+      <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+      <description>曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。
+  下载红心歌曲链接，这是一个维护了十年的豆瓣电台加心歌曲爬虫
+  下载红心歌曲，迅雷即可
+  上传到网易云音乐云盘
+  网易云对Mac未开放接口，M1 Mac还不支持X86架构的安卓模拟器，只能用开源API了
+网易云音乐 Node.js API service
+安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。
+// /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js node multi_song_upload.js --phone_number=&amp;#34;xx&amp;#34; --password=&amp;#34;xx&amp;#34; --dir=&amp;#39;/Users/xx/Music&amp;#39;   voila
+  </description>
+    </item>
+    
+    <item>
+      <title>HRM 人力资源机器</title>
+      <link>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
+      <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
+      <description>体积！速度！ 第 1 年 -- HUMAN RESOURCE MACHINE PROGRAM -- INBOX OUTBOX INBOX OUTBOX INBOX OUTBOX 第 2 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX JUMP a -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX INBOX OUTBOX JUMP a 第 3 年 -- HUMAN RESOURCE MACHINE PROGRAM -- COPYFROM 4 OUTBOX COPYFROM 0 OUTBOX COPYFROM 3 OUTBOX 第 4 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX OUTBOX COPYFROM 0 OUTBOX JUMP a 第 5 年 // 咖啡时间 第 6 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX ADD 0 OUTBOX JUMP a 第 7 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX JUMPZ b OUTBOX JUMP a 第 8 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 ADD 0 OUTBOX JUMP a 第 9 年 -- HUMAN RESOURCE MACHINE PROGRAM -- JUMP c a: OUTBOX b: c: INBOX JUMPZ a JUMP b 第 10 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 11 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 OUTBOX COPYFROM 0 SUB 1 OUTBOX JUMP a 第 12 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 1 ADD 1 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 13 年 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX SUB 0 JUMPZ c JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 14 年 // 代码行数需要优化 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 JUMPN c COPYFROM 1 OUTBOX JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 15 年 // 斗志注入 第 16 年 第 17 年 第 18 年 第 19 年 第 20 年 第 21 年 第 22 年 第 23 年 第 24 年 第 25 年 第 26 年 第 27 年 第 28 年 第 29 年 第 30 年 第 31 年 第 32 年 第 33 年 第 34 年 第 35 年 第 36 年 第 37 年 第 38 年 第 39 年 第 40 年 第 41 年 第 42 年 </description>
+    </item>
+    
+    <item>
+      <title>Go程序是怎么跑起来的</title>
+      <link>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</link>
+      <pubDate>Sun, 07 Nov 2021 11:51:19 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid>
+      <description>Go 的启动和执行流程  理解可执行文件 01 Go 进程的启动与初始化 02 调度组件与调度循环 03 处理阻塞 04 调度器的发展历史 05 与调度有关的常⻅问题  理解可执行文件 成长看得见</description>
+    </item>
+    
+    <item>
+      <title>Go Spec学习摘要</title>
+      <link>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
+      <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Delve Golang专属的debugger</title>
+      <link>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
+      <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sourcetree配置</title>
+      <link>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</guid>
+      <description>在mac上配置github账户 443时要配置代理
+403时要解决推送时没有权限问题
+因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式
+配置proxy 删除/Users/lucas/Library/ApplicationSupport/SourceTree目录下的密码文件 在sourcetree中配置账户信息 github上申请相关token 修改mac中钥匙串访问中的密码为token  参考链接  Suffering from the latest 403 error from GitHub on SourceTree? Connecting Mac SourceTree with your GitHub account  </description>
+    </item>
+    
+    <item>
+      <title>Vscode奇技淫巧</title>
+      <link>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
+      <pubDate>Sat, 30 Oct 2021 23:46:10 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
+      <description>使用VsCode正则表达式批量替换    正则查找：myfunction\((.*),(.*)\) 替换：myfunction($1,$2)   查找：&amp;quot;static/(.*).css 替换：&amp;quot;static/css/$1.css // 替换前 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/cui.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/style.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/less.css&amp;#34;&amp;gt; // 替换后 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/css/cui.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/css/style.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/css/less.css&amp;#34;&amp;gt;   正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0 匹配结果：.jpg?abc=1 0.001 404   \(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 \(problems/(.*)-(.*)\) (problems/$1) 命令行输入code自动打开vscode </description>
+    </item>
+    
+    <item>
+      <title>英语单词</title>
+      <link>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
+      <pubDate>Sun, 24 Oct 2021 14:34:37 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
+      <description>New words    英语 释义     disparate 根本不同的   tout 吹嘘，兜售   dread    impede    paginate                     </description>
+    </item>
+    
+    <item>
+      <title>Go与爬虫</title>
+      <link>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Sun, 24 Oct 2021 14:28:41 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>git使用笔记</title>
       <link>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>

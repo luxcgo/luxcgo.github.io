@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Categories</title>
+<title>如何从豆瓣FM转移到网易云音乐？</title>
 
 
 
@@ -16,10 +16,20 @@
 
 
 
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="My HomePage Description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://luxcgo.github.io/categories/" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:title" content="如何从豆瓣FM转移到网易云音乐？" />
+<meta property="og:description" content="曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。
+  下载红心歌曲链接，这是一个维护了十年的豆瓣电台加心歌曲爬虫
+  下载红心歌曲，迅雷即可
+  上传到网易云音乐云盘
+  网易云对Mac未开放接口，M1 Mac还不支持X86架构的安卓模拟器，只能用开源API了
+网易云音乐 Node.js API service
+安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。
+// /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js node multi_song_upload.js --phone_number=&#34;xx&#34; --password=&#34;xx&#34; --dir=&#39;/Users/xx/Music&#39;   voila
+  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-15T01:39:12+08:00" />
+<meta property="article:modified_time" content="2021-11-15T01:39:12+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -27,8 +37,16 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="My HomePage Description"/>
+<meta name="twitter:title" content="如何从豆瓣FM转移到网易云音乐？"/>
+<meta name="twitter:description" content="曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。
+  下载红心歌曲链接，这是一个维护了十年的豆瓣电台加心歌曲爬虫
+  下载红心歌曲，迅雷即可
+  上传到网易云音乐云盘
+  网易云对Mac未开放接口，M1 Mac还不支持X86架构的安卓模拟器，只能用开源API了
+网易云音乐 Node.js API service
+安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。
+// /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js node multi_song_upload.js --phone_number=&#34;xx&#34; --password=&#34;xx&#34; --dir=&#39;/Users/xx/Music&#39;   voila
+  "/>
 
 
 
@@ -66,7 +84,29 @@
 
 
 
+  
+    <script src="/js/toc-collapse.js"></script>
+  
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'a527293cd81df2a6cbb8',
+  clientSecret: '0e8c29bb9db8f136f345c5128c6ad846df4d5162',
+  repo: 'luxcgo.github.io',
+  owner: 'luxcgo',
+  admin: ['luxcgo'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
 
 
 
@@ -99,9 +139,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/posts">
+            
+            <a class="a-block nav-link-item active" href="/posts">
                 归档
             </a>
             
@@ -109,11 +151,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/categories">
+            <a class="a-block nav-link-item false" href="/categories">
                 分类
             </a>
             
@@ -159,6 +199,11 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -176,8 +221,6 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
         </a>
         
         
-        
-        
     </div>
 </div>
 <div class="single-column-drawer-container" ref="drawer"
@@ -190,9 +233,11 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/posts">
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
                     归档
                 </a>
                 
@@ -200,11 +245,9 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/categories">
+                <a class="a-block drawer-menu-item false" href="/categories">
                     分类
                 </a>
                 
@@ -229,6 +272,11 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+</div>
             
         </div>
     </div>
@@ -273,75 +321,100 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <a class="a-block">
-            <div class="post-item-wrapper post-item-wrapper-no-hover">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title post-item-title-small">
-                            Categories
-                        </div>
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    如何从豆瓣FM转移到网易云音乐？
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-11-15 01:39
+                        </time>
+                        
+
+                        
+
+                        
+                        
                     </div>
                 </div>
             </div>
-        </a>
-        
-        
-                <a href="https://luxcgo.github.io/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    语言学习
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。</p>
+<ol>
+<li>
+<p>下载红心歌曲链接，这是一个维护了十年的<a href="https://github.com/loveunk/douban-favorite-music-parser">豆瓣电台加心歌曲爬虫</a></p>
+</li>
+<li>
+<p>下载红心歌曲，迅雷即可</p>
+</li>
+<li>
+<p>上传到网易云音乐云盘</p>
+</li>
+<li>
+<p>网易云对Mac未开放接口，M1 Mac还不支持X86架构的安卓模拟器，只能用开源API了</p>
+<p><a href="https://github.com/Binaryify/NeteaseCloudMusicApi">网易云音乐 Node.js API service</a></p>
+<p>安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">// /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js
+node multi_song_upload.js --phone_number=<span style="color:#cd5555">&#34;xx&#34;</span> --password=<span style="color:#cd5555">&#34;xx&#34;</span> --dir=<span style="color:#cd5555">&#39;/Users/xx/Music&#39;</span>
+</code></pre></div></li>
+<li>
+<p>voila</p>
+</li>
+</ol>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2021-11-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
                 </a>
-        
-                <a href="https://luxcgo.github.io/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    开源软件
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/">
+			Previous<br>HRM 人力资源机器
                 </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
         
-                <a href="https://luxcgo.github.io/categories/%E6%89%AF%E9%97%B2%E7%AF%87%E5%84%BF/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    扯闲篇儿
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-        
-                <a href="https://luxcgo.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    自动化工具
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-        
+            </div>
+        </div>
     </div>
 </div>
 
-
-            </div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Categories</title>
+<title>Vscode奇技淫巧</title>
 
 
 
@@ -16,10 +16,12 @@
 
 
 
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="My HomePage Description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://luxcgo.github.io/categories/" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:title" content="Vscode奇技淫巧" />
+<meta property="og:description" content="使用VsCode正则表达式批量替换    正则查找：myfunction\((.*),(.*)\) 替换：myfunction($1,$2)   查找：&quot;static/(.*).css 替换：&quot;static/css/$1.css // 替换前 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/less.css&#34;&gt; // 替换后 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/less.css&#34;&gt;   正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]&#43;\.[0-9]&#43; 404 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0 匹配结果：.jpg?abc=1 0.001 404   \(https://www.acwing.com/problem/content/(\d&#43;)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 \(problems/(.*)-(.*)\) (problems/$1) 命令行输入code自动打开vscode " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-30T23:46:10+08:00" />
+<meta property="article:modified_time" content="2021-10-30T23:46:10+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -27,8 +29,8 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="My HomePage Description"/>
+<meta name="twitter:title" content="Vscode奇技淫巧"/>
+<meta name="twitter:description" content="使用VsCode正则表达式批量替换    正则查找：myfunction\((.*),(.*)\) 替换：myfunction($1,$2)   查找：&quot;static/(.*).css 替换：&quot;static/css/$1.css // 替换前 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/less.css&#34;&gt; // 替换后 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/less.css&#34;&gt;   正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]&#43;\.[0-9]&#43; 404 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0 匹配结果：.jpg?abc=1 0.001 404   \(https://www.acwing.com/problem/content/(\d&#43;)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 \(problems/(.*)-(.*)\) (problems/$1) 命令行输入code自动打开vscode "/>
 
 
 
@@ -66,7 +68,29 @@
 
 
 
+  
+    <script src="/js/toc-collapse.js"></script>
+  
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'a527293cd81df2a6cbb8',
+  clientSecret: '0e8c29bb9db8f136f345c5128c6ad846df4d5162',
+  repo: 'luxcgo.github.io',
+  owner: 'luxcgo',
+  admin: ['luxcgo'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
 
 
 
@@ -99,9 +123,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/posts">
+            
+            <a class="a-block nav-link-item active" href="/posts">
                 归档
             </a>
             
@@ -109,11 +135,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/categories">
+            <a class="a-block nav-link-item false" href="/categories">
                 分类
             </a>
             
@@ -159,6 +183,64 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8vscode%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%89%b9%e9%87%8f%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#使用vscode正则表达式批量替换-nav`)" id="使用vscode正则表达式批量替换-nav">
+									使用VsCode正则表达式批量替换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%be%93%e5%85%a5code%e8%87%aa%e5%8a%a8%e6%89%93%e5%bc%80vscode" onclick="onNavClick(`#命令行输入code自动打开vscode-nav`)" id="命令行输入code自动打开vscode-nav">
+									命令行输入code自动打开vscode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -176,8 +258,6 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
         </a>
         
         
-        
-        
     </div>
 </div>
 <div class="single-column-drawer-container" ref="drawer"
@@ -190,9 +270,11 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/posts">
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
                     归档
                 </a>
                 
@@ -200,11 +282,9 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/categories">
+                <a class="a-block drawer-menu-item false" href="/categories">
                     分类
                 </a>
                 
@@ -229,6 +309,64 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8vscode%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%89%b9%e9%87%8f%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#使用vscode正则表达式批量替换-nav`)" id="使用vscode正则表达式批量替换-nav">
+									使用VsCode正则表达式批量替换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%be%93%e5%85%a5code%e8%87%aa%e5%8a%a8%e6%89%93%e5%bc%80vscode" onclick="onNavClick(`#命令行输入code自动打开vscode-nav`)" id="命令行输入code自动打开vscode-nav">
+									命令行输入code自动打开vscode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
             
         </div>
     </div>
@@ -273,75 +411,113 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <a class="a-block">
-            <div class="post-item-wrapper post-item-wrapper-no-hover">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title post-item-title-small">
-                            Categories
-                        </div>
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Vscode奇技淫巧
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-30 23:46
+                        </time>
+                        
+
+                        
+
+                        
+                        
                     </div>
                 </div>
             </div>
-        </a>
-        
-        
-                <a href="https://luxcgo.github.io/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    语言学习
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="使用vscode正则表达式批量替换">使用VsCode正则表达式批量替换</h2>
+<ol>
+<li></li>
+</ol>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">正则查找：myfunction<span style="color:#cd5555">\(</span>(.*),(.*)<span style="color:#cd5555">\)</span>
+替换：myfunction(<span style="color:#00688b">$1</span>,<span style="color:#00688b">$2</span>)
+</code></pre></div><ol start="2">
+<li></li>
+</ol>
+<pre><code>查找：&quot;static/(.*).css
+替换：&quot;static/css/$1.css
+</code></pre><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// 替换前
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/cui.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/style.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/less.css&#34;</span>&gt;
+
+// 替换后
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/css/cui.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/css/style.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/css/less.css&#34;</span>&gt;
+</code></pre></div><ol start="3">
+<li></li>
+</ol>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404
+文本 images/mybg.jpg?abc=1 0.001 404 561 0.0
+匹配结果：.jpg?abc=1 0.001 404
+</code></pre></div><ol start="4">
+<li></li>
+</ol>
+<pre><code>\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式
+(https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式
+
+\(problems/(.*)-(.*)\)
+(problems/$1)
+</code></pre><h2 id="命令行输入code自动打开vscode">命令行输入code自动打开vscode</h2>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2021-10-30</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/">
+			Next<br>Sourcetree配置
                 </a>
-        
-                <a href="https://luxcgo.github.io/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    开源软件
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/">
+			Previous<br>英语单词
                 </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
         
-                <a href="https://luxcgo.github.io/categories/%E6%89%AF%E9%97%B2%E7%AF%87%E5%84%BF/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    扯闲篇儿
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-        
-                <a href="https://luxcgo.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7/" class="a-block">
-                    <div class="post-item-wrapper">
-                        <div class="post-item post-item-no-gaps">
-                            <div class="post-item-info-wrapper"> 
-                                <div class="post-item-title">
-                                    自动化工具
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-        
+            </div>
+        </div>
     </div>
 </div>
 
-
-            </div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

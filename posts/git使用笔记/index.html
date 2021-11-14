@@ -891,6 +891,15 @@ ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=<span style="color:#b452cd"
 <li>
 <p><a href="https://gist.github.com/develar/273e2eb938792cf5f86451fbac2bcd51">Commit Message Format</a></p>
 </li>
+<li>
+<p><a href="https://ralphjsmit.com/unfork-github-repo/">Unfork a repository</a></p>
+</li>
+<li>
+<p>Configure Git to use a proxy</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global http.proxy <span style="color:#cd5555">&#39;http://127.0.0.1:7890&#39;</span>
+git config --global https.proxy <span style="color:#cd5555">&#39;http://127.0.0.1:7890&#39;</span>
+
+</code></pre></div></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
@@ -909,8 +918,8 @@ ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=<span style="color:#b452cd"
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts">
-			Next<br>No newer posts.
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/">
+			Next<br>Go与爬虫
                 </a>
                 
                 

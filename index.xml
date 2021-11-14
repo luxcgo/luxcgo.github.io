@@ -5,9 +5,478 @@
     <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 01 Oct 2021 19:29:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>如何从豆瓣FM转移到网易云音乐？</title>
+        <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+        <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ -&lt;p&gt;曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载红心歌曲链接，这是一个维护了十年的&lt;a href=&#34;https://github.com/loveunk/douban-favorite-music-parser&#34;&gt;豆瓣电台加心歌曲爬虫&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载红心歌曲，迅雷即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上传到网易云音乐云盘&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网易云对Mac未开放接口，M1 Mac还不支持X86架构的安卓模拟器，只能用开源API了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Binaryify/NeteaseCloudMusicApi&#34;&gt;网易云音乐 Node.js API service&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;// /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js
+node multi_song_upload.js --phone_number=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;xx&amp;#34;&lt;/span&gt; --password=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;xx&amp;#34;&lt;/span&gt; --dir=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;/Users/xx/Music&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;voila&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+- https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>HRM 人力资源机器</title>
+        <link>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
+        <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ -&lt;h2 id=&#34;体积速度&#34;&gt;体积！速度！&lt;/h2&gt;
+&lt;h3 id=&#34;第-1-年&#34;&gt;第 1 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+    INBOX   
+    OUTBOX  
+    INBOX   
+    OUTBOX  
+    INBOX   
+    OUTBOX  
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-2-年&#34;&gt;第 2 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    OUTBOX  
+    INBOX   
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-3-年&#34;&gt;第 3 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+    COPYFROM 4
+    OUTBOX  
+    COPYFROM 0
+    OUTBOX  
+    COPYFROM 3
+    OUTBOX  
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-4-年&#34;&gt;第 4 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    COPYTO   0
+    INBOX   
+    OUTBOX  
+    COPYFROM 0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-5-年&#34;&gt;第 5 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 咖啡时间
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-6-年&#34;&gt;第 6 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    COPYTO   0
+    INBOX   
+    ADD      0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-7-年&#34;&gt;第 7 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+b:
+    INBOX   
+    JUMPZ    b
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-8-年&#34;&gt;第 8 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    COPYTO   0
+    ADD      0
+    ADD      0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-9-年&#34;&gt;第 9 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+    JUMP     c
+a:
+    OUTBOX  
+b:
+c:
+    INBOX   
+    JUMPZ    a
+    JUMP     b
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-10-年&#34;&gt;第 10 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    COPYTO   0
+    ADD      0
+    COPYTO   0
+    ADD      0
+    COPYTO   0
+    ADD      0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-11-年&#34;&gt;第 11 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    COPYTO   0
+    INBOX   
+    COPYTO   1
+    SUB      0
+    OUTBOX  
+    COPYFROM 0
+    SUB      1
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-12-年&#34;&gt;第 12 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+    INBOX   
+    COPYTO   0
+    ADD      0
+    COPYTO   1
+    ADD      1
+    ADD      0
+    COPYTO   0
+    ADD      0
+    COPYTO   0
+    ADD      0
+    COPYTO   0
+    ADD      0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-13-年&#34;&gt;第 13 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 运算步数需要优化
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+b:
+    INBOX   
+    COPYTO   0
+    INBOX   
+    SUB      0
+    JUMPZ    c
+    JUMP     b
+c:
+    COPYFROM 0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-14-年&#34;&gt;第 14 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 代码行数需要优化
+// 运算步数需要优化
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+a:
+b:
+    INBOX   
+    COPYTO   0
+    INBOX   
+    COPYTO   1
+    SUB      0
+    JUMPN    c
+    COPYFROM 1
+    OUTBOX  
+    JUMP     b
+c:
+    COPYFROM 0
+    OUTBOX  
+    JUMP     a
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-15-年&#34;&gt;第 15 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 斗志注入
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-16-年&#34;&gt;第 16 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-17-年&#34;&gt;第 17 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-18-年&#34;&gt;第 18 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-19-年&#34;&gt;第 19 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-20-年&#34;&gt;第 20 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-21-年&#34;&gt;第 21 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-22-年&#34;&gt;第 22 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-23-年&#34;&gt;第 23 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-24-年&#34;&gt;第 24 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-25-年&#34;&gt;第 25 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-26-年&#34;&gt;第 26 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-27-年&#34;&gt;第 27 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-28-年&#34;&gt;第 28 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-29-年&#34;&gt;第 29 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-30-年&#34;&gt;第 30 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-31-年&#34;&gt;第 31 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-32-年&#34;&gt;第 32 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-33-年&#34;&gt;第 33 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-34-年&#34;&gt;第 34 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-35-年&#34;&gt;第 35 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-36-年&#34;&gt;第 36 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-37-年&#34;&gt;第 37 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-38-年&#34;&gt;第 38 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-39-年&#34;&gt;第 39 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-40-年&#34;&gt;第 40 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-41-年&#34;&gt;第 41 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-42-年&#34;&gt;第 42 年&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go程序是怎么跑起来的</title>
+        <link>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</link>
+        <pubDate>Sun, 07 Nov 2021 11:51:19 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/ -&lt;h2 id=&#34;go-的启动和执行流程&#34;&gt;Go 的启动和执行流程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;理解可执行文件 01&lt;/li&gt;
+&lt;li&gt;Go 进程的启动与初始化 02&lt;/li&gt;
+&lt;li&gt;调度组件与调度循环 03&lt;/li&gt;
+&lt;li&gt;处理阻塞 04&lt;/li&gt;
+&lt;li&gt;调度器的发展历史 05&lt;/li&gt;
+&lt;li&gt;与调度有关的常⻅问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;理解可执行文件&#34;&gt;理解可执行文件&lt;/h3&gt;
+&lt;p&gt;成长看得见&lt;/p&gt;
+- https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go Spec学习摘要</title>
+        <link>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
+        <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ -- https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Delve Golang专属的debugger</title>
+        <link>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
+        <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Sourcetree配置</title>
+        <link>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;在mac上配置github账户&#34;&gt;在mac上配置github账户&lt;/h2&gt;
+&lt;p&gt;443时要配置代理&lt;/p&gt;
+&lt;p&gt;403时要解决推送时没有权限问题&lt;/p&gt;
+&lt;p&gt;因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式&lt;/p&gt;
+&lt;ol start=&#34;0&#34;&gt;
+&lt;li&gt;配置proxy&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;/Users/lucas/Library/ApplicationSupport/SourceTree&lt;/code&gt;目录下的密码文件&lt;/li&gt;
+&lt;li&gt;在sourcetree中配置账户信息&lt;/li&gt;
+&lt;li&gt;github上申请相关token&lt;/li&gt;
+&lt;li&gt;修改mac中&lt;code&gt;钥匙串访问&lt;/code&gt;中的密码为token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;参考链接&#34;&gt;参考链接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Vscode奇技淫巧</title>
+        <link>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
+        <pubDate>Sat, 30 Oct 2021 23:46:10 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ -&lt;h2 id=&#34;使用vscode正则表达式批量替换&#34;&gt;使用VsCode正则表达式批量替换&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;正则查找：myfunction&lt;span style=&#34;color:#cd5555&#34;&gt;\(&lt;/span&gt;(.*),(.*)&lt;span style=&#34;color:#cd5555&#34;&gt;\)&lt;/span&gt;
+替换：myfunction(&lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt;,&lt;span style=&#34;color:#00688b&#34;&gt;$2&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;查找：&amp;quot;static/(.*).css
+替换：&amp;quot;static/css/$1.css
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;// 替换前
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/cui.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/style.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/less.css&amp;#34;&lt;/span&gt;&amp;gt;
+
+// 替换后
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/css/cui.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/css/style.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/css/less.css&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404
+文本 images/mybg.jpg?abc=1 0.001 404 561 0.0
+匹配结果：.jpg?abc=1 0.001 404
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式
+(https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式
+
+\(problems/(.*)-(.*)\)
+(problems/$1)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;命令行输入code自动打开vscode&#34;&gt;命令行输入code自动打开vscode&lt;/h2&gt;
+- https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>英语单词</title>
+        <link>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
+        <pubDate>Sun, 24 Oct 2021 14:34:37 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ -&lt;h2 id=&#34;new-words&#34;&gt;New words&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;英语&lt;/th&gt;
+&lt;th&gt;释义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;disparate&lt;/td&gt;
+&lt;td&gt;根本不同的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tout&lt;/td&gt;
+&lt;td&gt;吹嘘，兜售&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dread&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;impede&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paginate&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+- https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go与爬虫</title>
+        <link>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</link>
+        <pubDate>Sun, 24 Oct 2021 14:28:41 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/ -- https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/ - </description>
+        </item>
     
     
     
@@ -313,6 +782,15 @@ ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=&lt;span style=&#34;color:#
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://gist.github.com/develar/273e2eb938792cf5f86451fbac2bcd51&#34;&gt;Commit Message Format&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://ralphjsmit.com/unfork-github-repo/&#34;&gt;Unfork a repository&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure Git to use a proxy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;git config --global http.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;http://127.0.0.1:7890&amp;#39;&lt;/span&gt;
+git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;http://127.0.0.1:7890&amp;#39;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
@@ -320,868 +798,6 @@ ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=&lt;span style=&#34;color:#
 &lt;/ul&gt;
 &lt;p&gt;22&lt;/p&gt;
 - https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Dns污染</title>
-        <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
-        <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/ -&lt;h2 id=&#34;failed-to-connect-to-rawgithubusercontentcom443&#34;&gt;Failed to connect to raw.githubusercontent.com:443&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/image-20210919234059200.png&#34; alt=&#34;image-20210919234059200&#34;&gt;&lt;/p&gt;
-&lt;p&gt;下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0&lt;/p&gt;
-&lt;p&gt;域名的解析过程是：&lt;/p&gt;
-&lt;p&gt;Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器&lt;/p&gt;
-&lt;h2 id=&#34;方法一在第一步解析时解决问题&#34;&gt;方法一：在第一步解析时解决问题&lt;/h2&gt;
-&lt;p&gt;获取真实的ip地址后加到hosts文件中就可以避免dns污染了&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat /etc/hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接修改的话比较麻烦，下面这个软件&lt;a href=&#34;https://swh.app/zh/&#34;&gt;SwitchHosts&lt;/a&gt;方便很多&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/image-20210920001132494.png&#34; alt=&#34;image-20210920001132494&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;方法二在第四步解析时解决问题&#34;&gt;方法二：在第四步解析时解决问题&lt;/h2&gt;
-&lt;p&gt;直接修改本机网络用到的DNS服务器，&lt;/p&gt;
-&lt;p&gt;在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;223.5.5.5
-223.6.6.6
-119.29.29.29
-119.28.28.28
-&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Terminal</title>
-        <link>https://luxcgo.github.io/posts/terminal/</link>
-        <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/terminal/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/terminal/ -&lt;h2 id=&#34;zsh&#34;&gt;zsh&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;framework: &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;ohmyzsh&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;Plugin:
-&lt;ul&gt;
-&lt;li&gt;docker&lt;/li&gt;
-&lt;li&gt;docker-compose&lt;/li&gt;
-&lt;li&gt;z&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/zsh-users/zsh-completions&#34;&gt;zsh-completions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/zsh-users/zsh-syntax-highlighting&#34;&gt;zsh-syntax-highlighting&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Theme:
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k&#34;&gt;powerlevel10k&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;How do I add username and/or hostname to prompt?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/terminal/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Docker使用笔记</title>
-        <link>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
-        <pubDate>Sat, 11 Sep 2021 15:27:19 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ -&lt;h2 id=&#34;初识docker&#34;&gt;初识docker&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看版本并顺便检查docker server正常启动，cli可以连接到engine&lt;/span&gt;
-$ docker version
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看engine的一些配置项&lt;/span&gt;
-$ docker info
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看docker command line structure&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker command的格式，为了解决激增的命令数量难以记忆的问题，推出Management Commands模式&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 1. 使用Management Commands: docker &amp;lt;command&amp;gt; &amp;lt;sub-command&amp;gt; (options)&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 2. 使用Commands: docker &amp;lt;command&amp;gt; (options)&lt;/span&gt;
-$ docker
-&lt;span style=&#34;color:#228b22&#34;&gt;# 例子，如下两种模式的命令目的是一样的&lt;/span&gt;
-$ docker container run
-$ docker run
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;创建一个nginx服务器&#34;&gt;创建一个Nginx服务器&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Downloaded image &lt;code&gt;nginx&lt;/code&gt; from Docker Hub&lt;/li&gt;
-&lt;li&gt;Started a new container from that image&lt;/li&gt;
-&lt;li&gt;Opened port 80 on the host IP&lt;/li&gt;
-&lt;li&gt;Routes that traffic to the container IP, port 80&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# --publish(or -p) 是一种映射host port到container port的方法&lt;/span&gt;
-$ docker container run --publish 80:80 nginx
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 在后台运行&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 可以使用docker container run --help查看更多详细内容&lt;/span&gt;
-$ docker container run --publish 80:80 --detach nginx
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker ps亦可&lt;/span&gt;
-$ docker container ls
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 停止容器但不删除&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker stop亦可&lt;/span&gt;
-$ docker container stop &lt;span style=&#34;color:#b452cd&#34;&gt;690&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker container run总是开启一个新的容器&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker container start是开启一个已经存在的停止的容器&lt;/span&gt;
-$ docker container start &lt;span style=&#34;color:#b452cd&#34;&gt;690&lt;/span&gt;
-
-$ docker container ls
-
-$ docker container ls -a
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 在不手动设置容器名称的情况下docker会随机生成一个adj+n的名称&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# detail: https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go&lt;/span&gt;
-$ docker container run --publish 80:80 --detach --name webhost nginx
-
-$ docker container ls -a
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker logs亦可&lt;/span&gt;
-$ docker container logs webhost
-
-$ docker container top
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# Display the running processes of a container&lt;/span&gt;
-$ docker container top webhost
-
-$ docker container --help
-
-$ docker container ls -a
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker rm亦可&lt;/span&gt;
-$ docker container rm 63f &lt;span style=&#34;color:#b452cd&#34;&gt;690&lt;/span&gt; ode
-
-$ docker container ls
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker为了防止误操作，不能直接删除一个运行的容器，除非加参数`-f`强制删除&lt;/span&gt;
-$ docker container rm -f 63f
-
-$ docker container ls -a
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-container-run背后的动作&#34;&gt;&lt;code&gt;docker container run&lt;/code&gt;背后的动作&lt;/h2&gt;
-&lt;p&gt;以&lt;code&gt;docker container run nginx&lt;/code&gt;为例：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Looks for that image locally in image cache, doesn&amp;rsquo;t find anything&lt;/li&gt;
-&lt;li&gt;Then looks in remote image repository (defaults to Docker Hub)&lt;/li&gt;
-&lt;li&gt;Downloads the latest version (nginx:latest by default)&lt;/li&gt;
-&lt;li&gt;Creates new container based on that image and prepares to start&lt;/li&gt;
-&lt;li&gt;Gives it a virtual IP on a private network inside docker engine&lt;/li&gt;
-&lt;li&gt;Opens up port 80 on host and forwards to port 80 in container&lt;/li&gt;
-&lt;li&gt;Starts container by using the CMD in the image Dockerfile&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;简单的命令背后docker帮我们做了很多默认的工作，实际上它是高度定制化的，我们可以根据需要进行修改&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;docker container run &amp;ndash;publish 8080:80 &amp;ndash;name webhost -d nginx:1.11 nginx -T&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如上所示，我们修改了host监听的端口为8080，修改了镜像版本为1.11，修改了开启容器时的CMD命令&lt;/p&gt;
-&lt;h2 id=&#34;container是个什么东西&#34;&gt;&lt;code&gt;container&lt;/code&gt;是个什么东西&lt;/h2&gt;
-&lt;p&gt;本质上一个运行着的容器只是资源受限的进程，当进程结束了container也就退出了，如下是在linux环境下的实验结果：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# ubuntu20.04&lt;/span&gt;
-lucas@ubuntu:~$ docker run --name mongo -d mongo
-4137bf48c62bb2230f717c5d2077419b1dc93ce05cd3db414f81c0aa4262bdac
-lucas@ubuntu:~$ docker ps
-CONTAINER ID   IMAGE    COMMAND                  CREATED          STATUS          PORTS        NAMES
-4137bf48c62b   mongo    &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;docker-entrypoint.s…&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#b452cd&#34;&gt;26&lt;/span&gt; seconds ago   Up &lt;span style=&#34;color:#b452cd&#34;&gt;25&lt;/span&gt; seconds   27017/tcp    mongo
-lucas@ubuntu:~$ ps aux | grep mongo
-systemd+ &lt;span style=&#34;color:#b452cd&#34;&gt;3800614&lt;/span&gt;  0.8  2.7 &lt;span style=&#34;color:#b452cd&#34;&gt;1538116&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;112280&lt;/span&gt; ?      Ssl  15:29   0:01 mongod --bind_ip_all
-lucas    &lt;span style=&#34;color:#b452cd&#34;&gt;3801103&lt;/span&gt;  0.0  0.0   &lt;span style=&#34;color:#b452cd&#34;&gt;6300&lt;/span&gt;   &lt;span style=&#34;color:#b452cd&#34;&gt;736&lt;/span&gt; pts/0    S+   15:31   0:00 grep --color=auto mongo
-lucas@ubuntu:~$ docker rm -f mongo
-mongo
-lucas@ubuntu:~$ ps aux | grep mongo
-lucas    &lt;span style=&#34;color:#b452cd&#34;&gt;3801302&lt;/span&gt;  0.0  0.0   &lt;span style=&#34;color:#b452cd&#34;&gt;6300&lt;/span&gt;   &lt;span style=&#34;color:#b452cd&#34;&gt;676&lt;/span&gt; pts/0    S+   15:32   0:00 grep --color=auto mongo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在&lt;code&gt;mac&lt;/code&gt;环境上略有不同，&lt;code&gt;docker engine&lt;/code&gt;实际上是运行在基于&lt;a href=&#34;https://github.com/machyve/xhyve&#34;&gt;xhyve&lt;/a&gt; &lt;code&gt;VM&lt;/code&gt;上的一个&lt;code&gt;Alpine Linux&lt;/code&gt;，我们进入到这个&lt;code&gt;docker VM&lt;/code&gt;中才能看到具体运行着的进程&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# macOS Big Sur on M1 chip &lt;/span&gt;
-$ docker run --name mongo -d mongo 
-4ce052bde09ce12cef9856e270347c549b988483fdc86051ee7a6cf409b6d15b
-$ docker run --name mongo -d mongo 
-$ docker run -it --rm --privileged --pid=host justincormack/nsenter1
-/ &lt;span style=&#34;color:#228b22&#34;&gt;# ps aux | grep mongo&lt;/span&gt;
- &lt;span style=&#34;color:#b452cd&#34;&gt;2551&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;999&lt;/span&gt;       0:00 mongod --bind_ip_all
- &lt;span style=&#34;color:#b452cd&#34;&gt;2712&lt;/span&gt; root      0:00 grep mongo
-$ docker rm -f mongo  
-mongo
-$ docker run -it --rm --privileged --pid=host justincormack/nsenter1 
-/ &lt;span style=&#34;color:#228b22&#34;&gt;#  ps aux | grep mongo&lt;/span&gt;
- &lt;span style=&#34;color:#b452cd&#34;&gt;2839&lt;/span&gt; root      0:00 grep mongo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lab-管理多个container&#34;&gt;Lab: 管理多个container&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# mysql官方镜像暂不支持arm64，只支持x86_64，所以换用mysql/mysql-server镜像&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# uname -a 查看架构&lt;/span&gt;
-$ docker container run -d -p 3306:3306 --name db -e &lt;span style=&#34;color:#00688b&#34;&gt;MYSQL_RANDOM_ROOT_PASSWORD&lt;/span&gt;=yes mysql/mysql-server
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看mysql生成的密码&lt;/span&gt;
-$ docker logs db
-$ docker container run -d --name webserver -p 8080:80 httpd
-$ docker container run -d --name proxy -p 80:80 nginx
-$ docker ps
-&lt;span style=&#34;color:#228b22&#34;&gt;# clean up&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 直接使用官方推出的自动补全功能，非常好用(tab completion)&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# https://docs.docker.com/compose/completion/&lt;/span&gt;
-$ docker container stop webserver proxy db
-$ docker container rm webserver proxy db
-$ docker ps -a
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看container状态的几个命令&#34;&gt;查看&lt;code&gt;container&lt;/code&gt;状态的几个命令&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# process list in one container&lt;/span&gt;
-$ docker container top
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# details of one container config&lt;/span&gt;
-$ docker container inspect
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# performance stats for all containers&lt;/span&gt;
-$ docker container stats
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;进入一个container&#34;&gt;进入一个&lt;code&gt;container&lt;/code&gt;&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# -i keep session open to receive terminal input&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# -t simulates a real terminal, like what ssh dose&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 修改开启容器时的CMD命令为bash，结合-it的OPTIONS，直接进入到对应镜像的bash环境中&lt;/span&gt;
-$ docker container run -it --name nginx nginx bash
-&lt;span style=&#34;color:#228b22&#34;&gt;# 当我们退出bash的同时容器就相应的停止了，因为我们修改了&amp;#34;Cmd&amp;#34;为bash&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重新进入上面已经停止的容器的bash中&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# docker start --help&lt;/span&gt;
-$ docker start -ai nginx
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 进入一个已经运行着其他命令的容器的shell&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 例如mysql&lt;/span&gt;
-$ docker container run -d -p 3306:3306 --name db -e &lt;span style=&#34;color:#00688b&#34;&gt;MYSQL_RANDOM_ROOT_PASSWORD&lt;/span&gt;=yes mysql/mysql-server
-$ docker &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; -it mysql bash
-&lt;span style=&#34;color:#228b22&#34;&gt;# 但此时我们退出bash的时候容器并不会停止，因为&amp;#34;exec&amp;#34;基于已有的容器运行在另外一个进程中，并不会影响mysql daemon所在的主进程&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;-t simulates a real terminal,like what ssh dose
--i keep session open to receive terminal input
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/&#34;&gt;https://docs.docker.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.bretfisher.com/docker-for-mac-commands-for-getting-into-local-docker-vm/&#34;&gt;Docker Desktop for Mac Commands for Getting Into The Local Docker VM&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mikegcoleman/docker101/blob/master/Docker_eBook_Jan_2017.pdf&#34;&gt;Docker for the Virtualization Admin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## Container VS. VM: It&amp;#39;s Just a Process&lt;/span&gt;
-
-$ docker run --name mongo -d mongo
-
-$ docker ps
-
-$ docker top mongo
-
-$ docker stop mongo
-
-$ docker ps
-
-$ docker top mongo
-
-$ docker start mongo
-
-$ docker ps
-
-$ docker top mongo
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## Assignment Answers: Manage Multiple Containers&lt;/span&gt;
-
-$ docker container run -d -p 3306:3306 --name db -e &lt;span style=&#34;color:#00688b&#34;&gt;MYSQL_RANDOM_ROOT_PASSWORD&lt;/span&gt;=yes MYSQL_RANDOM_ROOT_PASSWORD
-
-$ docker container logs db
-
-$ docker container run -d --name webserver -p 8080:80 httpd
-
-$ docker ps
-
-$ docker container run -d --name proxy -p 80:80 nginx
-
-$ docker ps
-
-$ docker container ls
-
-$ docker container stop TAB COMPLETION
-
-$ docker ps -a
-
-$ docker container ls -a
-
-$ docker container rm
-
-$ docker ps -a
-
-$ docker image ls
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## What&amp;#39;s Going On In Containers: CLI Process Monitoring&lt;/span&gt;
-
-$ docker container run -d --name nginx nginx
-
-$ docker container run -d --name mysql -e &lt;span style=&#34;color:#00688b&#34;&gt;MYSQL_RANDOM_ROOT_PASSWORD&lt;/span&gt;=&lt;span style=&#34;color:#658b00&#34;&gt;true&lt;/span&gt; mysql
-
-$ docker container ls
-
-$ docker container top mysql
-
-$ docker container top nginx
-
-$ docker container inspect mysql
-
-$ docker container stats --help
-
-$ docker container stats
-
-$ docker container ls
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## Getting a Shell Inside Containers: No Need for SSH&lt;/span&gt;
-
-$ docker container run -help
-
-$ docker container run -it --name proxy nginx bash
-
-$ docker container ls
-
-$ docker container ls -a
-
-$ docker container run -it --name ubuntu ubuntu
-
-$ docker container ls
-
-$ docker container ls -a
-
-$ docker container start --help
-
-$ docker container start -ai ubuntu
-
-$ docker container &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; --help
-
-$ docker container &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; -it mysql bash
-
-$ docker container ls
-
-$ docker pull alpine
-
-$ docker image ls
-
-$ docker container run -it alpine bash
-
-$ docker container run -it alpine sh
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## $ docker Networks: Concepts for Private and Public Comms in Containers&lt;/span&gt;
-
-$ docker container run -p 80:80 --name webhost -d nginx
-
-$ docker container port webhost
-
-$ docker container inspect --format &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;{{ .NetworkSettings.IPAddress }}&amp;#39;&lt;/span&gt; webhost
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## $ docker Networks: CLI Management of Virtual Networks&lt;/span&gt;
-
-$ docker network ls
-
-$ docker network inspect bridge
-
-$ docker network ls
-
-$ docker network create my_app_net
-
-$ docker network ls
-
-$ docker network create --help
-
-$ docker container run -d --name new_nginx --network my_app_net nginx
-
-$ docker network inspect my_app_net
-
-$ docker network --help
-
-$ docker network connect
-
-$ docker container inspect TAB COMPLETION
-
-$ docker container disconnect TAB COMPLETION
-
-$ docker container inspect
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## $ docker Networks: DNS and How Containers Find Each Other&lt;/span&gt;
-
-$ docker container ls
-
-$ docker network inspect TAB COMPLETION
-
-$ docker container run -d --name my_nginx --network my_app_net nginx
-
-$ docker container inspect TAB COMPLETION
-
-$ docker container &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; -it my_nginx ping new_nginx
-
-$ docker container &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; -it new_nginx ping my_nginx
-
-$ docker network ls
-
-$ docker container create --help
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## Assignment Answers: Using Containers for CLI Testing&lt;/span&gt;
-
-$ docker container run --rm -it centos:7 bash
-
-$ docker ps -a
-
-$ docker container run --rm -it ubuntu:14.04 bash
-
-$ docker ps -a
-
-&lt;span style=&#34;color:#228b22&#34;&gt;## Assignment Answers: DNS Round Robin Testing&lt;/span&gt;
-
-$ docker network create dude
-
-$ docker container run -d --net dude --net-alias search elasticsearch:2
-
-$ docker container ls
-
-$ docker container run --rm -- net dude alpine nslookup search
-
-$ docker container run --rm --net dude centos curl -s search:9200
-
-$ docker container ls
-
-$ docker container rm -f TAB COMPLETION
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;20210918 中秋计划&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Stanford CS107补上反码补码&lt;/li&gt;
-&lt;li&gt;mit-6.033补上网络协议啥的&lt;/li&gt;
-&lt;li&gt;traefik看完&lt;/li&gt;
-&lt;li&gt;go网络看完&lt;/li&gt;
-&lt;li&gt;ai教Lecture 1: Overview | Stanford CS221: AI (Autumn 2019)&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Tmux精简指南</title>
-        <link>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</link>
-        <pubDate>Thu, 09 Sep 2021 21:20:53 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/ -- https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Go Test</title>
-        <link>https://luxcgo.github.io/posts/go-test/</link>
-        <pubDate>Sun, 09 May 2021 15:32:48 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/go-test/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go-test/ -&lt;h2 id=&#34;写test的好处&#34;&gt;写test的好处&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;寻找不易发现的bug、edge case、side effect&lt;/li&gt;
-&lt;li&gt;记录目标行为，可作为一个文档帮助他人理解代码&lt;/li&gt;
-&lt;li&gt;自动化可重复&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;test包基本使用&#34;&gt;test包基本使用&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/testing/#pkg-overview&#34;&gt;https://golang.org/pkg/testing/#pkg-overview&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math.go
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; math
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;Sum&lt;/span&gt;(numbers []&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; {
-	sum := &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; _, n := &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;range&lt;/span&gt; numbers {
-		sum += n
-	}
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; sum
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math_test.go
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; math
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
-)
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestSum&lt;/span&gt;(t *testing.T) {
-	sum := &lt;span style=&#34;color:#008b45&#34;&gt;Sum&lt;/span&gt;([]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;{&lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;, -&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;})
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; sum != &lt;span style=&#34;color:#b452cd&#34;&gt;11&lt;/span&gt; {
-		t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fail want 11 bug got %d&amp;#34;&lt;/span&gt;, sum)
-	}
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下
-满足上述要求，运行go test命令就可以看到测试函数的运行结果。&lt;/p&gt;
-&lt;h2 id=&#34;test包实现原理&#34;&gt;test包实现原理&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; sleep
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;time&amp;#34;&lt;/span&gt;
-)
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestTmpExcutable&lt;/span&gt;(t *testing.T) {
-	t.&lt;span style=&#34;color:#008b45&#34;&gt;Log&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;TestTmpExcutable&amp;#34;&lt;/span&gt;)
-	time.&lt;span style=&#34;color:#008b45&#34;&gt;Sleep&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; * time.Minute)
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210509181957708.png&#34; alt=&#34;image-20210509181957708&#34;&gt;&lt;/p&gt;
-&lt;p&gt;运行&lt;code&gt;go test -v&lt;/code&gt;后可以看到进程中运行着一个临时的二进制文件，它就是由&lt;code&gt;go test&lt;/code&gt;命令生成出来的可执行程序，我们可以直接运行该文件。当go test程序执行完成后，该临时文件就会被删除。
-可见测试程序没有什么特别之处，我们完全可以不使用该包写出类似检验程序正确性的代码，但该包简化了我们实现的步骤。&lt;/p&gt;
-&lt;h2 id=&#34;test命名约定&#34;&gt;test命名约定&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;文件名以&lt;code&gt;_test.go&lt;/code&gt;结尾&lt;/li&gt;
-&lt;li&gt;函数名格式类似&lt;code&gt;TestXxx&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;变量名一般使用&lt;code&gt;arg&lt;/code&gt;、&lt;code&gt;want&lt;/code&gt;、&lt;code&gt;got&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数名例子
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数签名：Test接受者类型_方法名_参数类型
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestDog_Bark_muzzled&lt;/span&gt;(t *testing.T) {
-
-}
-
-&lt;span style=&#34;color:#228b22&#34;&gt;// 变量名例子
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestColor&lt;/span&gt;(t *testing.T) {
-	arg := &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt;
-	want := &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;#00000FF&amp;#34;&lt;/span&gt;
-	got := &lt;span style=&#34;color:#008b45&#34;&gt;Color&lt;/span&gt;(arg)
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; got != want {
-		t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Color(%q) = %q; want %q&amp;#34;&lt;/span&gt;, arg, got, want)
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;语言点：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/fmt/&#34;&gt;https://golang.org/pkg/fmt/&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Integer:
-%q	a single-quoted character literal safely escaped with Go syntax.
-String and slice of bytes (treated equivalently with these verbs):
-%q	a double-quoted string safely escaped with Go syntax
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;testingt的方法使用&#34;&gt;testing.T的方法使用&lt;/h2&gt;
-&lt;h3 id=&#34;方法列表&#34;&gt;方法列表&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/testing/#T&#34;&gt;https://golang.org/pkg/testing/#T&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Fail: 测试失败但继续运行&lt;/li&gt;
-&lt;li&gt;FailNow: 测试失败并停止执行当前goroutine的test&lt;/li&gt;
-&lt;li&gt;Log: 测试失败或者以verbose模式执行test时将内容打印到终端&lt;/li&gt;
-&lt;li&gt;Error: Log + Fail&lt;/li&gt;
-&lt;li&gt;Fatal: Log +FailNow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;方法选择&#34;&gt;方法选择&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;如果后续执行没有意义了，就使用 t.Fatal&lt;/li&gt;
-&lt;li&gt;如果当前执行的结果与预期不符，但后续操作还可以正常执行，就使用 t.Error ,这样可以更方便看到全局都有什么样的错误信息，而不至于出现了一个小错误就立即终止。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;可读的错误信息&#34;&gt;可读的错误信息&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;调用了哪个函数使用了什么参数，返回了什么样的错误，我们需要什么样的返回值&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;SomeFunc(%v) err = %v; want %v&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;, err, want)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;有时如果参数太多，我们也可以酌情选择打印出我们需要的参数&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;输出的内容尽可能简洁，易于理解，最重要的是通过错误信息可以方便的复现出整个出错的过程，更好的 debug 。
-正如下面的例子只需要&lt;code&gt;seed&lt;/code&gt;就可以复现出整个流程，但若只打印出整个数组就不易于理解。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; random
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;math/rand&amp;#34;&lt;/span&gt;
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;time&amp;#34;&lt;/span&gt;
-)
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestPick&lt;/span&gt;(t *testing.T) {
-	seed := time.&lt;span style=&#34;color:#008b45&#34;&gt;Now&lt;/span&gt;().&lt;span style=&#34;color:#008b45&#34;&gt;UnixNano&lt;/span&gt;()
-	r := rand.&lt;span style=&#34;color:#008b45&#34;&gt;New&lt;/span&gt;(rand.&lt;span style=&#34;color:#008b45&#34;&gt;NewSource&lt;/span&gt;(seed))
-	arg := &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;([]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;25&lt;/span&gt;)
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; i := &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span style=&#34;color:#b452cd&#34;&gt;25&lt;/span&gt;; i++ {
-        arg[i] = r.&lt;span style=&#34;color:#008b45&#34;&gt;Int&lt;/span&gt;()
-	}
-	got := &lt;span style=&#34;color:#008b45&#34;&gt;Pick&lt;/span&gt;(arg)
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; _, v := &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;range&lt;/span&gt; arg {
-        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; got == v {
-            &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;
-        }
-	}
-	t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Pick(seed=%d) = %d; not in slice&amp;#34;&lt;/span&gt;, seed, got)
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;example-可测试的案例代码&#34;&gt;Example: 可测试的案例代码&lt;/h2&gt;
-&lt;h3 id=&#34;example的好处&#34;&gt;Example的好处&lt;/h3&gt;
-&lt;p&gt;如果案例代码未经维护则随着功能代码的更新很容易就失效无法使用，但案例代码若写成可测试的代码，则可保证功能代码更新后运行&lt;code&gt;go test&lt;/code&gt;在测试的时候发现问题，保证案例代码的可用性。&lt;/p&gt;
-&lt;h3 id=&#34;example命名约定&#34;&gt;Example命名约定&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;文件名以&lt;code&gt;_test.go&lt;/code&gt;结尾&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;函数名格式&lt;code&gt;func ExampleXX_XX_suffix() { ... }&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 包级别
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;Example&lt;/span&gt;() { ... }
-&lt;span style=&#34;color:#228b22&#34;&gt;// 方法级别
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleF&lt;/span&gt;() { ... }
-&lt;span style=&#34;color:#228b22&#34;&gt;// 类型级别
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleT&lt;/span&gt;() { ... }
-&lt;span style=&#34;color:#228b22&#34;&gt;// T类型的M方法
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleT_M&lt;/span&gt;() { ... }
-
-&lt;span style=&#34;color:#228b22&#34;&gt;// 若有多个example函数，可加后缀以示区分。
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;Example_suffix&lt;/span&gt;() { ... }
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleF_suffix&lt;/span&gt;() { ... }
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleT_suffix&lt;/span&gt;() { ... }
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleT_M_suffix&lt;/span&gt;() { ... }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;整个测试文件被识别为example条件：有一个example函数，和至少一个其他的函数、类型、变量或常量，且不含有test或benchmark函数。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;example使用技巧&#34;&gt;Example使用技巧&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;运行&lt;code&gt;godoc -http=:3000&lt;/code&gt;可以在浏览器中看到排版优美的案例代码。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果因为某些原因（比如在测试interface接口或明确展示出导入了什么包）希望将test文件的全部代码，而不只是example函数，显示在godoc中，则只需要将该example函数抽离出来，单独放在一个文件里即可，不要忘记同时要满足上述命名约定。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;使用如下格式，在go test时会检测example函数的输出是否与Output下面的内容相符。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;     &lt;span style=&#34;color:#228b22&#34;&gt;// Output:
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;     &lt;span style=&#34;color:#228b22&#34;&gt;// Hello World
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;使用如下格式，在go test时会检测example函数的输出是否与Unordered output下面的内容相符，但检测顺序是无序的。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Unordered output:
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// BTC 比特币
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// ETH 以太坊
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// DOGE 狗狗币
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;example小案例&#34;&gt;Example小案例&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/greet.go
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;// Show how to write testable examples.
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; greet
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;type&lt;/span&gt; Dog &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; (d Dog) &lt;span style=&#34;color:#008b45&#34;&gt;Hello&lt;/span&gt;() &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt; {
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Sprint&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;woof woof!&amp;#34;&lt;/span&gt;)
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/greet_test.go
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; greet_test
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-)
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleDog_Hello_demo&lt;/span&gt;() {
-	fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Dog type w/ demo label&amp;#34;&lt;/span&gt;)
-
-	&lt;span style=&#34;color:#228b22&#34;&gt;// Output:
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Dog type w/ demo label
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/example_greet_test.go
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; greet_test
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
-	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-
-	&lt;span style=&#34;color:#228b22&#34;&gt;// Needed for initialize side effect
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	_ &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt;
-)
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; m = &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;)
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleDog_Hello&lt;/span&gt;() {
-	m = &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;)
-	m[&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;ETH&amp;#34;&lt;/span&gt;] = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;以太坊&amp;#34;&lt;/span&gt;
-	m[&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;BTC&amp;#34;&lt;/span&gt;] = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;比特币&amp;#34;&lt;/span&gt;
-	m[&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;DOGE&amp;#34;&lt;/span&gt;] = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;狗狗币&amp;#34;&lt;/span&gt;
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; k, v := &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;range&lt;/span&gt; m {
-		fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Println&lt;/span&gt;(k, v)
-	}
-
-	&lt;span style=&#34;color:#228b22&#34;&gt;// Unordered output:
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// BTC 比特币
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// ETH 以太坊
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// DOGE 狗狗币
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210522144118126.png&#34; alt=&#34;image-20210522144118126&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210522144008859.png&#34; alt=&#34;image-20210522144008859&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;类型比较&#34;&gt;类型比较&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://golang.org/ref/spec#Comparison_operators&#34;&gt;https://golang.org/ref/spec#Comparison_operators&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/reflect/#DeepEqual&#34;&gt;https://golang.org/pkg/reflect/#DeepEqual&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.luffy.vip/post/2020-10-17-golang-comparison/&#34;&gt;http://www.luffy.vip/post/2020-10-17-golang-comparison/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/testing/&#34;&gt;https://golang.org/pkg/testing/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/image/&#34;&gt;https://golang.org/pkg/image/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://golang.org/src/image/decode_example_test.go&#34;&gt;https://golang.org/src/image/decode_example_test.go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/sort/&#34;&gt;https://golang.org/pkg/sort/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://golang.org/src/sort/example_interface_test.go&#34;&gt;https://golang.org/src/sort/example_interface_test.go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/fluhus/godoc-tricks&#34;&gt;https://github.com/fluhus/godoc-tricks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/joncalhoun/twg&#34;&gt;https://github.com/joncalhoun/twg&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://testwithgo.com/&#34;&gt;https://testwithgo.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/2019/05/07/prefer-table-driven-tests&#34;&gt;https://dave.cheney.net/2019/05/07/prefer-table-driven-tests&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.golang.org/subtests&#34;&gt;https://blog.golang.org/subtests&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;on-the-list&#34;&gt;on the list&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;subtests&lt;/li&gt;
-&lt;li&gt;naming conventions&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210510004538186.png&#34; alt=&#34;image-20210510004538186&#34;&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/stretchr/testify&#34;&gt;https://github.com/stretchr/testify&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/go-test/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>docker基本使用</title>
-        <link>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-        <pubDate>Sat, 13 Mar 2021 16:48:30 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/ -&lt;h1 id=&#34;1-容器的基础命令&#34;&gt;1. 容器的基础命令&lt;/h1&gt;
-&lt;h2 id=&#34;使用docker的好处&#34;&gt;使用docker的好处&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;便于构建各种依赖关系&lt;/li&gt;
-&lt;li&gt;快速构建&lt;/li&gt;
-&lt;li&gt;快速迁移&lt;/li&gt;
-&lt;li&gt;和宿主主机互不影响&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run busybox &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; hello world
-hello world
-
-$ docker run -ti ubuntu
-root@3cc1d9fcadda:/# apt-get update
-root@3cc1d9fcadda:/# apt-get install figlet
-root@3cc1d9fcadda:/# figlet LuxcGo
- _                    ____
-| |   _   ___  _____ / ___| ___
-| |  | | | &lt;span style=&#34;color:#cd5555&#34;&gt;\ \/&lt;/span&gt; / __| |  _ / _ &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;| |__| |_| |&amp;gt;  &amp;lt; (__| |_| | (_) |
-|_____&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;_,_/_/&lt;span style=&#34;color:#cd5555&#34;&gt;\_\_&lt;/span&gt;__|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;___|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;__/
-root@3cc1d9fcadda:/# dpkg -l
-root@3cc1d9fcadda:/# dpkg -l | wc -l
-&lt;span style=&#34;color:#b452cd&#34;&gt;98&lt;/span&gt;
-
-lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l
-&lt;span style=&#34;color:#b452cd&#34;&gt;1877&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;运行一个容器&#34;&gt;运行一个容器&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run jpetazzo/clock
-
-$ sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt; &amp;amp;
-[1] &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt;
-$
-[1]  + &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;done&lt;/span&gt;       sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 后台创建并启动和sleep命令类似&lt;/span&gt;
-$ docker run -d jpetazzo/clock
-&lt;span style=&#34;color:#228b22&#34;&gt;# 只显示运行着的容器&lt;/span&gt;
-$ docker ps
-&lt;span style=&#34;color:#228b22&#34;&gt;# 显示所有容器&lt;/span&gt;
-$ docker ps -a
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看最后一个启动的容器&lt;/span&gt;
-$ docker ps -l
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看所有正在运行的容器的id（--quiet）&lt;/span&gt;
-$ docker ps -q
-&lt;span style=&#34;color:#228b22&#34;&gt;# 可以同时合并多条命令&lt;/span&gt;
-$ docker ps -ql
-$ docker ps -q -l
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看日志&lt;/span&gt;
-$ docker logs &amp;lt;container ID&amp;gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# --follow&lt;/span&gt;
-$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f
-&lt;span style=&#34;color:#228b22&#34;&gt;# --tail&lt;/span&gt;
-$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f -n &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# polite shutdown（传递一个关闭的信号）&lt;/span&gt;
-$ docker stop &lt;span style=&#34;color:#b452cd&#34;&gt;49&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 强制关闭&lt;/span&gt;
-$ docker &lt;span style=&#34;color:#658b00&#34;&gt;kill&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;48&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;后台运行的容器&#34;&gt;后台运行的容器&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run -ti ubuntu
-root@3cc1d9fcadda:/# top
-&lt;span style=&#34;color:#228b22&#34;&gt;# 退出容器&lt;/span&gt;
-^p^q
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重新进入容器&lt;/span&gt;
-$ docker attach &lt;span style=&#34;color:#b452cd&#34;&gt;34&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 或者用个 子命令&lt;/span&gt;
-$ docker attach &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 如果想要进入容器输入内容的话使用docker attach &lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器&lt;/span&gt;
-$ docker logs --tail &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; --follow &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重启停止的容器&lt;/span&gt;
-$ docker start &amp;lt;containerID&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2-构建容器镜像&#34;&gt;2. 构建容器镜像&lt;/h1&gt;
-&lt;h2 id=&#34;简单介绍&#34;&gt;简单介绍&lt;/h2&gt;
-&lt;p&gt;一个容器包含一个底层的只读的镜像层和一个上层的可读可写的容器层
-使用了copy-on-write技术加快启动时间
-多个容器共享一个底层的镜像层，只需要根据需求修改上层的读写层即可
-如果确认修改了可以在此基础上再创建一个image&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker commit
-$ docker build
-$ docker search marathon
-&lt;span style=&#34;color:#228b22&#34;&gt;# version tag&lt;/span&gt;
-$ docker pull debian:jessie
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实际操作&#34;&gt;实际操作&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看新装了什么内容&lt;/span&gt;
-$ docker diff &amp;lt;containerID&amp;gt; 
-&lt;span style=&#34;color:#228b22&#34;&gt;# 使用修改后的容器新建一个镜像&lt;/span&gt;
-$ docker commit &amp;lt;containerID&amp;gt; 
-&lt;span style=&#34;color:#228b22&#34;&gt;# 为新镜像起名&lt;/span&gt;
-$ docker tag ab580f989221 myfiglet
-&lt;span style=&#34;color:#228b22&#34;&gt;# 直接使用新镜像&lt;/span&gt;
-$ docker run myfiglet figlet hello
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 可以在创建时直接起名&lt;/span&gt;
-$ docker commit ab580f989 newfiglet 
-$ docker run -ti newfiglet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;写dockerfile&#34;&gt;写Dockerfile&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get install figlet&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t figlet .
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 不使用缓存&lt;/span&gt;
-$ docker build --no-cache ...
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看镜像的所有层的内容&lt;/span&gt;
-$ docker &lt;span style=&#34;color:#658b00&#34;&gt;history&lt;/span&gt; figlet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;CMD&lt;/code&gt;和&lt;code&gt;ENTRYPOINT&lt;/code&gt;
-注意要使用json syntax&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apt-get&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;install&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;-f&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;script&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t myfiglet .
-$ docker run myfiglet
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重写了cmd保留了entrypoint&lt;/span&gt;
-$ docker run myfiglet hola mundo
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重写entrypoint&lt;/span&gt;
-$ docker run -it --entrypoint bash myfiglet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://container.training/intro-selfpaced.yml.html&#34;&gt;container.training&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://education.ardanlabs.com/courses/ultimate-docker&#34;&gt;Ardan Labs - Ultimate Docker&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/ - </description>
         </item>
     
     
