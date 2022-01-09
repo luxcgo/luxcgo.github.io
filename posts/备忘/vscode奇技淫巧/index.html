@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Go程序是怎么跑起来的</title>
+<title>Vscode奇技淫巧</title>
 
 
 
@@ -16,12 +16,12 @@
 
 
 
-<meta property="og:title" content="Go程序是怎么跑起来的" />
-<meta property="og:description" content="Go 的启动和执行流程  理解可执行文件 01 Go 进程的启动与初始化 02 调度组件与调度循环 03 处理阻塞 04 调度器的发展历史 05 与调度有关的常⻅问题  理解可执行文件 成长看得见" />
+<meta property="og:title" content="Vscode奇技淫巧" />
+<meta property="og:description" content="使用VsCode正则表达式批量替换    正则查找：myfunction\((.*),(.*)\) 替换：myfunction($1,$2)   查找：&quot;static/(.*).css 替换：&quot;static/css/$1.css // 替换前 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/less.css&#34;&gt; // 替换后 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/less.css&#34;&gt;   正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]&#43;\.[0-9]&#43; 404 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0 匹配结果：.jpg?abc=1 0.001 404   \(https://www.acwing.com/problem/content/(\d&#43;)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 \(problems/(.*)-(.*)\) (problems/$1) 命令行输入code自动打开vscode " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-11-07T11:51:19+08:00" />
-<meta property="article:modified_time" content="2021-11-07T11:51:19+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-30T23:46:10+08:00" />
+<meta property="article:modified_time" content="2021-10-30T23:46:10+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -29,8 +29,8 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go程序是怎么跑起来的"/>
-<meta name="twitter:description" content="Go 的启动和执行流程  理解可执行文件 01 Go 进程的启动与初始化 02 调度组件与调度循环 03 处理阻塞 04 调度器的发展历史 05 与调度有关的常⻅问题  理解可执行文件 成长看得见"/>
+<meta name="twitter:title" content="Vscode奇技淫巧"/>
+<meta name="twitter:description" content="使用VsCode正则表达式批量替换    正则查找：myfunction\((.*),(.*)\) 替换：myfunction($1,$2)   查找：&quot;static/(.*).css 替换：&quot;static/css/$1.css // 替换前 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/less.css&#34;&gt; // 替换后 &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/cui.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/style.css&#34;&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;static/css/less.css&#34;&gt;   正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]&#43;\.[0-9]&#43; 404 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0 匹配结果：.jpg?abc=1 0.001 404   \(https://www.acwing.com/problem/content/(\d&#43;)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 \(problems/(.*)-(.*)\) (problems/$1) 命令行输入code自动打开vscode "/>
 
 
 
@@ -208,8 +208,8 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
-								<a href="#go-%e7%9a%84%e5%90%af%e5%8a%a8%e5%92%8c%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b" onclick="onNavClick(`#go-的启动和执行流程-nav`)" id="go-的启动和执行流程-nav">
-									Go 的启动和执行流程
+								<a href="#%e4%bd%bf%e7%94%a8vscode%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%89%b9%e9%87%8f%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#使用vscode正则表达式批量替换-nav`)" id="使用vscode正则表达式批量替换-nav">
+									使用VsCode正则表达式批量替换
 								</a>
 							</li>
 						
@@ -224,16 +224,10 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 						
-							
-								
-									<ul>
-								
-							
-						
 						
 							<li>
-								<a href="#%e7%90%86%e8%a7%a3%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#理解可执行文件-nav`)" id="理解可执行文件-nav">
-									理解可执行文件
+								<a href="#%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%be%93%e5%85%a5code%e8%87%aa%e5%8a%a8%e6%89%93%e5%bc%80vscode" onclick="onNavClick(`#命令行输入code自动打开vscode-nav`)" id="命令行输入code自动打开vscode-nav">
+									命令行输入code自动打开vscode
 								</a>
 							</li>
 						
@@ -340,8 +334,8 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
-								<a href="#go-%e7%9a%84%e5%90%af%e5%8a%a8%e5%92%8c%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b" onclick="onNavClick(`#go-的启动和执行流程-nav`)" id="go-的启动和执行流程-nav">
-									Go 的启动和执行流程
+								<a href="#%e4%bd%bf%e7%94%a8vscode%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%89%b9%e9%87%8f%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#使用vscode正则表达式批量替换-nav`)" id="使用vscode正则表达式批量替换-nav">
+									使用VsCode正则表达式批量替换
 								</a>
 							</li>
 						
@@ -356,16 +350,10 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 						
-							
-								
-									<ul>
-								
-							
-						
 						
 							<li>
-								<a href="#%e7%90%86%e8%a7%a3%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#理解可执行文件-nav`)" id="理解可执行文件-nav">
-									理解可执行文件
+								<a href="#%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%be%93%e5%85%a5code%e8%87%aa%e5%8a%a8%e6%89%93%e5%bc%80vscode" onclick="onNavClick(`#命令行输入code自动打开vscode-nav`)" id="命令行输入code自动打开vscode-nav">
+									命令行输入code自动打开vscode
 								</a>
 							</li>
 						
@@ -428,15 +416,19 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
             >
                 <div class="post-title">
-                    Go程序是怎么跑起来的
+                    Vscode奇技淫巧
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2021-11-07 11:51
+                            2021-10-30 23:46
                         </time>
                         
 
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%A4%87%E5%BF%98">备忘</a>
+                                &nbsp;
                         
 
                         
@@ -449,21 +441,45 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 <div class="post-body" v-pre>
                 
-                    <h2 id="go-的启动和执行流程">Go 的启动和执行流程</h2>
-<ul>
-<li>理解可执行文件 01</li>
-<li>Go 进程的启动与初始化 02</li>
-<li>调度组件与调度循环 03</li>
-<li>处理阻塞 04</li>
-<li>调度器的发展历史 05</li>
-<li>与调度有关的常⻅问题</li>
-</ul>
-<h3 id="理解可执行文件">理解可执行文件</h3>
-<p>成长看得见</p>
+                    <h2 id="使用vscode正则表达式批量替换">使用VsCode正则表达式批量替换</h2>
+<ol>
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">正则查找：myfunction<span style="color:#cd5555">\(</span>(.*),(.*)<span style="color:#cd5555">\)</span>
+替换：myfunction(<span style="color:#00688b">$1</span>,<span style="color:#00688b">$2</span>)
+</code></pre></div><ol start="2">
+<li></li>
+</ol>
+<pre tabindex="0"><code>查找：&quot;static/(.*).css
+替换：&quot;static/css/$1.css
+</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// 替换前
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/cui.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/style.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/less.css&#34;</span>&gt;
+
+// 替换后
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/css/cui.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/css/style.css&#34;</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/css/less.css&#34;</span>&gt;
+</code></pre></div><ol start="3">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404
+文本 images/mybg.jpg?abc=1 0.001 404 561 0.0
+匹配结果：.jpg?abc=1 0.001 404
+</code></pre></div><ol start="4">
+<li></li>
+</ol>
+<pre tabindex="0"><code>\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式
+(https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式
+
+\(problems/(.*)-(.*)\)
+(problems/$1)
+</code></pre><h2 id="命令行输入code自动打开vscode">命令行输入code自动打开vscode</h2>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">Last modified on 2021-11-07</p>
+		    <p style="color:#777;">Last modified on 2021-10-30</p>
                     
                 </div>
             </div>
@@ -472,14 +488,14 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/">
-			Next<br>HRM 人力资源机器
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/">
+			Next<br>Sourcetree配置
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/">
-			Previous<br>Go Spec学习摘要
+                <a class="older-posts" href="https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/">
+			Previous<br>英语单词
                 </a>
                 
             </nav>

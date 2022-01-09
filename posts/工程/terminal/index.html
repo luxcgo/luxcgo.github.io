@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Go程序是怎么跑起来的</title>
+<title>Terminal自定义</title>
 
 
 
@@ -16,12 +16,15 @@
 
 
 
-<meta property="og:title" content="Go程序是怎么跑起来的" />
-<meta property="og:description" content="Go 的启动和执行流程  理解可执行文件 01 Go 进程的启动与初始化 02 调度组件与调度循环 03 处理阻塞 04 调度器的发展历史 05 与调度有关的常⻅问题  理解可执行文件 成长看得见" />
+<meta property="og:title" content="Terminal自定义" />
+<meta property="og:description" content="zsh  framework: ohmyzsh   Plugin:
+ docker docker-compose z zsh-completions zsh-syntax-highlighting    Theme:
+  powerlevel10k
+ How do I add username and/or hostname to prompt?        # 用户管理 # 1. 删除用户及目录 sudo userdel -r lighthouse # 2. 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-11-07T11:51:19+08:00" />
-<meta property="article:modified_time" content="2021-11-07T11:51:19+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-19T22:27:20+08:00" />
+<meta property="article:modified_time" content="2021-09-19T22:27:20+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -29,8 +32,11 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go程序是怎么跑起来的"/>
-<meta name="twitter:description" content="Go 的启动和执行流程  理解可执行文件 01 Go 进程的启动与初始化 02 调度组件与调度循环 03 处理阻塞 04 调度器的发展历史 05 与调度有关的常⻅问题  理解可执行文件 成长看得见"/>
+<meta name="twitter:title" content="Terminal自定义"/>
+<meta name="twitter:description" content="zsh  framework: ohmyzsh   Plugin:
+ docker docker-compose z zsh-completions zsh-syntax-highlighting    Theme:
+  powerlevel10k
+ How do I add username and/or hostname to prompt?        # 用户管理 # 1. 删除用户及目录 sudo userdel -r lighthouse # 2. 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated."/>
 
 
 
@@ -208,32 +214,8 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
-								<a href="#go-%e7%9a%84%e5%90%af%e5%8a%a8%e5%92%8c%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b" onclick="onNavClick(`#go-的启动和执行流程-nav`)" id="go-的启动和执行流程-nav">
-									Go 的启动和执行流程
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%90%86%e8%a7%a3%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#理解可执行文件-nav`)" id="理解可执行文件-nav">
-									理解可执行文件
+								<a href="#zsh" onclick="onNavClick(`#zsh-nav`)" id="zsh-nav">
+									zsh
 								</a>
 							</li>
 						
@@ -340,32 +322,8 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
-								<a href="#go-%e7%9a%84%e5%90%af%e5%8a%a8%e5%92%8c%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b" onclick="onNavClick(`#go-的启动和执行流程-nav`)" id="go-的启动和执行流程-nav">
-									Go 的启动和执行流程
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%90%86%e8%a7%a3%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#理解可执行文件-nav`)" id="理解可执行文件-nav">
-									理解可执行文件
+								<a href="#zsh" onclick="onNavClick(`#zsh-nav`)" id="zsh-nav">
+									zsh
 								</a>
 							</li>
 						
@@ -428,15 +386,19 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
             >
                 <div class="post-title">
-                    Go程序是怎么跑起来的
+                    Terminal自定义
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2021-11-07 11:51
+                            2021-09-19 22:27
                         </time>
                         
 
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%B7%A5%E7%A8%8B">工程</a>
+                                &nbsp;
                         
 
                         
@@ -449,21 +411,60 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 <div class="post-body" v-pre>
                 
-                    <h2 id="go-的启动和执行流程">Go 的启动和执行流程</h2>
+                    <h2 id="zsh">zsh</h2>
 <ul>
-<li>理解可执行文件 01</li>
-<li>Go 进程的启动与初始化 02</li>
-<li>调度组件与调度循环 03</li>
-<li>处理阻塞 04</li>
-<li>调度器的发展历史 05</li>
-<li>与调度有关的常⻅问题</li>
+<li>framework: <a href="https://github.com/ohmyzsh/ohmyzsh">ohmyzsh</a>
+<ul>
+<li>
+<p>Plugin:</p>
+<ul>
+<li>docker</li>
+<li>docker-compose</li>
+<li>z</li>
+<li><a href="https://github.com/zsh-users/zsh-completions">zsh-completions</a></li>
+<li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a></li>
 </ul>
-<h3 id="理解可执行文件">理解可执行文件</h3>
-<p>成长看得见</p>
+</li>
+<li>
+<p>Theme:</p>
+<ul>
+<li>
+<p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<ul>
+<li>How do I add username and/or hostname to prompt?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#228b22"># 用户管理</span>
+<span style="color:#228b22"># 1. 删除用户及目录</span>
+sudo userdel -r lighthouse
+<span style="color:#228b22"># 2. 添加新用户</span>
+sudo useradd -d /home/lucas -m lucas
 
+<span style="color:#228b22"># zsh</span>
+
+<span style="color:#228b22"># oh my zsh</span>
+
+<span style="color:#228b22"># p10k</span>
+
+<span style="color:#228b22"># Run Docker commands without sudo</span>
+sudo gpasswd -a <span style="color:#00688b">$USER</span> docker
+<span style="color:#228b22"># IMPORTANT: Log out and log back in so that your group membership is re-evaluated.</span>
+
+<span style="color:#228b22"># 安装clash docker版</span>
+<span style="color:#228b22"># https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon#docker</span>
+<span style="color:#228b22"># 网络mode使用 host, 同时无需绑定端口</span>
+
+<span style="color:#228b22"># 安装golang</span>
+<span style="color:#228b22"># https://github.com/golang/go/wiki/Ubuntu</span>
+</code></pre></div>
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">Last modified on 2021-11-07</p>
+		    <p style="color:#777;">Last modified on 2021-09-19</p>
                     
                 </div>
             </div>
@@ -472,14 +473,14 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/">
-			Next<br>HRM 人力资源机器
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/">
+			Next<br>dns污染
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/">
-			Previous<br>Go Spec学习摘要
+                <a class="older-posts" href="https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/">
+			Previous<br>docker基本使用2
                 </a>
                 
             </nav>

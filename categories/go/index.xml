@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on 源泉的小站</title>
+    <link>https://luxcgo.github.io/categories/go/</link>
+    <description>Recent content in go on 源泉的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 31 Oct 2021 10:46:40 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Spec学习摘要</title>
+      <link>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
+      <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Delve Golang专属的debugger</title>
+      <link>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
+      <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go Test</title>
+      <link>https://luxcgo.github.io/posts/go/go-test/</link>
+      <pubDate>Sun, 09 May 2021 15:32:48 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/go/go-test/</guid>
+      <description>写test的好处  寻找不易发现的bug、edge case、side effect 记录目标行为，可作为一个文档帮助他人理解代码 自动化可重复  test包基本使用 https://golang.org/pkg/testing/#pkg-overview
+// math/math.go  package math func Sum(numbers []int) int { sum := 0 for _, n := range numbers { sum += n } return sum } // math/math_test.go  package math import ( &amp;#34;testing&amp;#34; ) func TestSum(t *testing.T) { sum := Sum([]int{10, -2, 3}) if sum != 11 { t.Errorf(&amp;#34;fail want 11 bug got %d&amp;#34;, sum) } } test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下 满足上述要求，运行go test命令就可以看到测试函数的运行结果。</description>
+    </item>
+    
+  </channel>
+</rss>

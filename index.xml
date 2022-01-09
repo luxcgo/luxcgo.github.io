@@ -112,23 +112,6 @@
     
     
         <item>
-        <title>Ubuntu配置</title>
-        <link>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</link>
-        <pubDate>Sun, 26 Dec 2021 12:25:54 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;用户管理&#34;&gt;用户管理&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 删除用户及目录&lt;/span&gt;
-sudo userdel -r lighthouse
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 添加新用户&lt;/span&gt;
-sudo useradd -d /home/lucas -m lucas
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/ - </description>
-        </item>
-    
-    
-    
-        <item>
         <title>Tinykv第三方指导书</title>
         <link>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</link>
         <pubDate>Sun, 12 Dec 2021 17:41:03 +0800</pubDate>
@@ -187,11 +170,11 @@ sudo useradd -d /home/lucas -m lucas
     
         <item>
         <title>如何从豆瓣FM转移到网易云音乐？</title>
-        <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+        <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
         <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ -&lt;p&gt;曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。&lt;/p&gt;
+        <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ -&lt;p&gt;曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;下载红心歌曲链接，这是一个维护了十年的&lt;a href=&#34;https://github.com/loveunk/douban-favorite-music-parser&#34;&gt;豆瓣电台加心歌曲爬虫&lt;/a&gt;&lt;/p&gt;
@@ -213,18 +196,18 @@ node multi_song_upload.js --phone_number=&lt;span style=&#34;color:#cd5555&#34;&
 &lt;p&gt;voila&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-- https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - </description>
+- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - </description>
         </item>
     
     
     
         <item>
         <title>HRM 人力资源机器</title>
-        <link>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
+        <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
         <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ -&lt;h2 id=&#34;体积速度&#34;&gt;体积！速度！&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ -&lt;h2 id=&#34;体积速度&#34;&gt;体积！速度！&lt;/h2&gt;
 &lt;h3 id=&#34;第-1-年&#34;&gt;第 1 年&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
 
@@ -463,7 +446,7 @@ c:
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-40-年&#34;&gt;第 40 年&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-41-年&#34;&gt;第 41 年&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-42-年&#34;&gt;第 42 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ - </description>
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ - </description>
         </item>
     
     
@@ -492,22 +475,49 @@ c:
     
         <item>
         <title>Go Spec学习摘要</title>
-        <link>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
+        <link>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
         <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ -- https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ - </description>
+        <guid>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ -- https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ - </description>
         </item>
     
     
     
         <item>
         <title>Delve Golang专属的debugger</title>
-        <link>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
+        <link>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
         <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - </description>
+        <guid>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Sourcetree配置</title>
+        <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;在mac上配置github账户&#34;&gt;在mac上配置github账户&lt;/h2&gt;
+&lt;p&gt;443时要配置代理&lt;/p&gt;
+&lt;p&gt;403时要解决推送时没有权限问题&lt;/p&gt;
+&lt;p&gt;因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式&lt;/p&gt;
+&lt;ol start=&#34;0&#34;&gt;
+&lt;li&gt;配置proxy&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;/Users/lucas/Library/ApplicationSupport/SourceTree&lt;/code&gt;目录下的密码文件&lt;/li&gt;
+&lt;li&gt;在sourcetree中配置账户信息&lt;/li&gt;
+&lt;li&gt;github上申请相关token&lt;/li&gt;
+&lt;li&gt;修改mac中&lt;code&gt;钥匙串访问&lt;/code&gt;中的密码为token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;参考链接&#34;&gt;参考链接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/ - </description>
         </item>
     
     

@@ -12,39 +12,12 @@
     
     
         <item>
-        <title>Sourcetree配置</title>
-        <link>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</link>
-        <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;在mac上配置github账户&#34;&gt;在mac上配置github账户&lt;/h2&gt;
-&lt;p&gt;443时要配置代理&lt;/p&gt;
-&lt;p&gt;403时要解决推送时没有权限问题&lt;/p&gt;
-&lt;p&gt;因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式&lt;/p&gt;
-&lt;ol start=&#34;0&#34;&gt;
-&lt;li&gt;配置proxy&lt;/li&gt;
-&lt;li&gt;删除&lt;code&gt;/Users/lucas/Library/ApplicationSupport/SourceTree&lt;/code&gt;目录下的密码文件&lt;/li&gt;
-&lt;li&gt;在sourcetree中配置账户信息&lt;/li&gt;
-&lt;li&gt;github上申请相关token&lt;/li&gt;
-&lt;li&gt;修改mac中&lt;code&gt;钥匙串访问&lt;/code&gt;中的密码为token&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;参考链接&#34;&gt;参考链接&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ - </description>
-        </item>
-    
-    
-    
-        <item>
         <title>Vscode奇技淫巧</title>
-        <link>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
+        <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
         <pubDate>Sat, 30 Oct 2021 23:46:10 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ -&lt;h2 id=&#34;使用vscode正则表达式批量替换&#34;&gt;使用VsCode正则表达式批量替换&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ -&lt;h2 id=&#34;使用vscode正则表达式批量替换&#34;&gt;使用VsCode正则表达式批量替换&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -79,18 +52,18 @@
 \(problems/(.*)-(.*)\)
 (problems/$1)
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;命令行输入code自动打开vscode&#34;&gt;命令行输入code自动打开vscode&lt;/h2&gt;
-- https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ - </description>
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ - </description>
         </item>
     
     
     
         <item>
         <title>英语单词</title>
-        <link>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
+        <link>https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
         <pubDate>Sun, 24 Oct 2021 14:34:37 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ -&lt;h2 id=&#34;new-words&#34;&gt;New words&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ -&lt;h2 id=&#34;new-words&#34;&gt;New words&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -137,29 +110,18 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-- https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Go与爬虫</title>
-        <link>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</link>
-        <pubDate>Sun, 24 Oct 2021 14:28:41 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/ -- https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/ - </description>
+- https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ - </description>
         </item>
     
     
     
         <item>
         <title>git使用笔记</title>
-        <link>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+        <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Fri, 01 Oct 2021 19:29:19 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ -&lt;h2 id=&#34;configuring-git&#34;&gt;Configuring Git&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ -&lt;h2 id=&#34;configuring-git&#34;&gt;Configuring Git&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Settings&lt;/p&gt;
@@ -251,7 +213,7 @@ $ git config --global core.autocrlf input
 &lt;li&gt;
 &lt;p&gt;更简洁的查看文件状态
 &lt;code&gt;git status -s&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20211003234649105.png&#34; alt=&#34;image-20211003234649105&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110002304.png&#34; alt=&#34;git1&#34;&gt;&lt;/p&gt;
 &lt;p&gt;左边是staging area 右边是working directory&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;右M：本地有修改&lt;/li&gt;
@@ -270,7 +232,7 @@ $ git config --global core.autocrlf input
 &lt;li&gt;Same as the above
 &lt;code&gt;git diff --cached&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20211004004722916.png&#34; alt=&#34;image-20211004004722916&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110002321.png&#34; alt=&#34;git2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;含义：&lt;em&gt;@@ -start line, count +start line, count @@&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;branching--merging&#34;&gt;Branching &amp;amp; Merging&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Managing branches&lt;/strong&gt;&lt;/p&gt;
@@ -462,26 +424,27 @@ ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=&lt;span style=&#34;color:#
 &lt;p&gt;Configure Git to use a proxy&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;git config --global http.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;http://127.0.0.1:7890&amp;#39;&lt;/span&gt;
 git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;http://127.0.0.1:7890&amp;#39;&lt;/span&gt;
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions&#34;&gt;github action&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;22&lt;/p&gt;
-- https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ - </description>
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ - </description>
         </item>
     
     
     
         <item>
         <title>dns污染</title>
-        <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
+        <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/</link>
         <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/ -&lt;h2 id=&#34;failed-to-connect-to-rawgithubusercontentcom443&#34;&gt;Failed to connect to raw.githubusercontent.com:443&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/ -&lt;h2 id=&#34;failed-to-connect-to-rawgithubusercontentcom443&#34;&gt;Failed to connect to raw.githubusercontent.com:443&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220109234638.png&#34; alt=&#34;dns污染-iterm&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0&lt;/p&gt;
 &lt;p&gt;域名的解析过程是：&lt;/p&gt;
@@ -498,18 +461,18 @@ git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#
 223.6.6.6
 119.29.29.29
 119.28.28.28
-&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/ - </description>
+&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/ - </description>
         </item>
     
     
     
         <item>
-        <title>Terminal</title>
-        <link>https://luxcgo.github.io/posts/terminal/</link>
+        <title>Terminal自定义</title>
+        <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/</link>
         <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/terminal/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/terminal/ -&lt;h2 id=&#34;zsh&#34;&gt;zsh&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/ -&lt;h2 id=&#34;zsh&#34;&gt;zsh&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;framework: &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;ohmyzsh&lt;/a&gt;
 &lt;ul&gt;
@@ -537,9 +500,10 @@ git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 删除用户及目录&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 用户管理&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 1. 删除用户及目录&lt;/span&gt;
 sudo userdel -r lighthouse
-&lt;span style=&#34;color:#228b22&#34;&gt;# 添加新用户&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 2. 添加新用户&lt;/span&gt;
 sudo useradd -d /home/lucas -m lucas
 
 &lt;span style=&#34;color:#228b22&#34;&gt;# zsh&lt;/span&gt;
@@ -558,18 +522,18 @@ sudo gpasswd -a &lt;span style=&#34;color:#00688b&#34;&gt;$USER&lt;/span&gt; doc
 
 &lt;span style=&#34;color:#228b22&#34;&gt;# 安装golang&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;# https://github.com/golang/go/wiki/Ubuntu&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/terminal/ - </description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/ - </description>
         </item>
     
     
     
         <item>
-        <title>Docker使用笔记</title>
-        <link>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+        <title>docker基本使用2</title>
+        <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/</link>
         <pubDate>Sat, 11 Sep 2021 15:27:19 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ -&lt;h2 id=&#34;初识docker&#34;&gt;初识docker&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/ -&lt;h2 id=&#34;初识docker&#34;&gt;初识docker&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看版本并顺便检查docker server正常启动，cli可以连接到engine&lt;/span&gt;
 $ docker version
 
@@ -928,29 +892,18 @@ $ docker container rm -f TAB COMPLETION
 &lt;li&gt;ai教Lecture 1: Overview | Stanford CS221: AI (Autumn 2019)&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Tmux精简指南</title>
-        <link>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</link>
-        <pubDate>Thu, 09 Sep 2021 21:20:53 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/ -- https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/ - </description>
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/ - </description>
         </item>
     
     
     
         <item>
         <title>Go Test</title>
-        <link>https://luxcgo.github.io/posts/go-test/</link>
+        <link>https://luxcgo.github.io/posts/go/go-test/</link>
         <pubDate>Sun, 09 May 2021 15:32:48 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/go-test/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go-test/ -&lt;h2 id=&#34;写test的好处&#34;&gt;写test的好处&lt;/h2&gt;
+        <guid>https://luxcgo.github.io/posts/go/go-test/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go/go-test/ -&lt;h2 id=&#34;写test的好处&#34;&gt;写test的好处&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;寻找不易发现的bug、edge case、side effect&lt;/li&gt;
 &lt;li&gt;记录目标行为，可作为一个文档帮助他人理解代码&lt;/li&gt;
@@ -1001,7 +954,7 @@ $ docker container rm -f TAB COMPLETION
 	time.&lt;span style=&#34;color:#008b45&#34;&gt;Sleep&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; * time.Minute)
 }
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210509181957708.png&#34; alt=&#34;image-20210509181957708&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005053.png&#34; alt=&#34;image-20210509181957708&#34;&gt;&lt;/p&gt;
 &lt;p&gt;运行&lt;code&gt;go test -v&lt;/code&gt;后可以看到进程中运行着一个临时的二进制文件，它就是由&lt;code&gt;go test&lt;/code&gt;命令生成出来的可执行程序，我们可以直接运行该文件。当go test程序执行完成后，该临时文件就会被删除。
 可见测试程序没有什么特别之处，我们完全可以不使用该包写出类似检验程序正确性的代码，但该包简化了我们实现的步骤。&lt;/p&gt;
 &lt;h2 id=&#34;test命名约定&#34;&gt;test命名约定&lt;/h2&gt;
@@ -1191,8 +1144,8 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// DOGE 狗狗币
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210522144118126.png&#34; alt=&#34;image-20210522144118126&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210522144008859.png&#34; alt=&#34;image-20210522144008859&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005130.png&#34; alt=&#34;image-20210522144118126&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005124.png&#34; alt=&#34;image-20210522144008859&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;类型比较&#34;&gt;类型比较&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://golang.org/ref/spec#Comparison_operators&#34;&gt;https://golang.org/ref/spec#Comparison_operators&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/reflect/#DeepEqual&#34;&gt;https://golang.org/pkg/reflect/#DeepEqual&lt;/a&gt;&lt;/p&gt;
@@ -1213,10 +1166,150 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;h2 id=&#34;on-the-list&#34;&gt;on the list&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;subtests&lt;/li&gt;
-&lt;li&gt;naming conventions&lt;img src=&#34;https://luxcgo.github.io/posts/go%20test/image-20210510004538186.png&#34; alt=&#34;image-20210510004538186&#34;&gt;&lt;/li&gt;
+&lt;li&gt;naming conventions&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005122.png&#34; alt=&#34;image-20210510004538186&#34;&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/stretchr/testify&#34;&gt;https://github.com/stretchr/testify&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://luxcgo.github.io/posts/go-test/ - </description>
+- https://luxcgo.github.io/posts/go/go-test/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>docker基本使用1</title>
+        <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/</link>
+        <pubDate>Sat, 13 Mar 2021 16:48:30 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/ -&lt;h1 id=&#34;1-容器的基础命令&#34;&gt;1. 容器的基础命令&lt;/h1&gt;
+&lt;h2 id=&#34;使用docker的好处&#34;&gt;使用docker的好处&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;便于构建各种依赖关系&lt;/li&gt;
+&lt;li&gt;快速构建&lt;/li&gt;
+&lt;li&gt;快速迁移&lt;/li&gt;
+&lt;li&gt;和宿主主机互不影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run busybox &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; hello world
+hello world
+
+$ docker run -ti ubuntu
+root@3cc1d9fcadda:/# apt-get update
+root@3cc1d9fcadda:/# apt-get install figlet
+root@3cc1d9fcadda:/# figlet LuxcGo
+ _                    ____
+| |   _   ___  _____ / ___| ___
+| |  | | | &lt;span style=&#34;color:#cd5555&#34;&gt;\ \/&lt;/span&gt; / __| |  _ / _ &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;| |__| |_| |&amp;gt;  &amp;lt; (__| |_| | (_) |
+|_____&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;_,_/_/&lt;span style=&#34;color:#cd5555&#34;&gt;\_\_&lt;/span&gt;__|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;___|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;__/
+root@3cc1d9fcadda:/# dpkg -l
+root@3cc1d9fcadda:/# dpkg -l | wc -l
+&lt;span style=&#34;color:#b452cd&#34;&gt;98&lt;/span&gt;
+
+lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l
+&lt;span style=&#34;color:#b452cd&#34;&gt;1877&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;运行一个容器&#34;&gt;运行一个容器&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run jpetazzo/clock
+
+$ sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt; &amp;amp;
+[1] &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt;
+$
+[1]  + &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;done&lt;/span&gt;       sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 后台创建并启动和sleep命令类似&lt;/span&gt;
+$ docker run -d jpetazzo/clock
+&lt;span style=&#34;color:#228b22&#34;&gt;# 只显示运行着的容器&lt;/span&gt;
+$ docker ps
+&lt;span style=&#34;color:#228b22&#34;&gt;# 显示所有容器&lt;/span&gt;
+$ docker ps -a
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看最后一个启动的容器&lt;/span&gt;
+$ docker ps -l
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看所有正在运行的容器的id（--quiet）&lt;/span&gt;
+$ docker ps -q
+&lt;span style=&#34;color:#228b22&#34;&gt;# 可以同时合并多条命令&lt;/span&gt;
+$ docker ps -ql
+$ docker ps -q -l
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看日志&lt;/span&gt;
+$ docker logs &amp;lt;container ID&amp;gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# --follow&lt;/span&gt;
+$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f
+&lt;span style=&#34;color:#228b22&#34;&gt;# --tail&lt;/span&gt;
+$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f -n &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# polite shutdown（传递一个关闭的信号）&lt;/span&gt;
+$ docker stop &lt;span style=&#34;color:#b452cd&#34;&gt;49&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 强制关闭&lt;/span&gt;
+$ docker &lt;span style=&#34;color:#658b00&#34;&gt;kill&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;48&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;后台运行的容器&#34;&gt;后台运行的容器&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run -ti ubuntu
+root@3cc1d9fcadda:/# top
+&lt;span style=&#34;color:#228b22&#34;&gt;# 退出容器&lt;/span&gt;
+^p^q
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重新进入容器&lt;/span&gt;
+$ docker attach &lt;span style=&#34;color:#b452cd&#34;&gt;34&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 或者用个 子命令&lt;/span&gt;
+$ docker attach &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 如果想要进入容器输入内容的话使用docker attach &lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器&lt;/span&gt;
+$ docker logs --tail &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; --follow &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重启停止的容器&lt;/span&gt;
+$ docker start &amp;lt;containerID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2-构建容器镜像&#34;&gt;2. 构建容器镜像&lt;/h1&gt;
+&lt;h2 id=&#34;简单介绍&#34;&gt;简单介绍&lt;/h2&gt;
+&lt;p&gt;一个容器包含一个底层的只读的镜像层和一个上层的可读可写的容器层
+使用了copy-on-write技术加快启动时间
+多个容器共享一个底层的镜像层，只需要根据需求修改上层的读写层即可
+如果确认修改了可以在此基础上再创建一个image&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker commit
+$ docker build
+$ docker search marathon
+&lt;span style=&#34;color:#228b22&#34;&gt;# version tag&lt;/span&gt;
+$ docker pull debian:jessie
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实际操作&#34;&gt;实际操作&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看新装了什么内容&lt;/span&gt;
+$ docker diff &amp;lt;containerID&amp;gt; 
+&lt;span style=&#34;color:#228b22&#34;&gt;# 使用修改后的容器新建一个镜像&lt;/span&gt;
+$ docker commit &amp;lt;containerID&amp;gt; 
+&lt;span style=&#34;color:#228b22&#34;&gt;# 为新镜像起名&lt;/span&gt;
+$ docker tag ab580f989221 myfiglet
+&lt;span style=&#34;color:#228b22&#34;&gt;# 直接使用新镜像&lt;/span&gt;
+$ docker run myfiglet figlet hello
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 可以在创建时直接起名&lt;/span&gt;
+$ docker commit ab580f989 newfiglet 
+$ docker run -ti newfiglet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;写dockerfile&#34;&gt;写Dockerfile&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get install figlet&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t figlet .
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 不使用缓存&lt;/span&gt;
+$ docker build --no-cache ...
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看镜像的所有层的内容&lt;/span&gt;
+$ docker &lt;span style=&#34;color:#658b00&#34;&gt;history&lt;/span&gt; figlet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;CMD&lt;/code&gt;和&lt;code&gt;ENTRYPOINT&lt;/code&gt;
+注意要使用json syntax&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apt-get&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;install&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;-f&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;script&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t myfiglet .
+$ docker run myfiglet
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重写了cmd保留了entrypoint&lt;/span&gt;
+$ docker run myfiglet hola mundo
+&lt;span style=&#34;color:#228b22&#34;&gt;# 重写entrypoint&lt;/span&gt;
+$ docker run -it --entrypoint bash myfiglet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://container.training/intro-selfpaced.yml.html&#34;&gt;container.training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://education.ardanlabs.com/courses/ultimate-docker&#34;&gt;Ardan Labs - Ultimate Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/ - </description>
         </item>
     
     

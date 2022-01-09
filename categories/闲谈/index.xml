@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/%E9%97%B2%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何从豆瓣FM转移到网易云音乐？</title>
-      <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+      <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
       <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+      <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
       <description>曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。
   下载红心歌曲链接，这是一个维护了十年的豆瓣电台加心歌曲爬虫
   下载红心歌曲，迅雷即可
@@ -22,6 +22,15 @@
 安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。
 // /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js node multi_song_upload.js --phone_number=&amp;#34;xx&amp;#34; --password=&amp;#34;xx&amp;#34; --dir=&amp;#39;/Users/xx/Music&amp;#39;   voila
   </description>
+    </item>
+    
+    <item>
+      <title>HRM 人力资源机器</title>
+      <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
+      <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
+      <description>体积！速度！ 第 1 年 -- HUMAN RESOURCE MACHINE PROGRAM -- INBOX OUTBOX INBOX OUTBOX INBOX OUTBOX 第 2 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX JUMP a -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX INBOX OUTBOX JUMP a 第 3 年 -- HUMAN RESOURCE MACHINE PROGRAM -- COPYFROM 4 OUTBOX COPYFROM 0 OUTBOX COPYFROM 3 OUTBOX 第 4 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX OUTBOX COPYFROM 0 OUTBOX JUMP a 第 5 年 // 咖啡时间 第 6 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX ADD 0 OUTBOX JUMP a 第 7 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX JUMPZ b OUTBOX JUMP a 第 8 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 ADD 0 OUTBOX JUMP a 第 9 年 -- HUMAN RESOURCE MACHINE PROGRAM -- JUMP c a: OUTBOX b: c: INBOX JUMPZ a JUMP b 第 10 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 11 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 OUTBOX COPYFROM 0 SUB 1 OUTBOX JUMP a 第 12 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 1 ADD 1 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 13 年 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX SUB 0 JUMPZ c JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 14 年 // 代码行数需要优化 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 JUMPN c COPYFROM 1 OUTBOX JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 15 年 // 斗志注入 第 16 年 第 17 年 第 18 年 第 19 年 第 20 年 第 21 年 第 22 年 第 23 年 第 24 年 第 25 年 第 26 年 第 27 年 第 28 年 第 29 年 第 30 年 第 31 年 第 32 年 第 33 年 第 34 年 第 35 年 第 36 年 第 37 年 第 38 年 第 39 年 第 40 年 第 41 年 第 42 年 </description>
     </item>
     
   </channel>

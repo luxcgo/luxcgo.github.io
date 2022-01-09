@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html><head>
+<title>Go Test</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Go Test" />
+<meta property="og:description" content="写test的好处  寻找不易发现的bug、edge case、side effect 记录目标行为，可作为一个文档帮助他人理解代码 自动化可重复  test包基本使用 https://golang.org/pkg/testing/#pkg-overview
+// math/math.go  package math func Sum(numbers []int) int { sum := 0 for _, n := range numbers { sum &#43;= n } return sum } // math/math_test.go  package math import ( &#34;testing&#34; ) func TestSum(t *testing.T) { sum := Sum([]int{10, -2, 3}) if sum != 11 { t.Errorf(&#34;fail want 11 bug got %d&#34;, sum) } } test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下 满足上述要求，运行go test命令就可以看到测试函数的运行结果。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/go/go-test/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-09T15:32:48+08:00" />
+<meta property="article:modified_time" content="2021-05-09T15:32:48+08:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Test"/>
+<meta name="twitter:description" content="写test的好处  寻找不易发现的bug、edge case、side effect 记录目标行为，可作为一个文档帮助他人理解代码 自动化可重复  test包基本使用 https://golang.org/pkg/testing/#pkg-overview
+// math/math.go  package math func Sum(numbers []int) int { sum := 0 for _, n := range numbers { sum &#43;= n } return sum } // math/math_test.go  package math import ( &#34;testing&#34; ) func TestSum(t *testing.T) { sum := Sum([]int{10, -2, 3}) if sum != 11 { t.Errorf(&#34;fail want 11 bug got %d&#34;, sum) } } test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下 满足上述要求，运行go test命令就可以看到测试函数的运行结果。"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://luxcgo.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://luxcgo.github.io/scss/dark-mode.min.f7c2efa7183435a6bd1842f91c541481c7a5137b5991629a870f24e4a516ad4b.css" integrity="sha256-98Lvpxg0Naa9GEL5HFQUgcelE3tZkWKahw8k5KUWrUs=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'a527293cd81df2a6cbb8',
+  clientSecret: '0e8c29bb9db8f136f345c5128c6ad846df4d5162',
+  repo: 'luxcgo.github.io',
+  owner: 'luxcgo',
+  admin: ['luxcgo'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://luxcgo.github.io/">
+    
+        <div class="nav-title">
+            源泉的小站
+        </div>
+        
+        <div class="nav-subtitle">
+            吾尝终日而思矣,不如须臾之所学也
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 源泉的小站
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%86%99test%e7%9a%84%e5%a5%bd%e5%a4%84" onclick="onNavClick(`#写test的好处-nav`)" id="写test的好处-nav">
+									写test的好处
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#test%e5%8c%85%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#test包基本使用-nav`)" id="test包基本使用-nav">
+									test包基本使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#test%e5%8c%85%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86" onclick="onNavClick(`#test包实现原理-nav`)" id="test包实现原理-nav">
+									test包实现原理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#test%e5%91%bd%e5%90%8d%e7%ba%a6%e5%ae%9a" onclick="onNavClick(`#test命名约定-nav`)" id="test命名约定-nav">
+									test命名约定
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#testingt%e7%9a%84%e6%96%b9%e6%b3%95%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#testingt的方法使用-nav`)" id="testingt的方法使用-nav">
+									testing.T的方法使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%b3%95%e5%88%97%e8%a1%a8" onclick="onNavClick(`#方法列表-nav`)" id="方法列表-nav">
+									方法列表
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%b3%95%e9%80%89%e6%8b%a9" onclick="onNavClick(`#方法选择-nav`)" id="方法选择-nav">
+									方法选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e8%af%bb%e7%9a%84%e9%94%99%e8%af%af%e4%bf%a1%e6%81%af" onclick="onNavClick(`#可读的错误信息-nav`)" id="可读的错误信息-nav">
+									可读的错误信息
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#example-%e5%8f%af%e6%b5%8b%e8%af%95%e7%9a%84%e6%a1%88%e4%be%8b%e4%bb%a3%e7%a0%81" onclick="onNavClick(`#example-可测试的案例代码-nav`)" id="example-可测试的案例代码-nav">
+									Example: 可测试的案例代码
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#example%e7%9a%84%e5%a5%bd%e5%a4%84" onclick="onNavClick(`#example的好处-nav`)" id="example的好处-nav">
+									Example的好处
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#example%e5%91%bd%e5%90%8d%e7%ba%a6%e5%ae%9a" onclick="onNavClick(`#example命名约定-nav`)" id="example命名约定-nav">
+									Example命名约定
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#example%e4%bd%bf%e7%94%a8%e6%8a%80%e5%b7%a7" onclick="onNavClick(`#example使用技巧-nav`)" id="example使用技巧-nav">
+									Example使用技巧
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#example%e5%b0%8f%e6%a1%88%e4%be%8b" onclick="onNavClick(`#example小案例-nav`)" id="example小案例-nav">
+									Example小案例
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%b1%bb%e5%9e%8b%e6%af%94%e8%be%83" onclick="onNavClick(`#类型比较-nav`)" id="类型比较-nav">
+									类型比较
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" onclick="onNavClick(`#references-nav`)" id="references-nav">
+									References
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#on-the-list" onclick="onNavClick(`#on-the-list-nav`)" id="on-the-list-nav">
+									on the list
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%86%99test%e7%9a%84%e5%a5%bd%e5%a4%84" onclick="onNavClick(`#写test的好处-nav`)" id="写test的好处-nav">
+									写test的好处
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#test%e5%8c%85%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#test包基本使用-nav`)" id="test包基本使用-nav">
+									test包基本使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#test%e5%8c%85%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86" onclick="onNavClick(`#test包实现原理-nav`)" id="test包实现原理-nav">
+									test包实现原理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#test%e5%91%bd%e5%90%8d%e7%ba%a6%e5%ae%9a" onclick="onNavClick(`#test命名约定-nav`)" id="test命名约定-nav">
+									test命名约定
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#testingt%e7%9a%84%e6%96%b9%e6%b3%95%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#testingt的方法使用-nav`)" id="testingt的方法使用-nav">
+									testing.T的方法使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%b3%95%e5%88%97%e8%a1%a8" onclick="onNavClick(`#方法列表-nav`)" id="方法列表-nav">
+									方法列表
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%b3%95%e9%80%89%e6%8b%a9" onclick="onNavClick(`#方法选择-nav`)" id="方法选择-nav">
+									方法选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e8%af%bb%e7%9a%84%e9%94%99%e8%af%af%e4%bf%a1%e6%81%af" onclick="onNavClick(`#可读的错误信息-nav`)" id="可读的错误信息-nav">
+									可读的错误信息
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#example-%e5%8f%af%e6%b5%8b%e8%af%95%e7%9a%84%e6%a1%88%e4%be%8b%e4%bb%a3%e7%a0%81" onclick="onNavClick(`#example-可测试的案例代码-nav`)" id="example-可测试的案例代码-nav">
+									Example: 可测试的案例代码
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#example%e7%9a%84%e5%a5%bd%e5%a4%84" onclick="onNavClick(`#example的好处-nav`)" id="example的好处-nav">
+									Example的好处
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#example%e5%91%bd%e5%90%8d%e7%ba%a6%e5%ae%9a" onclick="onNavClick(`#example命名约定-nav`)" id="example命名约定-nav">
+									Example命名约定
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#example%e4%bd%bf%e7%94%a8%e6%8a%80%e5%b7%a7" onclick="onNavClick(`#example使用技巧-nav`)" id="example使用技巧-nav">
+									Example使用技巧
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#example%e5%b0%8f%e6%a1%88%e4%be%8b" onclick="onNavClick(`#example小案例-nav`)" id="example小案例-nav">
+									Example小案例
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%b1%bb%e5%9e%8b%e6%af%94%e8%be%83" onclick="onNavClick(`#类型比较-nav`)" id="类型比较-nav">
+									类型比较
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" onclick="onNavClick(`#references-nav`)" id="references-nav">
+									References
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#on-the-list" onclick="onNavClick(`#on-the-list-nav`)" id="on-the-list-nav">
+									on the list
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://luxcgo.github.io/">
+            源泉的小站
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://luxcgo.github.io/">
+        <div class="single-column-header-title">源泉的小站</div>
+        
+        <div class="single-column-header-subtitle">吾尝终日而思矣,不如须臾之所学也</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://luxcgo.github.io/images/gotest.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    Go Test
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-05-09 15:32
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/go">go</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="写test的好处">写test的好处</h2>
+<ol>
+<li>寻找不易发现的bug、edge case、side effect</li>
+<li>记录目标行为，可作为一个文档帮助他人理解代码</li>
+<li>自动化可重复</li>
+</ol>
+<h2 id="test包基本使用">test包基本使用</h2>
+<p><a href="https://golang.org/pkg/testing/#pkg-overview">https://golang.org/pkg/testing/#pkg-overview</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// math/math.go
+</span><span style="color:#228b22"></span>
+<span style="color:#8b008b;font-weight:bold">package</span> math
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Sum</span>(numbers []<span style="color:#00688b;font-weight:bold">int</span>) <span style="color:#00688b;font-weight:bold">int</span> {
+	sum := <span style="color:#b452cd">0</span>
+	<span style="color:#8b008b;font-weight:bold">for</span> _, n := <span style="color:#8b008b;font-weight:bold">range</span> numbers {
+		sum += n
+	}
+	<span style="color:#8b008b;font-weight:bold">return</span> sum
+}
+
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// math/math_test.go
+</span><span style="color:#228b22"></span>
+<span style="color:#8b008b;font-weight:bold">package</span> math
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;testing&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestSum</span>(t *testing.T) {
+	sum := <span style="color:#008b45">Sum</span>([]<span style="color:#00688b;font-weight:bold">int</span>{<span style="color:#b452cd">10</span>, -<span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>})
+	<span style="color:#8b008b;font-weight:bold">if</span> sum != <span style="color:#b452cd">11</span> {
+		t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;fail want 11 bug got %d&#34;</span>, sum)
+	}
+}
+
+</code></pre></div><p>test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下
+满足上述要求，运行go test命令就可以看到测试函数的运行结果。</p>
+<h2 id="test包实现原理">test包实现原理</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> sleep
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+	<span style="color:#cd5555">&#34;testing&#34;</span>
+	<span style="color:#cd5555">&#34;time&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestTmpExcutable</span>(t *testing.T) {
+	t.<span style="color:#008b45">Log</span>(<span style="color:#cd5555">&#34;TestTmpExcutable&#34;</span>)
+	time.<span style="color:#008b45">Sleep</span>(<span style="color:#b452cd">2</span> * time.Minute)
+}
+
+</code></pre></div><p><img src="https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005053.png" alt="image-20210509181957708"></p>
+<p>运行<code>go test -v</code>后可以看到进程中运行着一个临时的二进制文件，它就是由<code>go test</code>命令生成出来的可执行程序，我们可以直接运行该文件。当go test程序执行完成后，该临时文件就会被删除。
+可见测试程序没有什么特别之处，我们完全可以不使用该包写出类似检验程序正确性的代码，但该包简化了我们实现的步骤。</p>
+<h2 id="test命名约定">test命名约定</h2>
+<ul>
+<li>文件名以<code>_test.go</code>结尾</li>
+<li>函数名格式类似<code>TestXxx</code></li>
+<li>变量名一般使用<code>arg</code>、<code>want</code>、<code>got</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 函数名例子
+</span><span style="color:#228b22">// 函数签名：Test接受者类型_方法名_参数类型
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestDog_Bark_muzzled</span>(t *testing.T) {
+
+}
+
+<span style="color:#228b22">// 变量名例子
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestColor</span>(t *testing.T) {
+	arg := <span style="color:#cd5555">&#34;blue&#34;</span>
+	want := <span style="color:#cd5555">&#34;#00000FF&#34;</span>
+	got := <span style="color:#008b45">Color</span>(arg)
+	<span style="color:#8b008b;font-weight:bold">if</span> got != want {
+		t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;Color(%q) = %q; want %q&#34;</span>, arg, got, want)
+	}
+}
+</code></pre></div><blockquote>
+<p>语言点：</p>
+<p><a href="https://golang.org/pkg/fmt/">https://golang.org/pkg/fmt/</a></p>
+<pre tabindex="0"><code>Integer:
+%q	a single-quoted character literal safely escaped with Go syntax.
+String and slice of bytes (treated equivalently with these verbs):
+%q	a double-quoted string safely escaped with Go syntax
+</code></pre></blockquote>
+<h2 id="testingt的方法使用">testing.T的方法使用</h2>
+<h3 id="方法列表">方法列表</h3>
+<p><a href="https://golang.org/pkg/testing/#T">https://golang.org/pkg/testing/#T</a></p>
+<ul>
+<li>Fail: 测试失败但继续运行</li>
+<li>FailNow: 测试失败并停止执行当前goroutine的test</li>
+<li>Log: 测试失败或者以verbose模式执行test时将内容打印到终端</li>
+<li>Error: Log + Fail</li>
+<li>Fatal: Log +FailNow</li>
+</ul>
+<h3 id="方法选择">方法选择</h3>
+<ul>
+<li>如果后续执行没有意义了，就使用 t.Fatal</li>
+<li>如果当前执行的结果与预期不符，但后续操作还可以正常执行，就使用 t.Error ,这样可以更方便看到全局都有什么样的错误信息，而不至于出现了一个小错误就立即终止。</li>
+</ul>
+<h3 id="可读的错误信息">可读的错误信息</h3>
+<ol>
+<li>
+<p>调用了哪个函数使用了什么参数，返回了什么样的错误，我们需要什么样的返回值</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;SomeFunc(%v) err = %v; want %v&#34;</span>, <span style="color:#8b008b;font-weight:bold">func</span>, err, want)
+</code></pre></div></li>
+<li>
+<p>有时如果参数太多，我们也可以酌情选择打印出我们需要的参数</p>
+</li>
+<li>
+<p>输出的内容尽可能简洁，易于理解，最重要的是通过错误信息可以方便的复现出整个出错的过程，更好的 debug 。
+正如下面的例子只需要<code>seed</code>就可以复现出整个流程，但若只打印出整个数组就不易于理解。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> random
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;math/rand&#34;</span>
+	<span style="color:#cd5555">&#34;testing&#34;</span>
+	<span style="color:#cd5555">&#34;time&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestPick</span>(t *testing.T) {
+	seed := time.<span style="color:#008b45">Now</span>().<span style="color:#008b45">UnixNano</span>()
+	r := rand.<span style="color:#008b45">New</span>(rand.<span style="color:#008b45">NewSource</span>(seed))
+	arg := <span style="color:#658b00">make</span>([]<span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#b452cd">25</span>)
+	<span style="color:#8b008b;font-weight:bold">for</span> i := <span style="color:#b452cd">0</span>; i &lt; <span style="color:#b452cd">25</span>; i++ {
+		arg[i] = r.<span style="color:#008b45">Int</span>()
+	}
+	got := <span style="color:#008b45">Pick</span>(arg)
+	<span style="color:#8b008b;font-weight:bold">for</span> _, v := <span style="color:#8b008b;font-weight:bold">range</span> arg {
+		<span style="color:#8b008b;font-weight:bold">if</span> got == v {
+			<span style="color:#8b008b;font-weight:bold">return</span>
+		}
+	}
+	t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;Pick(seed=%d) = %d; not in slice&#34;</span>, seed, got)
+}
+
+</code></pre></div></li>
+</ol>
+<h2 id="example-可测试的案例代码">Example: 可测试的案例代码</h2>
+<h3 id="example的好处">Example的好处</h3>
+<p>如果案例代码未经维护则随着功能代码的更新很容易就失效无法使用，但案例代码若写成可测试的代码，则可保证功能代码更新后运行<code>go test</code>在测试的时候发现问题，保证案例代码的可用性。</p>
+<h3 id="example命名约定">Example命名约定</h3>
+<ul>
+<li>
+<p>文件名以<code>_test.go</code>结尾</p>
+</li>
+<li>
+<p>函数名格式<code>func ExampleXX_XX_suffix() { ... }</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 包级别
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Example</span>() { ... }
+<span style="color:#228b22">// 方法级别
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleF</span>() { ... }
+<span style="color:#228b22">// 类型级别
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleT</span>() { ... }
+<span style="color:#228b22">// T类型的M方法
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleT_M</span>() { ... }
+
+<span style="color:#228b22">// 若有多个example函数，可加后缀以示区分。
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Example_suffix</span>() { ... }
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleF_suffix</span>() { ... }
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleT_suffix</span>() { ... }
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleT_M_suffix</span>() { ... }
+</code></pre></div></li>
+<li>
+<p>整个测试文件被识别为example条件：有一个example函数，和至少一个其他的函数、类型、变量或常量，且不含有test或benchmark函数。</p>
+</li>
+</ul>
+<h3 id="example使用技巧">Example使用技巧</h3>
+<ul>
+<li>
+<p>运行<code>godoc -http=:3000</code>可以在浏览器中看到排版优美的案例代码。</p>
+</li>
+<li>
+<p>如果因为某些原因（比如在测试interface接口或明确展示出导入了什么包）希望将test文件的全部代码，而不只是example函数，显示在godoc中，则只需要将该example函数抽离出来，单独放在一个文件里即可，不要忘记同时要满足上述命名约定。</p>
+</li>
+<li>
+<p>使用如下格式，在go test时会检测example函数的输出是否与Output下面的内容相符。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> 	<span style="color:#228b22">// Output:
+</span><span style="color:#228b22"></span> 	<span style="color:#228b22">// Hello World
+</span></code></pre></div></li>
+<li>
+<p>使用如下格式，在go test时会检测example函数的输出是否与Unordered output下面的内容相符，但检测顺序是无序的。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#228b22">// Unordered output:
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// BTC 比特币
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// ETH 以太坊
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// DOGE 狗狗币
+</span></code></pre></div></li>
+</ul>
+<h3 id="example小案例">Example小案例</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/greet.go
+</span><span style="color:#228b22"></span>
+<span style="color:#228b22">// Show how to write testable examples.
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">package</span> greet
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#cd5555">&#34;fmt&#34;</span>
+
+<span style="color:#8b008b;font-weight:bold">type</span> Dog <span style="color:#8b008b;font-weight:bold">struct</span>{}
+
+<span style="color:#8b008b;font-weight:bold">func</span> (d Dog) <span style="color:#008b45">Hello</span>() <span style="color:#00688b;font-weight:bold">string</span> {
+	<span style="color:#8b008b;font-weight:bold">return</span> fmt.<span style="color:#008b45">Sprint</span>(<span style="color:#cd5555">&#34;woof woof!&#34;</span>)
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/greet_test.go
+</span><span style="color:#228b22"></span>
+<span style="color:#8b008b;font-weight:bold">package</span> greet_test
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleDog_Hello_demo</span>() {
+	fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;Dog type w/ demo label&#34;</span>)
+
+	<span style="color:#228b22">// Output:
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// Dog type w/ demo label
+</span><span style="color:#228b22"></span>}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/example_greet_test.go
+</span><span style="color:#228b22"></span>
+<span style="color:#8b008b;font-weight:bold">package</span> greet_test
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+
+	<span style="color:#228b22">// Needed for initialize side effect
+</span><span style="color:#228b22"></span>	_ <span style="color:#cd5555">&#34;image/png&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">var</span> m = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleDog_Hello</span>() {
+	m = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>)
+	m[<span style="color:#cd5555">&#34;ETH&#34;</span>] = <span style="color:#cd5555">&#34;以太坊&#34;</span>
+	m[<span style="color:#cd5555">&#34;BTC&#34;</span>] = <span style="color:#cd5555">&#34;比特币&#34;</span>
+	m[<span style="color:#cd5555">&#34;DOGE&#34;</span>] = <span style="color:#cd5555">&#34;狗狗币&#34;</span>
+	<span style="color:#8b008b;font-weight:bold">for</span> k, v := <span style="color:#8b008b;font-weight:bold">range</span> m {
+		fmt.<span style="color:#008b45">Println</span>(k, v)
+	}
+
+	<span style="color:#228b22">// Unordered output:
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// BTC 比特币
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// ETH 以太坊
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">// DOGE 狗狗币
+</span><span style="color:#228b22"></span>}
+
+</code></pre></div><p><img src="https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005130.png" alt="image-20210522144118126"></p>
+<p><img src="https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005124.png" alt="image-20210522144008859"></p>
+<h2 id="类型比较">类型比较</h2>
+<p><a href="https://golang.org/ref/spec#Comparison_operators">https://golang.org/ref/spec#Comparison_operators</a></p>
+<p><a href="https://golang.org/pkg/reflect/#DeepEqual">https://golang.org/pkg/reflect/#DeepEqual</a></p>
+<p><a href="http://www.luffy.vip/post/2020-10-17-golang-comparison/">http://www.luffy.vip/post/2020-10-17-golang-comparison/</a></p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://golang.org/pkg/testing/">https://golang.org/pkg/testing/</a></li>
+<li><a href="https://golang.org/pkg/image/">https://golang.org/pkg/image/</a></li>
+<li><a href="https://golang.org/src/image/decode_example_test.go">https://golang.org/src/image/decode_example_test.go</a></li>
+<li><a href="https://golang.org/pkg/sort/">https://golang.org/pkg/sort/</a></li>
+<li><a href="https://golang.org/src/sort/example_interface_test.go">https://golang.org/src/sort/example_interface_test.go</a></li>
+<li><a href="https://github.com/fluhus/godoc-tricks">https://github.com/fluhus/godoc-tricks</a></li>
+<li><a href="https://github.com/joncalhoun/twg">https://github.com/joncalhoun/twg</a></li>
+<li><a href="https://testwithgo.com/">https://testwithgo.com/</a></li>
+<li><a href="https://dave.cheney.net/2019/05/07/prefer-table-driven-tests">https://dave.cheney.net/2019/05/07/prefer-table-driven-tests</a></li>
+<li><a href="https://blog.golang.org/subtests">https://blog.golang.org/subtests</a></li>
+</ul>
+<h2 id="on-the-list">on the list</h2>
+<ul>
+<li>subtests</li>
+<li>naming conventions<img src="https://gitee.com/luxcgo/imgs4md/raw/master/img/20220110005122.png" alt="image-20210510004538186"></li>
+<li><a href="https://github.com/stretchr/testify">https://github.com/stretchr/testify</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2021-05-09</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/">
+			Next<br>docker基本使用2
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/">
+			Previous<br>docker基本使用1
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 源泉的小站
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html><head>
+<title>docker基本使用2</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="docker基本使用2" />
+<meta property="og:description" content="初识docker # 查看版本并顺便检查docker server正常启动，cli可以连接到engine $ docker version # 查看engine的一些配置项 $ docker info # 查看docker command line structure # docker command的格式，为了解决激增的命令数量难以记忆的问题，推出Management Commands模式 # 1. 使用Management Commands: docker &lt;command&gt; &lt;sub-command&gt; (options) # 2. 使用Commands: docker &lt;command&gt; (options) $ docker # 例子，如下两种模式的命令目的是一样的 $ docker container run $ docker run 创建一个Nginx服务器  Downloaded image nginx from Docker Hub Started a new container from that image Opened port 80 on the host IP Routes that traffic to the container IP, port 80  # --publish(or -p) 是一种映射host port到container port的方法 $ docker container run --publish 80:80 nginx # 在后台运行 # 可以使用docker container run --help查看更多详细内容 $ docker container run --publish 80:80 --detach nginx # docker ps亦可 $ docker container ls # 停止容器但不删除 # docker stop亦可 $ docker container stop 690 # docker container run总是开启一个新的容器 # docker container start是开启一个已经存在的停止的容器 $ docker container start 690 $ docker container ls $ docker container ls -a # 在不手动设置容器名称的情况下docker会随机生成一个adj&#43;n的名称 # detail: https://github." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-11T15:27:19+08:00" />
+<meta property="article:modified_time" content="2021-09-11T15:27:19+08:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="docker基本使用2"/>
+<meta name="twitter:description" content="初识docker # 查看版本并顺便检查docker server正常启动，cli可以连接到engine $ docker version # 查看engine的一些配置项 $ docker info # 查看docker command line structure # docker command的格式，为了解决激增的命令数量难以记忆的问题，推出Management Commands模式 # 1. 使用Management Commands: docker &lt;command&gt; &lt;sub-command&gt; (options) # 2. 使用Commands: docker &lt;command&gt; (options) $ docker # 例子，如下两种模式的命令目的是一样的 $ docker container run $ docker run 创建一个Nginx服务器  Downloaded image nginx from Docker Hub Started a new container from that image Opened port 80 on the host IP Routes that traffic to the container IP, port 80  # --publish(or -p) 是一种映射host port到container port的方法 $ docker container run --publish 80:80 nginx # 在后台运行 # 可以使用docker container run --help查看更多详细内容 $ docker container run --publish 80:80 --detach nginx # docker ps亦可 $ docker container ls # 停止容器但不删除 # docker stop亦可 $ docker container stop 690 # docker container run总是开启一个新的容器 # docker container start是开启一个已经存在的停止的容器 $ docker container start 690 $ docker container ls $ docker container ls -a # 在不手动设置容器名称的情况下docker会随机生成一个adj&#43;n的名称 # detail: https://github."/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://luxcgo.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://luxcgo.github.io/scss/dark-mode.min.f7c2efa7183435a6bd1842f91c541481c7a5137b5991629a870f24e4a516ad4b.css" integrity="sha256-98Lvpxg0Naa9GEL5HFQUgcelE3tZkWKahw8k5KUWrUs=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'a527293cd81df2a6cbb8',
+  clientSecret: '0e8c29bb9db8f136f345c5128c6ad846df4d5162',
+  repo: 'luxcgo.github.io',
+  owner: 'luxcgo',
+  admin: ['luxcgo'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://luxcgo.github.io/">
+    
+        <div class="nav-title">
+            源泉的小站
+        </div>
+        
+        <div class="nav-subtitle">
+            吾尝终日而思矣,不如须臾之所学也
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 源泉的小站
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%9d%e8%af%86docker" onclick="onNavClick(`#初识docker-nav`)" id="初识docker-nav">
+									初识docker
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aanginx%e6%9c%8d%e5%8a%a1%e5%99%a8" onclick="onNavClick(`#创建一个nginx服务器-nav`)" id="创建一个nginx服务器-nav">
+									创建一个Nginx服务器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#docker-container-run%e8%83%8c%e5%90%8e%e7%9a%84%e5%8a%a8%e4%bd%9c" onclick="onNavClick(`#docker-container-run背后的动作-nav`)" id="docker-container-run背后的动作-nav">
+									docker container run背后的动作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#container%e6%98%af%e4%b8%aa%e4%bb%80%e4%b9%88%e4%b8%9c%e8%a5%bf" onclick="onNavClick(`#container是个什么东西-nav`)" id="container是个什么东西-nav">
+									container是个什么东西
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#lab-%e7%ae%a1%e7%90%86%e5%a4%9a%e4%b8%aacontainer" onclick="onNavClick(`#lab-管理多个container-nav`)" id="lab-管理多个container-nav">
+									Lab: 管理多个container
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e7%9c%8bcontainer%e7%8a%b6%e6%80%81%e7%9a%84%e5%87%a0%e4%b8%aa%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#查看container状态的几个命令-nav`)" id="查看container状态的几个命令-nav">
+									查看container状态的几个命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bf%9b%e5%85%a5%e4%b8%80%e4%b8%aacontainer" onclick="onNavClick(`#进入一个container-nav`)" id="进入一个container-nav">
+									进入一个container
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" onclick="onNavClick(`#references-nav`)" id="references-nav">
+									References
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%9d%e8%af%86docker" onclick="onNavClick(`#初识docker-nav`)" id="初识docker-nav">
+									初识docker
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aanginx%e6%9c%8d%e5%8a%a1%e5%99%a8" onclick="onNavClick(`#创建一个nginx服务器-nav`)" id="创建一个nginx服务器-nav">
+									创建一个Nginx服务器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#docker-container-run%e8%83%8c%e5%90%8e%e7%9a%84%e5%8a%a8%e4%bd%9c" onclick="onNavClick(`#docker-container-run背后的动作-nav`)" id="docker-container-run背后的动作-nav">
+									docker container run背后的动作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#container%e6%98%af%e4%b8%aa%e4%bb%80%e4%b9%88%e4%b8%9c%e8%a5%bf" onclick="onNavClick(`#container是个什么东西-nav`)" id="container是个什么东西-nav">
+									container是个什么东西
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#lab-%e7%ae%a1%e7%90%86%e5%a4%9a%e4%b8%aacontainer" onclick="onNavClick(`#lab-管理多个container-nav`)" id="lab-管理多个container-nav">
+									Lab: 管理多个container
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e7%9c%8bcontainer%e7%8a%b6%e6%80%81%e7%9a%84%e5%87%a0%e4%b8%aa%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#查看container状态的几个命令-nav`)" id="查看container状态的几个命令-nav">
+									查看container状态的几个命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bf%9b%e5%85%a5%e4%b8%80%e4%b8%aacontainer" onclick="onNavClick(`#进入一个container-nav`)" id="进入一个container-nav">
+									进入一个container
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" onclick="onNavClick(`#references-nav`)" id="references-nav">
+									References
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://luxcgo.github.io/">
+            源泉的小站
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://luxcgo.github.io/">
+        <div class="single-column-header-title">源泉的小站</div>
+        
+        <div class="single-column-header-subtitle">吾尝终日而思矣,不如须臾之所学也</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://luxcgo.github.io/images/docker.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    docker基本使用2
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-09-11 15:27
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%A4%87%E5%BF%98">备忘</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="初识docker">初识docker</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># 查看版本并顺便检查docker server正常启动，cli可以连接到engine</span>
+$ docker version
+
+<span style="color:#228b22"># 查看engine的一些配置项</span>
+$ docker info
+
+<span style="color:#228b22"># 查看docker command line structure</span>
+<span style="color:#228b22"># docker command的格式，为了解决激增的命令数量难以记忆的问题，推出Management Commands模式</span>
+<span style="color:#228b22"># 1. 使用Management Commands: docker &lt;command&gt; &lt;sub-command&gt; (options)</span>
+<span style="color:#228b22"># 2. 使用Commands: docker &lt;command&gt; (options)</span>
+$ docker
+<span style="color:#228b22"># 例子，如下两种模式的命令目的是一样的</span>
+$ docker container run
+$ docker run
+
+</code></pre></div><h2 id="创建一个nginx服务器">创建一个Nginx服务器</h2>
+<ol>
+<li>Downloaded image <code>nginx</code> from Docker Hub</li>
+<li>Started a new container from that image</li>
+<li>Opened port 80 on the host IP</li>
+<li>Routes that traffic to the container IP, port 80</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># --publish(or -p) 是一种映射host port到container port的方法</span>
+$ docker container run --publish 80:80 nginx
+
+<span style="color:#228b22"># 在后台运行</span>
+<span style="color:#228b22"># 可以使用docker container run --help查看更多详细内容</span>
+$ docker container run --publish 80:80 --detach nginx
+
+<span style="color:#228b22"># docker ps亦可</span>
+$ docker container ls
+
+<span style="color:#228b22"># 停止容器但不删除</span>
+<span style="color:#228b22"># docker stop亦可</span>
+$ docker container stop <span style="color:#b452cd">690</span>
+
+<span style="color:#228b22"># docker container run总是开启一个新的容器</span>
+<span style="color:#228b22"># docker container start是开启一个已经存在的停止的容器</span>
+$ docker container start <span style="color:#b452cd">690</span>
+
+$ docker container ls
+
+$ docker container ls -a
+
+<span style="color:#228b22"># 在不手动设置容器名称的情况下docker会随机生成一个adj+n的名称</span>
+<span style="color:#228b22"># detail: https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go</span>
+$ docker container run --publish 80:80 --detach --name webhost nginx
+
+$ docker container ls -a
+
+<span style="color:#228b22"># docker logs亦可</span>
+$ docker container logs webhost
+
+$ docker container top
+
+<span style="color:#228b22"># Display the running processes of a container</span>
+$ docker container top webhost
+
+$ docker container --help
+
+$ docker container ls -a
+
+<span style="color:#228b22"># docker rm亦可</span>
+$ docker container rm 63f <span style="color:#b452cd">690</span> ode
+
+$ docker container ls
+
+<span style="color:#228b22"># docker为了防止误操作，不能直接删除一个运行的容器，除非加参数`-f`强制删除</span>
+$ docker container rm -f 63f
+
+$ docker container ls -a
+
+</code></pre></div><h2 id="docker-container-run背后的动作"><code>docker container run</code>背后的动作</h2>
+<p>以<code>docker container run nginx</code>为例：</p>
+<ol>
+<li>Looks for that image locally in image cache, doesn&rsquo;t find anything</li>
+<li>Then looks in remote image repository (defaults to Docker Hub)</li>
+<li>Downloads the latest version (nginx:latest by default)</li>
+<li>Creates new container based on that image and prepares to start</li>
+<li>Gives it a virtual IP on a private network inside docker engine</li>
+<li>Opens up port 80 on host and forwards to port 80 in container</li>
+<li>Starts container by using the CMD in the image Dockerfile</li>
+</ol>
+<p>简单的命令背后docker帮我们做了很多默认的工作，实际上它是高度定制化的，我们可以根据需要进行修改</p>
+<blockquote>
+<p>docker container run &ndash;publish 8080:80 &ndash;name webhost -d nginx:1.11 nginx -T</p>
+</blockquote>
+<p>如上所示，我们修改了host监听的端口为8080，修改了镜像版本为1.11，修改了开启容器时的CMD命令</p>
+<h2 id="container是个什么东西"><code>container</code>是个什么东西</h2>
+<p>本质上一个运行着的容器只是资源受限的进程，当进程结束了container也就退出了，如下是在linux环境下的实验结果：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># ubuntu20.04</span>
+lucas@ubuntu:~$ docker run --name mongo -d mongo
+4137bf48c62bb2230f717c5d2077419b1dc93ce05cd3db414f81c0aa4262bdac
+lucas@ubuntu:~$ docker ps
+CONTAINER ID   IMAGE    COMMAND                  CREATED          STATUS          PORTS        NAMES
+4137bf48c62b   mongo    <span style="color:#cd5555">&#34;docker-entrypoint.s…&#34;</span>   <span style="color:#b452cd">26</span> seconds ago   Up <span style="color:#b452cd">25</span> seconds   27017/tcp    mongo
+lucas@ubuntu:~$ ps aux | grep mongo
+systemd+ <span style="color:#b452cd">3800614</span>  0.8  2.7 <span style="color:#b452cd">1538116</span> <span style="color:#b452cd">112280</span> ?      Ssl  15:29   0:01 mongod --bind_ip_all
+lucas    <span style="color:#b452cd">3801103</span>  0.0  0.0   <span style="color:#b452cd">6300</span>   <span style="color:#b452cd">736</span> pts/0    S+   15:31   0:00 grep --color=auto mongo
+lucas@ubuntu:~$ docker rm -f mongo
+mongo
+lucas@ubuntu:~$ ps aux | grep mongo
+lucas    <span style="color:#b452cd">3801302</span>  0.0  0.0   <span style="color:#b452cd">6300</span>   <span style="color:#b452cd">676</span> pts/0    S+   15:32   0:00 grep --color=auto mongo
+</code></pre></div><p>在<code>mac</code>环境上略有不同，<code>docker engine</code>实际上是运行在基于<a href="https://github.com/machyve/xhyve">xhyve</a> <code>VM</code>上的一个<code>Alpine Linux</code>，我们进入到这个<code>docker VM</code>中才能看到具体运行着的进程</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># macOS Big Sur on M1 chip </span>
+$ docker run --name mongo -d mongo 
+4ce052bde09ce12cef9856e270347c549b988483fdc86051ee7a6cf409b6d15b
+$ docker run --name mongo -d mongo 
+$ docker run -it --rm --privileged --pid=host justincormack/nsenter1
+/ <span style="color:#228b22"># ps aux | grep mongo</span>
+ <span style="color:#b452cd">2551</span> <span style="color:#b452cd">999</span>       0:00 mongod --bind_ip_all
+ <span style="color:#b452cd">2712</span> root      0:00 grep mongo
+$ docker rm -f mongo  
+mongo
+$ docker run -it --rm --privileged --pid=host justincormack/nsenter1 
+/ <span style="color:#228b22">#  ps aux | grep mongo</span>
+ <span style="color:#b452cd">2839</span> root      0:00 grep mongo
+</code></pre></div><h2 id="lab-管理多个container">Lab: 管理多个container</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># mysql官方镜像暂不支持arm64，只支持x86_64，所以换用mysql/mysql-server镜像</span>
+<span style="color:#228b22"># uname -a 查看架构</span>
+$ docker container run -d -p 3306:3306 --name db -e <span style="color:#00688b">MYSQL_RANDOM_ROOT_PASSWORD</span>=yes mysql/mysql-server
+<span style="color:#228b22"># 查看mysql生成的密码</span>
+$ docker logs db
+$ docker container run -d --name webserver -p 8080:80 httpd
+$ docker container run -d --name proxy -p 80:80 nginx
+$ docker ps
+<span style="color:#228b22"># clean up</span>
+<span style="color:#228b22"># 直接使用官方推出的自动补全功能，非常好用(tab completion)</span>
+<span style="color:#228b22"># https://docs.docker.com/compose/completion/</span>
+$ docker container stop webserver proxy db
+$ docker container rm webserver proxy db
+$ docker ps -a
+</code></pre></div><h2 id="查看container状态的几个命令">查看<code>container</code>状态的几个命令</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># process list in one container</span>
+$ docker container top
+
+<span style="color:#228b22"># details of one container config</span>
+$ docker container inspect
+
+<span style="color:#228b22"># performance stats for all containers</span>
+$ docker container stats
+</code></pre></div><h2 id="进入一个container">进入一个<code>container</code></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># -i keep session open to receive terminal input</span>
+<span style="color:#228b22"># -t simulates a real terminal, like what ssh dose</span>
+<span style="color:#228b22"># 修改开启容器时的CMD命令为bash，结合-it的OPTIONS，直接进入到对应镜像的bash环境中</span>
+$ docker container run -it --name nginx nginx bash
+<span style="color:#228b22"># 当我们退出bash的同时容器就相应的停止了，因为我们修改了&#34;Cmd&#34;为bash</span>
+
+<span style="color:#228b22"># 重新进入上面已经停止的容器的bash中</span>
+<span style="color:#228b22"># docker start --help</span>
+$ docker start -ai nginx
+
+<span style="color:#228b22"># 进入一个已经运行着其他命令的容器的shell</span>
+<span style="color:#228b22"># 例如mysql</span>
+$ docker container run -d -p 3306:3306 --name db -e <span style="color:#00688b">MYSQL_RANDOM_ROOT_PASSWORD</span>=yes mysql/mysql-server
+$ docker <span style="color:#658b00">exec</span> -it mysql bash
+<span style="color:#228b22"># 但此时我们退出bash的时候容器并不会停止，因为&#34;exec&#34;基于已有的容器运行在另外一个进程中，并不会影响mysql daemon所在的主进程</span>
+</code></pre></div><pre tabindex="0"><code>-t simulates a real terminal,like what ssh dose
+-i keep session open to receive terminal input
+</code></pre><h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
+<li><a href="https://www.bretfisher.com/docker-for-mac-commands-for-getting-into-local-docker-vm/">Docker Desktop for Mac Commands for Getting Into The Local Docker VM</a></li>
+<li><a href="https://github.com/mikegcoleman/docker101/blob/master/Docker_eBook_Jan_2017.pdf">Docker for the Virtualization Admin</a></li>
+<li></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22">## Container VS. VM: It&#39;s Just a Process</span>
+
+$ docker run --name mongo -d mongo
+
+$ docker ps
+
+$ docker top mongo
+
+$ docker stop mongo
+
+$ docker ps
+
+$ docker top mongo
+
+$ docker start mongo
+
+$ docker ps
+
+$ docker top mongo
+
+<span style="color:#228b22">## Assignment Answers: Manage Multiple Containers</span>
+
+$ docker container run -d -p 3306:3306 --name db -e <span style="color:#00688b">MYSQL_RANDOM_ROOT_PASSWORD</span>=yes MYSQL_RANDOM_ROOT_PASSWORD
+
+$ docker container logs db
+
+$ docker container run -d --name webserver -p 8080:80 httpd
+
+$ docker ps
+
+$ docker container run -d --name proxy -p 80:80 nginx
+
+$ docker ps
+
+$ docker container ls
+
+$ docker container stop TAB COMPLETION
+
+$ docker ps -a
+
+$ docker container ls -a
+
+$ docker container rm
+
+$ docker ps -a
+
+$ docker image ls
+
+<span style="color:#228b22">## What&#39;s Going On In Containers: CLI Process Monitoring</span>
+
+$ docker container run -d --name nginx nginx
+
+$ docker container run -d --name mysql -e <span style="color:#00688b">MYSQL_RANDOM_ROOT_PASSWORD</span>=<span style="color:#658b00">true</span> mysql
+
+$ docker container ls
+
+$ docker container top mysql
+
+$ docker container top nginx
+
+$ docker container inspect mysql
+
+$ docker container stats --help
+
+$ docker container stats
+
+$ docker container ls
+
+<span style="color:#228b22">## Getting a Shell Inside Containers: No Need for SSH</span>
+
+$ docker container run -help
+
+$ docker container run -it --name proxy nginx bash
+
+$ docker container ls
+
+$ docker container ls -a
+
+$ docker container run -it --name ubuntu ubuntu
+
+$ docker container ls
+
+$ docker container ls -a
+
+$ docker container start --help
+
+$ docker container start -ai ubuntu
+
+$ docker container <span style="color:#658b00">exec</span> --help
+
+$ docker container <span style="color:#658b00">exec</span> -it mysql bash
+
+$ docker container ls
+
+$ docker pull alpine
+
+$ docker image ls
+
+$ docker container run -it alpine bash
+
+$ docker container run -it alpine sh
+
+<span style="color:#228b22">## $ docker Networks: Concepts for Private and Public Comms in Containers</span>
+
+$ docker container run -p 80:80 --name webhost -d nginx
+
+$ docker container port webhost
+
+$ docker container inspect --format <span style="color:#cd5555">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> webhost
+
+<span style="color:#228b22">## $ docker Networks: CLI Management of Virtual Networks</span>
+
+$ docker network ls
+
+$ docker network inspect bridge
+
+$ docker network ls
+
+$ docker network create my_app_net
+
+$ docker network ls
+
+$ docker network create --help
+
+$ docker container run -d --name new_nginx --network my_app_net nginx
+
+$ docker network inspect my_app_net
+
+$ docker network --help
+
+$ docker network connect
+
+$ docker container inspect TAB COMPLETION
+
+$ docker container disconnect TAB COMPLETION
+
+$ docker container inspect
+
+<span style="color:#228b22">## $ docker Networks: DNS and How Containers Find Each Other</span>
+
+$ docker container ls
+
+$ docker network inspect TAB COMPLETION
+
+$ docker container run -d --name my_nginx --network my_app_net nginx
+
+$ docker container inspect TAB COMPLETION
+
+$ docker container <span style="color:#658b00">exec</span> -it my_nginx ping new_nginx
+
+$ docker container <span style="color:#658b00">exec</span> -it new_nginx ping my_nginx
+
+$ docker network ls
+
+$ docker container create --help
+
+<span style="color:#228b22">## Assignment Answers: Using Containers for CLI Testing</span>
+
+$ docker container run --rm -it centos:7 bash
+
+$ docker ps -a
+
+$ docker container run --rm -it ubuntu:14.04 bash
+
+$ docker ps -a
+
+<span style="color:#228b22">## Assignment Answers: DNS Round Robin Testing</span>
+
+$ docker network create dude
+
+$ docker container run -d --net dude --net-alias search elasticsearch:2
+
+$ docker container ls
+
+$ docker container run --rm -- net dude alpine nslookup search
+
+$ docker container run --rm --net dude centos curl -s search:9200
+
+$ docker container ls
+
+$ docker container rm -f TAB COMPLETION
+
+
+</code></pre></div><p>20210918 中秋计划</p>
+<ul>
+<li>Stanford CS107补上反码补码</li>
+<li>mit-6.033补上网络协议啥的</li>
+<li>traefik看完</li>
+<li>go网络看完</li>
+<li>ai教Lecture 1: Overview | Stanford CS221: AI (Autumn 2019)</li>
+<li></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2021-09-11</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/">
+			Next<br>Terminal自定义
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/go/go-test/">
+			Previous<br>Go Test
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 源泉的小站
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

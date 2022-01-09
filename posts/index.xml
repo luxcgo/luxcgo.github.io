@@ -23,15 +23,6 @@
     </item>
     
     <item>
-      <title>Ubuntu配置</title>
-      <link>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Sun, 26 Dec 2021 12:25:54 +0800</pubDate>
-      
-      <guid>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</guid>
-      <description>用户管理 # 删除用户及目录 sudo userdel -r lighthouse # 添加新用户 sudo useradd -d /home/lucas -m lucas </description>
-    </item>
-    
-    <item>
       <title>Tinykv第三方指导书</title>
       <link>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</link>
       <pubDate>Sun, 12 Dec 2021 17:41:03 +0800</pubDate>
@@ -66,10 +57,10 @@ Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storag
     
     <item>
       <title>如何从豆瓣FM转移到网易云音乐？</title>
-      <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+      <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
       <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+      <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
       <description>曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。
   下载红心歌曲链接，这是一个维护了十年的豆瓣电台加心歌曲爬虫
   下载红心歌曲，迅雷即可
@@ -83,10 +74,10 @@ Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storag
     
     <item>
       <title>HRM 人力资源机器</title>
-      <link>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
+      <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
       <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
+      <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
       <description>体积！速度！ 第 1 年 -- HUMAN RESOURCE MACHINE PROGRAM -- INBOX OUTBOX INBOX OUTBOX INBOX OUTBOX 第 2 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX JUMP a -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX INBOX OUTBOX JUMP a 第 3 年 -- HUMAN RESOURCE MACHINE PROGRAM -- COPYFROM 4 OUTBOX COPYFROM 0 OUTBOX COPYFROM 3 OUTBOX 第 4 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX OUTBOX COPYFROM 0 OUTBOX JUMP a 第 5 年 // 咖啡时间 第 6 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX ADD 0 OUTBOX JUMP a 第 7 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX JUMPZ b OUTBOX JUMP a 第 8 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 ADD 0 OUTBOX JUMP a 第 9 年 -- HUMAN RESOURCE MACHINE PROGRAM -- JUMP c a: OUTBOX b: c: INBOX JUMPZ a JUMP b 第 10 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 11 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 OUTBOX COPYFROM 0 SUB 1 OUTBOX JUMP a 第 12 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 1 ADD 1 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 13 年 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX SUB 0 JUMPZ c JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 14 年 // 代码行数需要优化 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 JUMPN c COPYFROM 1 OUTBOX JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 15 年 // 斗志注入 第 16 年 第 17 年 第 18 年 第 19 年 第 20 年 第 21 年 第 22 年 第 23 年 第 24 年 第 25 年 第 26 年 第 27 年 第 28 年 第 29 年 第 30 年 第 31 年 第 32 年 第 33 年 第 34 年 第 35 年 第 36 年 第 37 年 第 38 年 第 39 年 第 40 年 第 41 年 第 42 年 </description>
     </item>
     
@@ -101,28 +92,28 @@ Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storag
     
     <item>
       <title>Go Spec学习摘要</title>
-      <link>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
+      <link>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
       <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
+      <guid>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delve Golang专属的debugger</title>
-      <link>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
+      <link>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
       <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
+      <guid>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sourcetree配置</title>
-      <link>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</link>
+      <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/</guid>
       <description>在mac上配置github账户 443时要配置代理
 403时要解决推送时没有权限问题
 因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式
@@ -131,37 +122,28 @@ Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storag
     
     <item>
       <title>Vscode奇技淫巧</title>
-      <link>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
+      <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
       <pubDate>Sat, 30 Oct 2021 23:46:10 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
       <description>使用VsCode正则表达式批量替换    正则查找：myfunction\((.*),(.*)\) 替换：myfunction($1,$2)   查找：&amp;quot;static/(.*).css 替换：&amp;quot;static/css/$1.css // 替换前 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/cui.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/style.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/less.css&amp;#34;&amp;gt; // 替换后 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/css/cui.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/css/style.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;static/css/less.css&amp;#34;&amp;gt;   正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0 匹配结果：.jpg?abc=1 0.001 404   \(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式 \(problems/(.*)-(.*)\) (problems/$1) 命令行输入code自动打开vscode </description>
     </item>
     
     <item>
       <title>英语单词</title>
-      <link>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
+      <link>https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
       <pubDate>Sun, 24 Oct 2021 14:34:37 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
+      <guid>https://luxcgo.github.io/posts/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
       <description>New words    英语 释义     disparate 根本不同的   tout 吹嘘，兜售   dread    impede    paginate                     </description>
     </item>
     
     <item>
-      <title>Go与爬虫</title>
-      <link>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</link>
-      <pubDate>Sun, 24 Oct 2021 14:28:41 +0800</pubDate>
-      
-      <guid>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git使用笔记</title>
-      <link>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 01 Oct 2021 19:29:19 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>Configuring Git   Settings
  Name Email Default Editor Line Ending    Levels
  System: All users Global: All repositories of the current user Local: The current repository    $ git config --global user.name &amp;#34;hackcraker&amp;#34; $ git config --global user.email mgyuchen@163.com $ git config --global core.editor vim # 用于多平台协作 $ git config --global core.autocrlf input Creating Snapshots Initializing a repository
@@ -170,10 +152,10 @@ Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storag
     
     <item>
       <title>dns污染</title>
-      <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
+      <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/</link>
       <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/</guid>
       <description>Failed to connect to raw.githubusercontent.com:443 下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0
 域名的解析过程是：
 Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器
@@ -185,51 +167,42 @@ $ cat /etc/hosts 直接修改的话比较麻烦，下面这个软件SwitchHosts�
     </item>
     
     <item>
-      <title>Terminal</title>
-      <link>https://luxcgo.github.io/posts/terminal/</link>
+      <title>Terminal自定义</title>
+      <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/</link>
       <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/terminal/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/</guid>
       <description>zsh  framework: ohmyzsh   Plugin:
  docker docker-compose z zsh-completions zsh-syntax-highlighting    Theme:
   powerlevel10k
- How do I add username and/or hostname to prompt?        # 删除用户及目录 sudo userdel -r lighthouse # 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated.</description>
+ How do I add username and/or hostname to prompt?        # 用户管理 # 1. 删除用户及目录 sudo userdel -r lighthouse # 2. 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated.</description>
     </item>
     
     <item>
-      <title>Docker使用笔记</title>
-      <link>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <title>docker基本使用2</title>
+      <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/</link>
       <pubDate>Sat, 11 Sep 2021 15:27:19 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A82/</guid>
       <description>初识docker # 查看版本并顺便检查docker server正常启动，cli可以连接到engine $ docker version # 查看engine的一些配置项 $ docker info # 查看docker command line structure # docker command的格式，为了解决激增的命令数量难以记忆的问题，推出Management Commands模式 # 1. 使用Management Commands: docker &amp;lt;command&amp;gt; &amp;lt;sub-command&amp;gt; (options) # 2. 使用Commands: docker &amp;lt;command&amp;gt; (options) $ docker # 例子，如下两种模式的命令目的是一样的 $ docker container run $ docker run 创建一个Nginx服务器  Downloaded image nginx from Docker Hub Started a new container from that image Opened port 80 on the host IP Routes that traffic to the container IP, port 80  # --publish(or -p) 是一种映射host port到container port的方法 $ docker container run --publish 80:80 nginx # 在后台运行 # 可以使用docker container run --help查看更多详细内容 $ docker container run --publish 80:80 --detach nginx # docker ps亦可 $ docker container ls # 停止容器但不删除 # docker stop亦可 $ docker container stop 690 # docker container run总是开启一个新的容器 # docker container start是开启一个已经存在的停止的容器 $ docker container start 690 $ docker container ls $ docker container ls -a # 在不手动设置容器名称的情况下docker会随机生成一个adj+n的名称 # detail: https://github.</description>
     </item>
     
     <item>
-      <title>Tmux精简指南</title>
-      <link>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Thu, 09 Sep 2021 21:20:53 +0800</pubDate>
-      
-      <guid>https://luxcgo.github.io/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Go Test</title>
-      <link>https://luxcgo.github.io/posts/go-test/</link>
+      <link>https://luxcgo.github.io/posts/go/go-test/</link>
       <pubDate>Sun, 09 May 2021 15:32:48 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/go-test/</guid>
+      <guid>https://luxcgo.github.io/posts/go/go-test/</guid>
       <description>写test的好处  寻找不易发现的bug、edge case、side effect 记录目标行为，可作为一个文档帮助他人理解代码 自动化可重复  test包基本使用 https://golang.org/pkg/testing/#pkg-overview
 // math/math.go  package math func Sum(numbers []int) int { sum := 0 for _, n := range numbers { sum += n } return sum } // math/math_test.go  package math import ( &amp;#34;testing&amp;#34; ) func TestSum(t *testing.T) { sum := Sum([]int{10, -2, 3}) if sum != 11 { t.Errorf(&amp;#34;fail want 11 bug got %d&amp;#34;, sum) } } test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下 满足上述要求，运行go test命令就可以看到测试函数的运行结果。</description>
     </item>
     
     <item>
-      <title>docker基本使用</title>
-      <link>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <title>docker基本使用1</title>
+      <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/</link>
       <pubDate>Sat, 13 Mar 2021 16:48:30 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A81/</guid>
       <description>1. 容器的基础命令 使用docker的好处  便于构建各种依赖关系 快速构建 快速迁移 和宿主主机互不影响  初步使用 $ docker run busybox echo hello world hello world $ docker run -ti ubuntu root@3cc1d9fcadda:/# apt-get update root@3cc1d9fcadda:/# apt-get install figlet root@3cc1d9fcadda:/# figlet LuxcGo _ ____ | | _ ___ _____ / ___| ___ | | | | | \ \/ / __| | _ / _ \ | |__| |_| |&amp;gt; &amp;lt; (__| |_| | (_) | |_____\__,_/_/\_\___|\____|\___/ root@3cc1d9fcadda:/# dpkg -l root@3cc1d9fcadda:/# dpkg -l | wc -l 98 lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l 1877 运行一个容器 $ docker run jpetazzo/clock $ sleep 10 &amp;amp; [1] 18495 $ [1] + 18495 done sleep 10 # 后台创建并启动和sleep命令类似 $ docker run -d jpetazzo/clock # 只显示运行着的容器 $ docker ps # 显示所有容器 $ docker ps -a # 查看最后一个启动的容器 $ docker ps -l # 查看所有正在运行的容器的id（--quiet） $ docker ps -q # 可以同时合并多条命令 $ docker ps -ql $ docker ps -q -l # 查看日志 $ docker logs &amp;lt;container ID&amp;gt; # --follow $ docker logs 82 -f # --tail $ docker logs 82 -f -n 10 # polite shutdown（传递一个关闭的信号） $ docker stop 49 # 强制关闭 $ docker kill 82 48 后台运行的容器 $ docker run -ti ubuntu root@3cc1d9fcadda:/# top # 退出容器 ^p^q # 重新进入容器 $ docker attach 34 # 或者用个 子命令 $ docker attach $(docker ps -ql) # 如果想要进入容器输入内容的话使用docker attach  # 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器 $ docker logs --tail 1 --follow $(docker ps -ql) # 重启停止的容器 $ docker start &amp;lt;containerID&amp;gt; 2.</description>
     </item>
     

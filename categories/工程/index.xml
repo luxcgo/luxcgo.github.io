@@ -24,10 +24,10 @@
     
     <item>
       <title>dns污染</title>
-      <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
+      <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/</link>
       <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
+      <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/dns%E6%B1%A1%E6%9F%93/</guid>
       <description>Failed to connect to raw.githubusercontent.com:443 下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0
 域名的解析过程是：
 Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器
@@ -36,6 +36,18 @@ $ cat /etc/hosts 直接修改的话比较麻烦，下面这个软件SwitchHosts�
 方法二：在第四步解析时解决问题 直接修改本机网络用到的DNS服务器，
 在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题
 223.5.5.5 223.6.6.6 119.29.29.29 119.28.28.28 </description>
+    </item>
+    
+    <item>
+      <title>Terminal自定义</title>
+      <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/</link>
+      <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/terminal/</guid>
+      <description>zsh  framework: ohmyzsh   Plugin:
+ docker docker-compose z zsh-completions zsh-syntax-highlighting    Theme:
+  powerlevel10k
+ How do I add username and/or hostname to prompt?        # 用户管理 # 1. 删除用户及目录 sudo userdel -r lighthouse # 2. 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated.</description>
     </item>
     
   </channel>
