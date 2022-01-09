@@ -769,7 +769,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 <li>和宿主主机互不影响</li>
 </ul>
 <h2 id="初步使用">初步使用</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run busybox <span style="color:#658b00">echo</span> hello world
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run busybox <span style="color:#658b00">echo</span> hello world
 hello world
 
 $ docker run -ti ubuntu
@@ -788,7 +788,7 @@ root@3cc1d9fcadda:/# dpkg -l | wc -l
 lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l
 <span style="color:#b452cd">1877</span>
 </code></pre></div><h2 id="运行一个容器">运行一个容器</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run jpetazzo/clock
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run jpetazzo/clock
 
 $ sleep <span style="color:#b452cd">10</span> &amp;
 [1] <span style="color:#b452cd">18495</span>
@@ -821,7 +821,7 @@ $ docker stop <span style="color:#b452cd">49</span>
 <span style="color:#228b22"># 强制关闭</span>
 $ docker <span style="color:#658b00">kill</span> <span style="color:#b452cd">82</span> <span style="color:#b452cd">48</span>
 </code></pre></div><h2 id="后台运行的容器">后台运行的容器</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -ti ubuntu
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -ti ubuntu
 root@3cc1d9fcadda:/# top
 <span style="color:#228b22"># 退出容器</span>
 ^p^q
@@ -842,13 +842,13 @@ $ docker start &lt;containerID&gt;
 使用了copy-on-write技术加快启动时间
 多个容器共享一个底层的镜像层，只需要根据需求修改上层的读写层即可
 如果确认修改了可以在此基础上再创建一个image</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker commit
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker commit
 $ docker build
 $ docker search marathon
 <span style="color:#228b22"># version tag</span>
 $ docker pull debian:jessie
 </code></pre></div><h2 id="实际操作">实际操作</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># 查看新装了什么内容</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># 查看新装了什么内容</span>
 $ docker diff &lt;containerID&gt; 
 <span style="color:#228b22"># 使用修改后的容器新建一个镜像</span>
 $ docker commit &lt;containerID&gt; 
@@ -861,10 +861,10 @@ $ docker run myfiglet figlet hello
 $ docker commit ab580f989 newfiglet 
 $ docker run -ti newfiglet
 </code></pre></div><h2 id="写dockerfile">写Dockerfile</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#cd5555"> ubuntu</span><span style="color:#a61717;background-color:#e3d2d2">
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#cd5555"> ubuntu</span><span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">RUN</span> apt-get update<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">RUN</span> apt-get install figlet<span style="color:#a61717;background-color:#e3d2d2">
-</span></code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build -t figlet .
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build -t figlet .
 
 <span style="color:#228b22"># 不使用缓存</span>
 $ docker build --no-cache ...
@@ -873,12 +873,12 @@ $ docker build --no-cache ...
 $ docker <span style="color:#658b00">history</span> figlet
 </code></pre></div><p>使用<code>CMD</code>和<code>ENTRYPOINT</code>
 注意要使用json syntax</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#cd5555"> ubuntu</span><span style="color:#a61717;background-color:#e3d2d2">
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#cd5555"> ubuntu</span><span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">RUN</span> apt-get update<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">RUN</span> [<span style="color:#cd5555">&#34;apt-get&#34;</span>, <span style="color:#cd5555">&#34;install&#34;</span>, <span style="color:#cd5555">&#34;figlet&#34;</span>]<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">ENTRYPOINT</span> [<span style="color:#cd5555">&#34;figlet&#34;</span>, <span style="color:#cd5555">&#34;-f&#34;</span>, <span style="color:#cd5555">&#34;script&#34;</span>]<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">CMD</span> [<span style="color:#cd5555">&#34;hello world&#34;</span>]<span style="color:#a61717;background-color:#e3d2d2">
-</span></code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build -t myfiglet .
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build -t myfiglet .
 $ docker run myfiglet
 <span style="color:#228b22"># 重写了cmd保留了entrypoint</span>
 $ docker run myfiglet hola mundo

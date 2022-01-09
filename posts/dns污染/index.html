@@ -502,13 +502,13 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 <p>Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器</p>
 <h2 id="方法一在第一步解析时解决问题">方法一：在第一步解析时解决问题</h2>
 <p>获取真实的ip地址后加到hosts文件中就可以避免dns污染了</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /etc/hosts
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /etc/hosts
 </code></pre></div><p>直接修改的话比较麻烦，下面这个软件<a href="https://swh.app/zh/">SwitchHosts</a>方便很多</p>
 <p><img src="/posts/dns%E6%B1%A1%E6%9F%93/image-20210920001132494.png" alt="image-20210920001132494"></p>
 <h2 id="方法二在第四步解析时解决问题">方法二：在第四步解析时解决问题</h2>
 <p>直接修改本机网络用到的DNS服务器，</p>
 <p>在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题</p>
-<pre><code>223.5.5.5
+<pre tabindex="0"><code>223.5.5.5
 223.6.6.6
 119.29.29.29
 119.28.28.28

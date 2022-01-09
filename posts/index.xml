@@ -6,7 +6,49 @@
     <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 12:25:54 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu配置</title>
+      <link>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 26 Dec 2021 12:25:54 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</guid>
+      <description>用户管理 # 删除用户及目录 sudo userdel -r lighthouse # 添加新用户 sudo useradd -d /home/lucas -m lucas </description>
+    </item>
+    
+    <item>
+      <title>Tinykv第三方指导书</title>
+      <link>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</link>
+      <pubDate>Sun, 12 Dec 2021 17:41:03 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</guid>
+      <description>Project2A 实现Raft算法 数据结构 // Prs map[uint64]*Progress // leader用来维护所有follower的日志进度信息 type Progress struct { // 当前follower和leader最后一个一致的日志的index 	Match uint64 // 当前follower希望leader下一次同步日志时，第一条日志的index  Next uint64 } 消息处理 MsgPropose 作用：提议在领导者节点添加新的日志
+类型：本地消息
+处理者：领导人
+Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storage Storage) *Raft { return newRaft(newTestConfig(id, peers, election, heartbeat, storage)) } </description>
+    </item>
+    
+    <item>
+      <title>寻找一种易于理解的raft算法的解读</title>
+      <link>https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/</link>
+      <pubDate>Thu, 02 Dec 2021 01:49:21 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/</guid>
+      <description>尽管脱胎于paxos的raft算法的主要目的是容易开发者理解和实现，我作为一个分布式小白初读raft论文后还是一头雾水。主要原因我认为一是前置知识欠缺，二是论文中的一些结论的应用场景和由来没有指明，三是论文组织层层交错有一定难度。所以在我还没有被这部分知识诅咒之前，尝试把自己的理解表达出来，希望可以减少消磨一些同学们的意志力帮助理解。如有错误,还请大佬们不吝指正。
+拆解拆解</description>
+    </item>
+    
+    <item>
+      <title>Raft算法解读与实现</title>
+      <link>https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Tue, 23 Nov 2021 23:44:34 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/</guid>
+      <description>脑裂
+随机超时时间
+最高端的系统设计往往只拥有最朴素的实现目标</description>
+    </item>
+    
     <item>
       <title>如何从豆瓣FM转移到网易云音乐？</title>
       <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
@@ -26,10 +68,10 @@
     
     <item>
       <title>HRM 人力资源机器</title>
-      <link>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
+      <link>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
       <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
       
-      <guid>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
+      <guid>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
       <description>体积！速度！ 第 1 年 -- HUMAN RESOURCE MACHINE PROGRAM -- INBOX OUTBOX INBOX OUTBOX INBOX OUTBOX 第 2 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX JUMP a -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX OUTBOX INBOX OUTBOX JUMP a 第 3 年 -- HUMAN RESOURCE MACHINE PROGRAM -- COPYFROM 4 OUTBOX COPYFROM 0 OUTBOX COPYFROM 3 OUTBOX 第 4 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX OUTBOX COPYFROM 0 OUTBOX JUMP a 第 5 年 // 咖啡时间 第 6 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX ADD 0 OUTBOX JUMP a 第 7 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX JUMPZ b OUTBOX JUMP a 第 8 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 ADD 0 OUTBOX JUMP a 第 9 年 -- HUMAN RESOURCE MACHINE PROGRAM -- JUMP c a: OUTBOX b: c: INBOX JUMPZ a JUMP b 第 10 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 11 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 OUTBOX COPYFROM 0 SUB 1 OUTBOX JUMP a 第 12 年 -- HUMAN RESOURCE MACHINE PROGRAM -- a: INBOX COPYTO 0 ADD 0 COPYTO 1 ADD 1 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 COPYTO 0 ADD 0 OUTBOX JUMP a 第 13 年 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX SUB 0 JUMPZ c JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 14 年 // 代码行数需要优化 // 运算步数需要优化 -- HUMAN RESOURCE MACHINE PROGRAM -- a: b: INBOX COPYTO 0 INBOX COPYTO 1 SUB 0 JUMPN c COPYFROM 1 OUTBOX JUMP b c: COPYFROM 0 OUTBOX JUMP a 第 15 年 // 斗志注入 第 16 年 第 17 年 第 18 年 第 19 年 第 20 年 第 21 年 第 22 年 第 23 年 第 24 年 第 25 年 第 26 年 第 27 年 第 28 年 第 29 年 第 30 年 第 31 年 第 32 年 第 33 年 第 34 年 第 35 年 第 36 年 第 37 年 第 38 年 第 39 年 第 40 年 第 41 年 第 42 年 </description>
     </item>
     
@@ -133,7 +175,10 @@ $ cat /etc/hosts 直接修改的话比较麻烦，下面这个软件SwitchHosts�
       <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
       
       <guid>https://luxcgo.github.io/posts/terminal/</guid>
-      <description>zsh  framework: ohmyzsh  Plugin:  docker docker-compose z zsh-completions zsh-syntax-highlighting   Theme:  powerlevel10k  How do I add username and/or hostname to prompt?        </description>
+      <description>zsh  framework: ohmyzsh   Plugin:
+ docker docker-compose z zsh-completions zsh-syntax-highlighting    Theme:
+  powerlevel10k
+ How do I add username and/or hostname to prompt?        # 删除用户及目录 sudo userdel -r lighthouse # 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated.</description>
     </item>
     
     <item>

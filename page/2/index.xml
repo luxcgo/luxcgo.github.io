@@ -5,9 +5,446 @@
     <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2021 12:25:54 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Vscode奇技淫巧</title>
+        <link>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
+        <pubDate>Sat, 30 Oct 2021 23:46:10 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ -&lt;h2 id=&#34;使用vscode正则表达式批量替换&#34;&gt;使用VsCode正则表达式批量替换&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;正则查找：myfunction&lt;span style=&#34;color:#cd5555&#34;&gt;\(&lt;/span&gt;(.*),(.*)&lt;span style=&#34;color:#cd5555&#34;&gt;\)&lt;/span&gt;
+替换：myfunction(&lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt;,&lt;span style=&#34;color:#00688b&#34;&gt;$2&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;查找：&amp;quot;static/(.*).css
+替换：&amp;quot;static/css/$1.css
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;// 替换前
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/cui.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/style.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/less.css&amp;#34;&lt;/span&gt;&amp;gt;
+
+// 替换后
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/css/cui.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/css/style.css&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;rel&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;static/css/less.css&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404
+文本 images/mybg.jpg?abc=1 0.001 404 561 0.0
+匹配结果：.jpg?abc=1 0.001 404
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式
+(https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式
+
+\(problems/(.*)-(.*)\)
+(problems/$1)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;命令行输入code自动打开vscode&#34;&gt;命令行输入code自动打开vscode&lt;/h2&gt;
+- https://luxcgo.github.io/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>英语单词</title>
+        <link>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</link>
+        <pubDate>Sun, 24 Oct 2021 14:34:37 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ -&lt;h2 id=&#34;new-words&#34;&gt;New words&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;英语&lt;/th&gt;
+&lt;th&gt;释义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;disparate&lt;/td&gt;
+&lt;td&gt;根本不同的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tout&lt;/td&gt;
+&lt;td&gt;吹嘘，兜售&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dread&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;impede&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paginate&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+- https://luxcgo.github.io/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go与爬虫</title>
+        <link>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</link>
+        <pubDate>Sun, 24 Oct 2021 14:28:41 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/ -- https://luxcgo.github.io/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>git使用笔记</title>
+        <link>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Fri, 01 Oct 2021 19:29:19 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ -&lt;h2 id=&#34;configuring-git&#34;&gt;Configuring Git&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Settings&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name&lt;/li&gt;
+&lt;li&gt;Email&lt;/li&gt;
+&lt;li&gt;Default Editor&lt;/li&gt;
+&lt;li&gt;Line Ending&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Levels&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System: All users&lt;/li&gt;
+&lt;li&gt;Global: All repositories of the current user&lt;/li&gt;
+&lt;li&gt;Local: The current repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ git config --global user.name &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hackcraker&amp;#34;&lt;/span&gt;
+$ git config --global user.email mgyuchen@163.com
+$ git config --global core.editor vim
+&lt;span style=&#34;color:#228b22&#34;&gt;# 用于多平台协作&lt;/span&gt;
+$ git config --global core.autocrlf input
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-snapshots&#34;&gt;Creating Snapshots&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Initializing a repository&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Staging files&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stages a single file:
+&lt;code&gt;git add file1.js &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Stages multiple files :
+&lt;code&gt;git add file1.js file2.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Stages with a pattern :
+&lt;code&gt;git add *.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Stages the current directory and all its content:
+&lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Viewing the status&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Full status:
+&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Short status:
+&lt;code&gt;git status -s&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Committing the staged files&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Commits with a one-line message:
+&lt;code&gt;git commit -m &amp;quot;Message&amp;quot; &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Opens the default editor to type a long message:
+&lt;code&gt;git commit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Skipping the staging area&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只对modified的文件有效，对untracked的文件还是需要&lt;code&gt;git add&lt;/code&gt;
+只要加入staging area的文件，git才会去track
+&lt;code&gt;git commit -am &amp;quot;Message&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Removing files&lt;/strong&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Removes from working directory and staging area :
+&lt;code&gt;git rm file1.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Removes from staging area only:
+&lt;code&gt;git rm --cached file1.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Renaming or moving files&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;移动文件或者重命名文件时只需要一条命令就搞定
+&lt;code&gt;git mv file1.js file1.txt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ignoring files&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在repo的根目录创建一个&lt;code&gt;.gitignore&lt;/code&gt;的文件，在里面标注不想被git追踪的文件
+这样在改动相关文件时git并不会显示有内容改动&lt;/p&gt;
+&lt;p&gt;但这个只对git从未跟踪的文件上生效，否则还是会显示有内容改动
+可以通过&lt;code&gt;git ls-files&lt;/code&gt;查看跟踪的文件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show information about files in the index and the working tree&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了解决这个问题，只需将相关文件从staging area删除，而不需从disk上真正的删除&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git rm --cached file1.js&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Short status&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;更简洁的查看文件状态
+&lt;code&gt;git status -s&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20211003234649105.png&#34; alt=&#34;image-20211003234649105&#34;&gt;&lt;/p&gt;
+&lt;p&gt;左边是staging area 右边是working directory&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;右M：本地有修改&lt;/li&gt;
+&lt;li&gt;左M：本地有修改并提交到了暂存区&lt;/li&gt;
+&lt;li&gt;??：新加的文件&lt;/li&gt;
+&lt;li&gt;左A：新加的文件并提交到了暂存区&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Viewing the staged/unstaged changes&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shows unstaged changes 
+&lt;code&gt;git diff&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Shows staged changes
+&lt;code&gt;git diff --staged&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Same as the above
+&lt;code&gt;git diff --cached&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20211004004722916.png&#34; alt=&#34;image-20211004004722916&#34;&gt;&lt;/p&gt;
+&lt;p&gt;含义：&lt;em&gt;@@ -start line, count +start line, count @@&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;branching--merging&#34;&gt;Branching &amp;amp; Merging&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Managing branches&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creates a new branch called bugfix
+&lt;code&gt;git branch bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Switches to the bugfix branch
+&lt;code&gt;git checkout bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Same as the above
+&lt;code&gt;git switch bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Creates and switches
+&lt;code&gt;git switch -C bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Rename branch
+&lt;code&gt;git branch -m bugfix bugfix/signup&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Deletes the bugfix branch
+&lt;code&gt;git branch -d bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Comparing branches&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Lists the commits in the bugfix branch not in master
+&lt;code&gt;git log master..bugfix&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shows the summary of changes
+&lt;code&gt;git diff master..bugfix&lt;/code&gt;
+如果当前已经在master分支，可省略&lt;code&gt;master..&lt;/code&gt;
+&lt;code&gt;git diff bugfix&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;增加一些可选项
+&lt;code&gt;git diff --name-only bugfix&lt;/code&gt;
+&lt;code&gt;git diff --name-status bugfix&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Stashing&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Creates a new stash
+&lt;code&gt;git stash push -m &amp;quot;New stash&amp;quot;&lt;/code&gt;
+默认不会stash untracked的file，需要加参数&lt;code&gt;-a&lt;/code&gt;
+&lt;code&gt;git stash push -am &amp;quot;New stash&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lists all the stashes
+&lt;code&gt;git stash list&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shows the given stash
+&lt;code&gt;git stash show stash@{1}&lt;/code&gt;
+shortcut for stash@{1}
+&lt;code&gt;git stash show 1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Applies the given stash to the working dir
+&lt;code&gt;git stash apply 1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deletes the given stash
+&lt;code&gt;git stash drop 1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deletes all the stashes
+&lt;code&gt;git stash&lt;/code&gt; clear&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;collaboration&#34;&gt;Collaboration&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Workflow&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;centralized：每个人都有push权限&lt;/li&gt;
+&lt;li&gt;integration-manager：
+&lt;ul&gt;
+&lt;li&gt;maintainer拥有push权限：pull fork repo → merge → push&lt;/li&gt;
+&lt;li&gt;contributor：fork → clone → commit &amp;amp; push to fork repo → pull request&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cloning a repository&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;clone and rename: git clone url newName&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/hackcraker/Mars.git MarsProject&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在git log中查看到的信息 &lt;code&gt;(HEAD -&amp;gt; main, origin/main, origin/HEAD)&lt;/code&gt;
+origin指的是什么呢&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;origin&lt;/code&gt; is an &lt;strong&gt;alias&lt;/strong&gt; &lt;em&gt;on your system&lt;/em&gt; for a particular remote repository. It&amp;rsquo;s not actually a property of that repository.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;远端仓库在本地的名字是origin
+orgin/master: a remote tracking branch&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;check remote repositories
+&lt;code&gt;git remote&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git remote -v&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Syncing with remotes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fetches master from origin
+&lt;code&gt;git fetch origin master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fetches all objects from origin
+&lt;code&gt;git fetch origin&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shortcut for &amp;ldquo;git fetch origin&amp;rdquo;
+将远程内容拉取到本地，但HEAD并没有改变
+&lt;code&gt;git fetch&lt;/code&gt;
+&lt;code&gt;git branch -vv&lt;/code&gt;
+同步HEAD指针
+&lt;code&gt;git merge origin/main&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fetch + merge&lt;/p&gt;
+&lt;p&gt;有可能会导致commit记录非线性
+&lt;code&gt;git pull&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;已经出现了非线性的解决方法:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;回滚到上次提交&lt;code&gt;git reset --hard HEAD~1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;``git pull &amp;ndash;rebase`&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fetch + rebase
+不产生新的节点，提交树一直向前
+&lt;code&gt;git pull --rebase&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pushes master to origin
+&lt;code&gt;git push origin master&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shortcut for &amp;ldquo;git push origin master&amp;rdquo;
+&lt;code&gt;git push&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Sharing tags&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pushes tag v1.0 to origin
+&lt;code&gt;git push origin v1.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Delete tag v1.0 from origin
+&lt;code&gt;git push origin --delete v1.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;本地删除tag v1.0
+&lt;code&gt;git tag -d v1.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Sharing branches&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shows remote tracking branches
+&lt;code&gt;git branch -r&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Shows local &amp;amp; remote tracking branches
+&lt;code&gt;git branch -vv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Pushes bugfix to origin
+&lt;code&gt;git push -u origin bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Removes bugfix from origin
+&lt;code&gt;git push -d origin bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Removes bugfix from local
+&lt;code&gt;git branch -d bugfix&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh&#34;&gt;配置公私钥&lt;/a&gt;
+配好后本地通过ssh协议传输就不需要输入账号密码了
+如果已经有repo的remote配置为HTTPS协议，需要更改相关地址如下：
+&lt;code&gt;git remote set-url origin git@github.com:USERNAME/REPOSITORY.git&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/alopresto/b8d940197b4c314e27188a6852198d2d&#34;&gt;配置gpg key&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置ssh代理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Host github.com
+HostName github.com
+User git
+&lt;span style=&#34;color:#228b22&#34;&gt;# 走 HTTP 代理&lt;/span&gt;
+ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=&lt;span style=&#34;color:#b452cd&#34;&gt;7890&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 走 socks5 代理（如 Shadowsocks ）&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# ProxyCommand nc -v -x 127.0.0.1:7890 %h %p&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/develar/273e2eb938792cf5f86451fbac2bcd51&#34;&gt;Commit Message Format&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://ralphjsmit.com/unfork-github-repo/&#34;&gt;Unfork a repository&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure Git to use a proxy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;git config --global http.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;http://127.0.0.1:7890&amp;#39;&lt;/span&gt;
+git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;http://127.0.0.1:7890&amp;#39;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;22&lt;/p&gt;
+- https://luxcgo.github.io/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ - </description>
+        </item>
     
     
     
@@ -24,13 +461,13 @@
 &lt;p&gt;Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器&lt;/p&gt;
 &lt;h2 id=&#34;方法一在第一步解析时解决问题&#34;&gt;方法一：在第一步解析时解决问题&lt;/h2&gt;
 &lt;p&gt;获取真实的ip地址后加到hosts文件中就可以避免dns污染了&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat /etc/hosts
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat /etc/hosts
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接修改的话比较麻烦，下面这个软件&lt;a href=&#34;https://swh.app/zh/&#34;&gt;SwitchHosts&lt;/a&gt;方便很多&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/image-20210920001132494.png&#34; alt=&#34;image-20210920001132494&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;方法二在第四步解析时解决问题&#34;&gt;方法二：在第四步解析时解决问题&lt;/h2&gt;
 &lt;p&gt;直接修改本机网络用到的DNS服务器，&lt;/p&gt;
 &lt;p&gt;在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;223.5.5.5
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;223.5.5.5
 223.6.6.6
 119.29.29.29
 119.28.28.28
@@ -49,7 +486,8 @@
 &lt;ul&gt;
 &lt;li&gt;framework: &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;ohmyzsh&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;Plugin:
+&lt;li&gt;
+&lt;p&gt;Plugin:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;docker&lt;/li&gt;
 &lt;li&gt;docker-compose&lt;/li&gt;
@@ -58,9 +496,11 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/zsh-users/zsh-syntax-highlighting&#34;&gt;zsh-syntax-highlighting&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Theme:
+&lt;li&gt;
+&lt;p&gt;Theme:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k&#34;&gt;powerlevel10k&lt;/a&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k&#34;&gt;powerlevel10k&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How do I add username and/or hostname to prompt?&lt;/li&gt;
 &lt;/ul&gt;
@@ -70,7 +510,28 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-- https://luxcgo.github.io/posts/terminal/ - </description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 删除用户及目录&lt;/span&gt;
+sudo userdel -r lighthouse
+&lt;span style=&#34;color:#228b22&#34;&gt;# 添加新用户&lt;/span&gt;
+sudo useradd -d /home/lucas -m lucas
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# zsh&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# oh my zsh&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# p10k&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# Run Docker commands without sudo&lt;/span&gt;
+sudo gpasswd -a &lt;span style=&#34;color:#00688b&#34;&gt;$USER&lt;/span&gt; docker
+&lt;span style=&#34;color:#228b22&#34;&gt;# IMPORTANT: Log out and log back in so that your group membership is re-evaluated.&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 安装clash docker版&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon#docker&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 网络mode使用 host, 同时无需绑定端口&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 安装golang&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# https://github.com/golang/go/wiki/Ubuntu&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/terminal/ - </description>
         </item>
     
     
@@ -82,7 +543,7 @@
         
         <guid>https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
         <description>源泉的小站 https://luxcgo.github.io/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ -&lt;h2 id=&#34;初识docker&#34;&gt;初识docker&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看版本并顺便检查docker server正常启动，cli可以连接到engine&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看版本并顺便检查docker server正常启动，cli可以连接到engine&lt;/span&gt;
 $ docker version
 
 &lt;span style=&#34;color:#228b22&#34;&gt;# 查看engine的一些配置项&lt;/span&gt;
@@ -104,7 +565,7 @@ $ docker run
 &lt;li&gt;Opened port 80 on the host IP&lt;/li&gt;
 &lt;li&gt;Routes that traffic to the container IP, port 80&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# --publish(or -p) 是一种映射host port到container port的方法&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# --publish(or -p) 是一种映射host port到container port的方法&lt;/span&gt;
 $ docker container run --publish 80:80 nginx
 
 &lt;span style=&#34;color:#228b22&#34;&gt;# 在后台运行&lt;/span&gt;
@@ -172,7 +633,7 @@ $ docker container ls -a
 &lt;p&gt;如上所示，我们修改了host监听的端口为8080，修改了镜像版本为1.11，修改了开启容器时的CMD命令&lt;/p&gt;
 &lt;h2 id=&#34;container是个什么东西&#34;&gt;&lt;code&gt;container&lt;/code&gt;是个什么东西&lt;/h2&gt;
 &lt;p&gt;本质上一个运行着的容器只是资源受限的进程，当进程结束了container也就退出了，如下是在linux环境下的实验结果：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# ubuntu20.04&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# ubuntu20.04&lt;/span&gt;
 lucas@ubuntu:~$ docker run --name mongo -d mongo
 4137bf48c62bb2230f717c5d2077419b1dc93ce05cd3db414f81c0aa4262bdac
 lucas@ubuntu:~$ docker ps
@@ -186,7 +647,7 @@ mongo
 lucas@ubuntu:~$ ps aux | grep mongo
 lucas    &lt;span style=&#34;color:#b452cd&#34;&gt;3801302&lt;/span&gt;  0.0  0.0   &lt;span style=&#34;color:#b452cd&#34;&gt;6300&lt;/span&gt;   &lt;span style=&#34;color:#b452cd&#34;&gt;676&lt;/span&gt; pts/0    S+   15:32   0:00 grep --color=auto mongo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在&lt;code&gt;mac&lt;/code&gt;环境上略有不同，&lt;code&gt;docker engine&lt;/code&gt;实际上是运行在基于&lt;a href=&#34;https://github.com/machyve/xhyve&#34;&gt;xhyve&lt;/a&gt; &lt;code&gt;VM&lt;/code&gt;上的一个&lt;code&gt;Alpine Linux&lt;/code&gt;，我们进入到这个&lt;code&gt;docker VM&lt;/code&gt;中才能看到具体运行着的进程&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# macOS Big Sur on M1 chip &lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# macOS Big Sur on M1 chip &lt;/span&gt;
 $ docker run --name mongo -d mongo 
 4ce052bde09ce12cef9856e270347c549b988483fdc86051ee7a6cf409b6d15b
 $ docker run --name mongo -d mongo 
@@ -200,7 +661,7 @@ $ docker run -it --rm --privileged --pid=host justincormack/nsenter1
 / &lt;span style=&#34;color:#228b22&#34;&gt;#  ps aux | grep mongo&lt;/span&gt;
  &lt;span style=&#34;color:#b452cd&#34;&gt;2839&lt;/span&gt; root      0:00 grep mongo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lab-管理多个container&#34;&gt;Lab: 管理多个container&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# mysql官方镜像暂不支持arm64，只支持x86_64，所以换用mysql/mysql-server镜像&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# mysql官方镜像暂不支持arm64，只支持x86_64，所以换用mysql/mysql-server镜像&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;# uname -a 查看架构&lt;/span&gt;
 $ docker container run -d -p 3306:3306 --name db -e &lt;span style=&#34;color:#00688b&#34;&gt;MYSQL_RANDOM_ROOT_PASSWORD&lt;/span&gt;=yes mysql/mysql-server
 &lt;span style=&#34;color:#228b22&#34;&gt;# 查看mysql生成的密码&lt;/span&gt;
@@ -215,7 +676,7 @@ $ docker container stop webserver proxy db
 $ docker container rm webserver proxy db
 $ docker ps -a
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看container状态的几个命令&#34;&gt;查看&lt;code&gt;container&lt;/code&gt;状态的几个命令&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# process list in one container&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# process list in one container&lt;/span&gt;
 $ docker container top
 
 &lt;span style=&#34;color:#228b22&#34;&gt;# details of one container config&lt;/span&gt;
@@ -224,7 +685,7 @@ $ docker container inspect
 &lt;span style=&#34;color:#228b22&#34;&gt;# performance stats for all containers&lt;/span&gt;
 $ docker container stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;进入一个container&#34;&gt;进入一个&lt;code&gt;container&lt;/code&gt;&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# -i keep session open to receive terminal input&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# -i keep session open to receive terminal input&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;# -t simulates a real terminal, like what ssh dose&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;# 修改开启容器时的CMD命令为bash，结合-it的OPTIONS，直接进入到对应镜像的bash环境中&lt;/span&gt;
 $ docker container run -it --name nginx nginx bash
@@ -239,7 +700,7 @@ $ docker start -ai nginx
 $ docker container run -d -p 3306:3306 --name db -e &lt;span style=&#34;color:#00688b&#34;&gt;MYSQL_RANDOM_ROOT_PASSWORD&lt;/span&gt;=yes mysql/mysql-server
 $ docker &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; -it mysql bash
 &lt;span style=&#34;color:#228b22&#34;&gt;# 但此时我们退出bash的时候容器并不会停止，因为&amp;#34;exec&amp;#34;基于已有的容器运行在另外一个进程中，并不会影响mysql daemon所在的主进程&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;-t simulates a real terminal,like what ssh dose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-t simulates a real terminal,like what ssh dose
 -i keep session open to receive terminal input
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
@@ -248,7 +709,7 @@ $ docker &lt;span style=&#34;color:#658b00&#34;&gt;exec&lt;/span&gt; -it mysql b
 &lt;li&gt;&lt;a href=&#34;https://github.com/mikegcoleman/docker101/blob/master/Docker_eBook_Jan_2017.pdf&#34;&gt;Docker for the Virtualization Admin&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## Container VS. VM: It&amp;#39;s Just a Process&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## Container VS. VM: It&amp;#39;s Just a Process&lt;/span&gt;
 
 $ docker run --name mongo -d mongo
 
@@ -470,7 +931,7 @@ $ docker container rm -f TAB COMPLETION
 &lt;/ol&gt;
 &lt;h2 id=&#34;test包基本使用&#34;&gt;test包基本使用&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/testing/#pkg-overview&#34;&gt;https://golang.org/pkg/testing/#pkg-overview&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math.go
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math.go
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; math
 
@@ -482,7 +943,7 @@ $ docker container rm -f TAB COMPLETION
 	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; sum
 }
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math_test.go
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// math/math_test.go
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; math
 
@@ -500,7 +961,7 @@ $ docker container rm -f TAB COMPLETION
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下
 满足上述要求，运行go test命令就可以看到测试函数的运行结果。&lt;/p&gt;
 &lt;h2 id=&#34;test包实现原理&#34;&gt;test包实现原理&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; sleep
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; sleep
 
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
 	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
@@ -522,7 +983,7 @@ $ docker container rm -f TAB COMPLETION
 &lt;li&gt;函数名格式类似&lt;code&gt;TestXxx&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;变量名一般使用&lt;code&gt;arg&lt;/code&gt;、&lt;code&gt;want&lt;/code&gt;、&lt;code&gt;got&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数名例子
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数名例子
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 函数签名：Test接受者类型_方法名_参数类型
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;TestDog_Bark_muzzled&lt;/span&gt;(t *testing.T) {
 
@@ -540,7 +1001,7 @@ $ docker container rm -f TAB COMPLETION
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;语言点：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/fmt/&#34;&gt;https://golang.org/pkg/fmt/&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Integer:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Integer:
 %q	a single-quoted character literal safely escaped with Go syntax.
 String and slice of bytes (treated equivalently with these verbs):
 %q	a double-quoted string safely escaped with Go syntax
@@ -564,7 +1025,7 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;调用了哪个函数使用了什么参数，返回了什么样的错误，我们需要什么样的返回值&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;SomeFunc(%v) err = %v; want %v&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;, err, want)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;SomeFunc(%v) err = %v; want %v&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;, err, want)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;有时如果参数太多，我们也可以酌情选择打印出我们需要的参数&lt;/p&gt;
@@ -572,7 +1033,7 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;li&gt;
 &lt;p&gt;输出的内容尽可能简洁，易于理解，最重要的是通过错误信息可以方便的复现出整个出错的过程，更好的 debug 。
 正如下面的例子只需要&lt;code&gt;seed&lt;/code&gt;就可以复现出整个流程，但若只打印出整个数组就不易于理解。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; random
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; random
 
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
 	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;math/rand&amp;#34;&lt;/span&gt;
@@ -585,13 +1046,13 @@ String and slice of bytes (treated equivalently with these verbs):
 	r := rand.&lt;span style=&#34;color:#008b45&#34;&gt;New&lt;/span&gt;(rand.&lt;span style=&#34;color:#008b45&#34;&gt;NewSource&lt;/span&gt;(seed))
 	arg := &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;([]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;25&lt;/span&gt;)
 	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; i := &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span style=&#34;color:#b452cd&#34;&gt;25&lt;/span&gt;; i++ {
-        arg[i] = r.&lt;span style=&#34;color:#008b45&#34;&gt;Int&lt;/span&gt;()
+		arg[i] = r.&lt;span style=&#34;color:#008b45&#34;&gt;Int&lt;/span&gt;()
 	}
 	got := &lt;span style=&#34;color:#008b45&#34;&gt;Pick&lt;/span&gt;(arg)
 	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; _, v := &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;range&lt;/span&gt; arg {
-        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; got == v {
-            &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;
-        }
+		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; got == v {
+			&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;
+		}
 	}
 	t.&lt;span style=&#34;color:#008b45&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Pick(seed=%d) = %d; not in slice&amp;#34;&lt;/span&gt;, seed, got)
 }
@@ -608,7 +1069,7 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;函数名格式&lt;code&gt;func ExampleXX_XX_suffix() { ... }&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 包级别
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 包级别
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;Example&lt;/span&gt;() { ... }
 &lt;span style=&#34;color:#228b22&#34;&gt;// 方法级别
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ExampleF&lt;/span&gt;() { ... }
@@ -637,19 +1098,19 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用如下格式，在go test时会检测example函数的输出是否与Output下面的内容相符。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;     &lt;span style=&#34;color:#228b22&#34;&gt;// Output:
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;     &lt;span style=&#34;color:#228b22&#34;&gt;// Hello World
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt; 	&lt;span style=&#34;color:#228b22&#34;&gt;// Output:
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt; 	&lt;span style=&#34;color:#228b22&#34;&gt;// Hello World
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用如下格式，在go test时会检测example函数的输出是否与Unordered output下面的内容相符，但检测顺序是无序的。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Unordered output:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Unordered output:
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// BTC 比特币
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// ETH 以太坊
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// DOGE 狗狗币
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;example小案例&#34;&gt;Example小案例&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/greet.go
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/greet.go
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;// Show how to write testable examples.
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; greet
@@ -661,7 +1122,7 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; (d Dog) &lt;span style=&#34;color:#008b45&#34;&gt;Hello&lt;/span&gt;() &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt; {
 	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Sprint&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;woof woof!&amp;#34;&lt;/span&gt;)
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/greet_test.go
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/greet_test.go
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; greet_test
 
@@ -675,7 +1136,7 @@ String and slice of bytes (treated equivalently with these verbs):
 	&lt;span style=&#34;color:#228b22&#34;&gt;// Output:
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Dog type w/ demo label
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/example_greet_test.go
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// example/example_greet_test.go
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; greet_test
 
@@ -748,7 +1209,7 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;li&gt;和宿主主机互不影响&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run busybox &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; hello world
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run busybox &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; hello world
 hello world
 
 $ docker run -ti ubuntu
@@ -767,7 +1228,7 @@ root@3cc1d9fcadda:/# dpkg -l | wc -l
 lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l
 &lt;span style=&#34;color:#b452cd&#34;&gt;1877&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;运行一个容器&#34;&gt;运行一个容器&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run jpetazzo/clock
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run jpetazzo/clock
 
 $ sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt; &amp;amp;
 [1] &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt;
@@ -800,7 +1261,7 @@ $ docker stop &lt;span style=&#34;color:#b452cd&#34;&gt;49&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;# 强制关闭&lt;/span&gt;
 $ docker &lt;span style=&#34;color:#658b00&#34;&gt;kill&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;48&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;后台运行的容器&#34;&gt;后台运行的容器&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run -ti ubuntu
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run -ti ubuntu
 root@3cc1d9fcadda:/# top
 &lt;span style=&#34;color:#228b22&#34;&gt;# 退出容器&lt;/span&gt;
 ^p^q
@@ -821,13 +1282,13 @@ $ docker start &amp;lt;containerID&amp;gt;
 使用了copy-on-write技术加快启动时间
 多个容器共享一个底层的镜像层，只需要根据需求修改上层的读写层即可
 如果确认修改了可以在此基础上再创建一个image&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker commit
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker commit
 $ docker build
 $ docker search marathon
 &lt;span style=&#34;color:#228b22&#34;&gt;# version tag&lt;/span&gt;
 $ docker pull debian:jessie
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实际操作&#34;&gt;实际操作&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看新装了什么内容&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看新装了什么内容&lt;/span&gt;
 $ docker diff &amp;lt;containerID&amp;gt; 
 &lt;span style=&#34;color:#228b22&#34;&gt;# 使用修改后的容器新建一个镜像&lt;/span&gt;
 $ docker commit &amp;lt;containerID&amp;gt; 
@@ -840,10 +1301,10 @@ $ docker run myfiglet figlet hello
 $ docker commit ab580f989 newfiglet 
 $ docker run -ti newfiglet
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;写dockerfile&#34;&gt;写Dockerfile&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get install figlet&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t figlet .
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t figlet .
 
 &lt;span style=&#34;color:#228b22&#34;&gt;# 不使用缓存&lt;/span&gt;
 $ docker build --no-cache ...
@@ -852,12 +1313,12 @@ $ docker build --no-cache ...
 $ docker &lt;span style=&#34;color:#658b00&#34;&gt;history&lt;/span&gt; figlet
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;CMD&lt;/code&gt;和&lt;code&gt;ENTRYPOINT&lt;/code&gt;
 注意要使用json syntax&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apt-get&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;install&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;-f&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;script&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t myfiglet .
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t myfiglet .
 $ docker run myfiglet
 &lt;span style=&#34;color:#228b22&#34;&gt;# 重写了cmd保留了entrypoint&lt;/span&gt;
 $ docker run myfiglet hola mundo

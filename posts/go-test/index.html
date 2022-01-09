@@ -994,7 +994,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </ol>
 <h2 id="test包基本使用">test包基本使用</h2>
 <p><a href="https://golang.org/pkg/testing/#pkg-overview">https://golang.org/pkg/testing/#pkg-overview</a></p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// math/math.go
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// math/math.go
 </span><span style="color:#228b22"></span>
 <span style="color:#8b008b;font-weight:bold">package</span> math
 
@@ -1006,7 +1006,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 	<span style="color:#8b008b;font-weight:bold">return</span> sum
 }
 
-</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// math/math_test.go
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// math/math_test.go
 </span><span style="color:#228b22"></span>
 <span style="color:#8b008b;font-weight:bold">package</span> math
 
@@ -1024,7 +1024,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </code></pre></div><p>test文件的文件名和函数签名都有格式的要求，并要放在和被测试的函数同一个package下
 满足上述要求，运行go test命令就可以看到测试函数的运行结果。</p>
 <h2 id="test包实现原理">test包实现原理</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> sleep
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> sleep
 
 <span style="color:#8b008b;font-weight:bold">import</span> (
 	<span style="color:#cd5555">&#34;fmt&#34;</span>
@@ -1046,7 +1046,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 <li>函数名格式类似<code>TestXxx</code></li>
 <li>变量名一般使用<code>arg</code>、<code>want</code>、<code>got</code></li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 函数名例子
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 函数名例子
 </span><span style="color:#228b22">// 函数签名：Test接受者类型_方法名_参数类型
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">TestDog_Bark_muzzled</span>(t *testing.T) {
 
@@ -1064,7 +1064,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </code></pre></div><blockquote>
 <p>语言点：</p>
 <p><a href="https://golang.org/pkg/fmt/">https://golang.org/pkg/fmt/</a></p>
-<pre><code>Integer:
+<pre tabindex="0"><code>Integer:
 %q	a single-quoted character literal safely escaped with Go syntax.
 String and slice of bytes (treated equivalently with these verbs):
 %q	a double-quoted string safely escaped with Go syntax
@@ -1088,7 +1088,7 @@ String and slice of bytes (treated equivalently with these verbs):
 <ol>
 <li>
 <p>调用了哪个函数使用了什么参数，返回了什么样的错误，我们需要什么样的返回值</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;SomeFunc(%v) err = %v; want %v&#34;</span>, <span style="color:#8b008b;font-weight:bold">func</span>, err, want)
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;SomeFunc(%v) err = %v; want %v&#34;</span>, <span style="color:#8b008b;font-weight:bold">func</span>, err, want)
 </code></pre></div></li>
 <li>
 <p>有时如果参数太多，我们也可以酌情选择打印出我们需要的参数</p>
@@ -1096,7 +1096,7 @@ String and slice of bytes (treated equivalently with these verbs):
 <li>
 <p>输出的内容尽可能简洁，易于理解，最重要的是通过错误信息可以方便的复现出整个出错的过程，更好的 debug 。
 正如下面的例子只需要<code>seed</code>就可以复现出整个流程，但若只打印出整个数组就不易于理解。</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> random
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> random
 
 <span style="color:#8b008b;font-weight:bold">import</span> (
 	<span style="color:#cd5555">&#34;math/rand&#34;</span>
@@ -1109,13 +1109,13 @@ String and slice of bytes (treated equivalently with these verbs):
 	r := rand.<span style="color:#008b45">New</span>(rand.<span style="color:#008b45">NewSource</span>(seed))
 	arg := <span style="color:#658b00">make</span>([]<span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#b452cd">25</span>)
 	<span style="color:#8b008b;font-weight:bold">for</span> i := <span style="color:#b452cd">0</span>; i &lt; <span style="color:#b452cd">25</span>; i++ {
-        arg[i] = r.<span style="color:#008b45">Int</span>()
+		arg[i] = r.<span style="color:#008b45">Int</span>()
 	}
 	got := <span style="color:#008b45">Pick</span>(arg)
 	<span style="color:#8b008b;font-weight:bold">for</span> _, v := <span style="color:#8b008b;font-weight:bold">range</span> arg {
-        <span style="color:#8b008b;font-weight:bold">if</span> got == v {
-            <span style="color:#8b008b;font-weight:bold">return</span>
-        }
+		<span style="color:#8b008b;font-weight:bold">if</span> got == v {
+			<span style="color:#8b008b;font-weight:bold">return</span>
+		}
 	}
 	t.<span style="color:#008b45">Errorf</span>(<span style="color:#cd5555">&#34;Pick(seed=%d) = %d; not in slice&#34;</span>, seed, got)
 }
@@ -1132,7 +1132,7 @@ String and slice of bytes (treated equivalently with these verbs):
 </li>
 <li>
 <p>函数名格式<code>func ExampleXX_XX_suffix() { ... }</code></p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 包级别
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 包级别
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Example</span>() { ... }
 <span style="color:#228b22">// 方法级别
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ExampleF</span>() { ... }
@@ -1161,19 +1161,19 @@ String and slice of bytes (treated equivalently with these verbs):
 </li>
 <li>
 <p>使用如下格式，在go test时会检测example函数的输出是否与Output下面的内容相符。</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#228b22">// Output:
-</span><span style="color:#228b22"></span>     <span style="color:#228b22">// Hello World
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> 	<span style="color:#228b22">// Output:
+</span><span style="color:#228b22"></span> 	<span style="color:#228b22">// Hello World
 </span></code></pre></div></li>
 <li>
 <p>使用如下格式，在go test时会检测example函数的输出是否与Unordered output下面的内容相符，但检测顺序是无序的。</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#228b22">// Unordered output:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#228b22">// Unordered output:
 </span><span style="color:#228b22"></span>	<span style="color:#228b22">// BTC 比特币
 </span><span style="color:#228b22"></span>	<span style="color:#228b22">// ETH 以太坊
 </span><span style="color:#228b22"></span>	<span style="color:#228b22">// DOGE 狗狗币
 </span></code></pre></div></li>
 </ul>
 <h3 id="example小案例">Example小案例</h3>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/greet.go
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/greet.go
 </span><span style="color:#228b22"></span>
 <span style="color:#228b22">// Show how to write testable examples.
 </span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">package</span> greet
@@ -1185,7 +1185,7 @@ String and slice of bytes (treated equivalently with these verbs):
 <span style="color:#8b008b;font-weight:bold">func</span> (d Dog) <span style="color:#008b45">Hello</span>() <span style="color:#00688b;font-weight:bold">string</span> {
 	<span style="color:#8b008b;font-weight:bold">return</span> fmt.<span style="color:#008b45">Sprint</span>(<span style="color:#cd5555">&#34;woof woof!&#34;</span>)
 }
-</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/greet_test.go
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/greet_test.go
 </span><span style="color:#228b22"></span>
 <span style="color:#8b008b;font-weight:bold">package</span> greet_test
 
@@ -1199,7 +1199,7 @@ String and slice of bytes (treated equivalently with these verbs):
 	<span style="color:#228b22">// Output:
 </span><span style="color:#228b22"></span>	<span style="color:#228b22">// Dog type w/ demo label
 </span><span style="color:#228b22"></span>}
-</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/example_greet_test.go
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// example/example_greet_test.go
 </span><span style="color:#228b22"></span>
 <span style="color:#8b008b;font-weight:bold">package</span> greet_test
 

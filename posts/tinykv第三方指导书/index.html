@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Posts</title>
+<title>Tinykv第三方指导书</title>
 
 
 
@@ -16,10 +16,15 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="My HomePage Description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://luxcgo.github.io/posts/" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:title" content="Tinykv第三方指导书" />
+<meta property="og:description" content="Project2A 实现Raft算法 数据结构 // Prs map[uint64]*Progress // leader用来维护所有follower的日志进度信息 type Progress struct { // 当前follower和leader最后一个一致的日志的index 	Match uint64 // 当前follower希望leader下一次同步日志时，第一条日志的index  Next uint64 } 消息处理 MsgPropose 作用：提议在领导者节点添加新的日志
+类型：本地消息
+处理者：领导人
+Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storage Storage) *Raft { return newRaft(newTestConfig(id, peers, election, heartbeat, storage)) } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-12T17:41:03+08:00" />
+<meta property="article:modified_time" content="2021-12-12T17:41:03+08:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -27,8 +32,11 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="My HomePage Description"/>
+<meta name="twitter:title" content="Tinykv第三方指导书"/>
+<meta name="twitter:description" content="Project2A 实现Raft算法 数据结构 // Prs map[uint64]*Progress // leader用来维护所有follower的日志进度信息 type Progress struct { // 当前follower和leader最后一个一致的日志的index 	Match uint64 // 当前follower希望leader下一次同步日志时，第一条日志的index  Next uint64 } 消息处理 MsgPropose 作用：提议在领导者节点添加新的日志
+类型：本地消息
+处理者：领导人
+Test func newTestRaft(id uint64, peers []uint64, election, heartbeat int, storage Storage) *Raft { return newRaft(newTestConfig(id, peers, election, heartbeat, storage)) } "/>
 
 
 
@@ -66,7 +74,29 @@
 
 
 
+  
+    <script src="/js/toc-collapse.js"></script>
+  
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'a527293cd81df2a6cbb8',
+  clientSecret: '0e8c29bb9db8f136f345c5128c6ad846df4d5162',
+  repo: 'luxcgo.github.io',
+  owner: 'luxcgo',
+  admin: ['luxcgo'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
 
 
 
@@ -159,6 +189,128 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#project2a-%e5%ae%9e%e7%8e%b0raft%e7%ae%97%e6%b3%95" onclick="onNavClick(`#project2a-实现raft算法-nav`)" id="project2a-实现raft算法-nav">
+									Project2A 实现Raft算法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" onclick="onNavClick(`#数据结构-nav`)" id="数据结构-nav">
+									数据结构
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b6%88%e6%81%af%e5%a4%84%e7%90%86" onclick="onNavClick(`#消息处理-nav`)" id="消息处理-nav">
+									消息处理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#msgpropose" onclick="onNavClick(`#msgpropose-nav`)" id="msgpropose-nav">
+									MsgPropose
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#test" onclick="onNavClick(`#test-nav`)" id="test-nav">
+									Test
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -174,24 +326,6 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 brightness_7
             </i>
         </a>
-        
-        
-        
-            <div class="pagination-indicator">
-                <span style="text-align: center">
-                    2<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>2
-                </span>
-            </div>
-            
-            
-            <a class="pagination-action" href="/posts/">
-                <i class="material-icons pagination-action-icon">
-                    chevron_left
-                </i>
-            </a>
-            
-
-            
         
         
     </div>
@@ -246,6 +380,128 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
             
             
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#project2a-%e5%ae%9e%e7%8e%b0raft%e7%ae%97%e6%b3%95" onclick="onNavClick(`#project2a-实现raft算法-nav`)" id="project2a-实现raft算法-nav">
+									Project2A 实现Raft算法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" onclick="onNavClick(`#数据结构-nav`)" id="数据结构-nav">
+									数据结构
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b6%88%e6%81%af%e5%a4%84%e7%90%86" onclick="onNavClick(`#消息处理-nav`)" id="消息处理-nav">
+									消息处理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#msgpropose" onclick="onNavClick(`#msgpropose-nav`)" id="msgpropose-nav">
+									MsgPropose
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#test" onclick="onNavClick(`#test-nav`)" id="test-nav">
+									Test
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
         </div>
     </div>
 </div>
@@ -289,286 +545,97 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Tinykv第三方指导书
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-12-12 17:41
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="project2a-实现raft算法">Project2A 实现Raft算法</h1>
+<h2 id="数据结构">数据结构</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// Prs map[uint64]*Progress
+</span><span style="color:#228b22">// leader用来维护所有follower的日志进度信息
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">type</span> Progress <span style="color:#8b008b;font-weight:bold">struct</span> {
+    <span style="color:#228b22">// 当前follower和leader最后一个一致的日志的index
+</span><span style="color:#228b22"></span>	Match <span style="color:#00688b;font-weight:bold">uint64</span>
+    <span style="color:#228b22">// 当前follower希望leader下一次同步日志时，第一条日志的index
+</span><span style="color:#228b22"></span>    Next <span style="color:#00688b;font-weight:bold">uint64</span>
+}
+</code></pre></div><h2 id="消息处理">消息处理</h2>
+<h3 id="msgpropose">MsgPropose</h3>
+<p>作用：提议在领导者节点添加新的日志</p>
+<p>类型：本地消息</p>
+<p>处理者：领导人</p>
+<h1 id="test">Test</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">newTestRaft</span>(id <span style="color:#00688b;font-weight:bold">uint64</span>, peers []<span style="color:#00688b;font-weight:bold">uint64</span>, election, heartbeat <span style="color:#00688b;font-weight:bold">int</span>, storage Storage) *Raft {
+	<span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#008b45">newRaft</span>(<span style="color:#008b45">newTestConfig</span>(id, peers, election, heartbeat, storage))
+}
+</code></pre></div>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2021-12-12</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/">
+			Next<br>Ubuntu配置
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/">
+			Previous<br>寻找一种易于理解的raft算法的解读
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
         
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                2021
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/vscode%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Vscode奇技淫巧
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-30
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                英语单词
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-24
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/go%E4%B8%8E%E7%88%AC%E8%99%AB/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Go与爬虫
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-24
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                git使用笔记
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-01
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/dns%E6%B1%A1%E6%9F%93/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Dns污染
-                            </div>
-                            <div class="post-item-meta">
-    2021-09-19
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/terminal/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Terminal
-                            </div>
-                            <div class="post-item-meta">
-    2021-09-19
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Docker使用笔记
-                            </div>
-                            <div class="post-item-meta">
-    2021-09-11
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/tmux%E7%B2%BE%E7%AE%80%E6%8C%87%E5%8D%97/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Tmux精简指南
-                            </div>
-                            <div class="post-item-meta">
-    2021-09-09
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-    <span class="draft-label">DRAFT</span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/go-test/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Go Test
-                            </div>
-                            <div class="post-item-meta">
-    2021-05-09
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                docker基本使用
-                            </div>
-                            <div class="post-item-meta">
-    2021-03-13
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-        
+            </div>
+        </div>
     </div>
 </div>
 
-
-            </div>
-
-<div class="pagination">
-    
-    <a class="pagination-action" href="/posts/" style="opacity:1">
-    
-        <i class="material-icons pagination-action-icon">
-            chevron_left
-        </i>
-    </a>
-
-        <div class="pagination-indicator">
-            <span>2/2</span>
-        </div>
-
-        
-            <a class="pagination-action" style="opacity:0">
-        
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-</div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

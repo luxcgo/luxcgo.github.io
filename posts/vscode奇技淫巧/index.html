@@ -445,14 +445,14 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 <ol>
 <li></li>
 </ol>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">正则查找：myfunction<span style="color:#cd5555">\(</span>(.*),(.*)<span style="color:#cd5555">\)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">正则查找：myfunction<span style="color:#cd5555">\(</span>(.*),(.*)<span style="color:#cd5555">\)</span>
 替换：myfunction(<span style="color:#00688b">$1</span>,<span style="color:#00688b">$2</span>)
 </code></pre></div><ol start="2">
 <li></li>
 </ol>
-<pre><code>查找：&quot;static/(.*).css
+<pre tabindex="0"><code>查找：&quot;static/(.*).css
 替换：&quot;static/css/$1.css
-</code></pre><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// 替换前
+</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// 替换前
 &lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/cui.css&#34;</span>&gt;
 &lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/style.css&#34;</span>&gt;
 &lt;<span style="color:#8b008b;font-weight:bold">link</span> <span style="color:#658b00">rel</span>=<span style="color:#cd5555">&#34;stylesheet&#34;</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;static/less.css&#34;</span>&gt;
@@ -464,13 +464,13 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </code></pre></div><ol start="3">
 <li></li>
 </ol>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">正则 \.(jpg|gif|png|txt|js)(\?.*)? [0-9]+\.[0-9]+ 404
 文本 images/mybg.jpg?abc=1 0.001 404 561 0.0
 匹配结果：.jpg?abc=1 0.001 404
 </code></pre></div><ol start="4">
 <li></li>
 </ol>
-<pre><code>\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式
+<pre tabindex="0"><code>\(https://www.acwing.com/problem/content/(\d+)/\)\n\n### 题目\n\n### 输入格式
 (https://www.acwing.com/problem/content/solution/$1/1/)\n\n### 题目\n\n### 输入格式
 
 \(problems/(.*)-(.*)\)

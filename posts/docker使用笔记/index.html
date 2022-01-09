@@ -662,7 +662,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 <div class="post-body" v-pre>
                 
                     <h2 id="初识docker">初识docker</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># 查看版本并顺便检查docker server正常启动，cli可以连接到engine</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># 查看版本并顺便检查docker server正常启动，cli可以连接到engine</span>
 $ docker version
 
 <span style="color:#228b22"># 查看engine的一些配置项</span>
@@ -684,7 +684,7 @@ $ docker run
 <li>Opened port 80 on the host IP</li>
 <li>Routes that traffic to the container IP, port 80</li>
 </ol>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># --publish(or -p) 是一种映射host port到container port的方法</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># --publish(or -p) 是一种映射host port到container port的方法</span>
 $ docker container run --publish 80:80 nginx
 
 <span style="color:#228b22"># 在后台运行</span>
@@ -752,7 +752,7 @@ $ docker container ls -a
 <p>如上所示，我们修改了host监听的端口为8080，修改了镜像版本为1.11，修改了开启容器时的CMD命令</p>
 <h2 id="container是个什么东西"><code>container</code>是个什么东西</h2>
 <p>本质上一个运行着的容器只是资源受限的进程，当进程结束了container也就退出了，如下是在linux环境下的实验结果：</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># ubuntu20.04</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># ubuntu20.04</span>
 lucas@ubuntu:~$ docker run --name mongo -d mongo
 4137bf48c62bb2230f717c5d2077419b1dc93ce05cd3db414f81c0aa4262bdac
 lucas@ubuntu:~$ docker ps
@@ -766,7 +766,7 @@ mongo
 lucas@ubuntu:~$ ps aux | grep mongo
 lucas    <span style="color:#b452cd">3801302</span>  0.0  0.0   <span style="color:#b452cd">6300</span>   <span style="color:#b452cd">676</span> pts/0    S+   15:32   0:00 grep --color=auto mongo
 </code></pre></div><p>在<code>mac</code>环境上略有不同，<code>docker engine</code>实际上是运行在基于<a href="https://github.com/machyve/xhyve">xhyve</a> <code>VM</code>上的一个<code>Alpine Linux</code>，我们进入到这个<code>docker VM</code>中才能看到具体运行着的进程</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># macOS Big Sur on M1 chip </span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># macOS Big Sur on M1 chip </span>
 $ docker run --name mongo -d mongo 
 4ce052bde09ce12cef9856e270347c549b988483fdc86051ee7a6cf409b6d15b
 $ docker run --name mongo -d mongo 
@@ -780,7 +780,7 @@ $ docker run -it --rm --privileged --pid=host justincormack/nsenter1
 / <span style="color:#228b22">#  ps aux | grep mongo</span>
  <span style="color:#b452cd">2839</span> root      0:00 grep mongo
 </code></pre></div><h2 id="lab-管理多个container">Lab: 管理多个container</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># mysql官方镜像暂不支持arm64，只支持x86_64，所以换用mysql/mysql-server镜像</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># mysql官方镜像暂不支持arm64，只支持x86_64，所以换用mysql/mysql-server镜像</span>
 <span style="color:#228b22"># uname -a 查看架构</span>
 $ docker container run -d -p 3306:3306 --name db -e <span style="color:#00688b">MYSQL_RANDOM_ROOT_PASSWORD</span>=yes mysql/mysql-server
 <span style="color:#228b22"># 查看mysql生成的密码</span>
@@ -795,7 +795,7 @@ $ docker container stop webserver proxy db
 $ docker container rm webserver proxy db
 $ docker ps -a
 </code></pre></div><h2 id="查看container状态的几个命令">查看<code>container</code>状态的几个命令</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># process list in one container</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># process list in one container</span>
 $ docker container top
 
 <span style="color:#228b22"># details of one container config</span>
@@ -804,7 +804,7 @@ $ docker container inspect
 <span style="color:#228b22"># performance stats for all containers</span>
 $ docker container stats
 </code></pre></div><h2 id="进入一个container">进入一个<code>container</code></h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># -i keep session open to receive terminal input</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22"># -i keep session open to receive terminal input</span>
 <span style="color:#228b22"># -t simulates a real terminal, like what ssh dose</span>
 <span style="color:#228b22"># 修改开启容器时的CMD命令为bash，结合-it的OPTIONS，直接进入到对应镜像的bash环境中</span>
 $ docker container run -it --name nginx nginx bash
@@ -819,7 +819,7 @@ $ docker start -ai nginx
 $ docker container run -d -p 3306:3306 --name db -e <span style="color:#00688b">MYSQL_RANDOM_ROOT_PASSWORD</span>=yes mysql/mysql-server
 $ docker <span style="color:#658b00">exec</span> -it mysql bash
 <span style="color:#228b22"># 但此时我们退出bash的时候容器并不会停止，因为&#34;exec&#34;基于已有的容器运行在另外一个进程中，并不会影响mysql daemon所在的主进程</span>
-</code></pre></div><pre><code>-t simulates a real terminal,like what ssh dose
+</code></pre></div><pre tabindex="0"><code>-t simulates a real terminal,like what ssh dose
 -i keep session open to receive terminal input
 </code></pre><h2 id="references">References</h2>
 <ul>
@@ -828,7 +828,7 @@ $ docker <span style="color:#658b00">exec</span> -it mysql bash
 <li><a href="https://github.com/mikegcoleman/docker101/blob/master/Docker_eBook_Jan_2017.pdf">Docker for the Virtualization Admin</a></li>
 <li></li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22">## Container VS. VM: It&#39;s Just a Process</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22">## Container VS. VM: It&#39;s Just a Process</span>
 
 $ docker run --name mongo -d mongo
 

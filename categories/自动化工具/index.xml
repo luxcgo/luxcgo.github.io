@@ -13,7 +13,10 @@
       <pubDate>Sun, 19 Sep 2021 22:27:20 +0800</pubDate>
       
       <guid>https://luxcgo.github.io/posts/terminal/</guid>
-      <description>zsh  framework: ohmyzsh  Plugin:  docker docker-compose z zsh-completions zsh-syntax-highlighting   Theme:  powerlevel10k  How do I add username and/or hostname to prompt?        </description>
+      <description>zsh  framework: ohmyzsh   Plugin:
+ docker docker-compose z zsh-completions zsh-syntax-highlighting    Theme:
+  powerlevel10k
+ How do I add username and/or hostname to prompt?        # 删除用户及目录 sudo userdel -r lighthouse # 添加新用户 sudo useradd -d /home/lucas -m lucas # zsh # oh my zsh # p10k # Run Docker commands without sudo sudo gpasswd -a $USER docker # IMPORTANT: Log out and log back in so that your group membership is re-evaluated.</description>
     </item>
     
     <item>

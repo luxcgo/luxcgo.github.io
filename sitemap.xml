@@ -3,15 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://luxcgo.github.io/posts/</loc>
-    <lastmod>2021-11-15T01:39:12+08:00</lastmod>
+    <lastmod>2021-12-26T12:25:54+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/ubuntu%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2021-12-26T12:25:54+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/</loc>
+    <lastmod>2021-12-26T12:25:54+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</loc>
+    <lastmod>2021-12-12T17:41:03+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/</loc>
+    <lastmod>2021-12-02T01:49:21+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2021-11-23T23:44:34+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2021-11-15T01:39:12+08:00</lastmod>
   </url><url>
-    <loc>https://luxcgo.github.io/</loc>
-    <lastmod>2021-11-15T01:39:12+08:00</lastmod>
-  </url><url>
-    <loc>https://luxcgo.github.io/posts/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</loc>
+    <loc>https://luxcgo.github.io/posts/1/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</loc>
     <lastmod>2021-11-07T16:15:14+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</loc>
