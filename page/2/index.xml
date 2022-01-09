@@ -5,9 +5,36 @@
     <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 26 Dec 2021 12:25:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jan 2022 22:16:50 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Sourcetree配置</title>
+        <link>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;在mac上配置github账户&#34;&gt;在mac上配置github账户&lt;/h2&gt;
+&lt;p&gt;443时要配置代理&lt;/p&gt;
+&lt;p&gt;403时要解决推送时没有权限问题&lt;/p&gt;
+&lt;p&gt;因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式&lt;/p&gt;
+&lt;ol start=&#34;0&#34;&gt;
+&lt;li&gt;配置proxy&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;/Users/lucas/Library/ApplicationSupport/SourceTree&lt;/code&gt;目录下的密码文件&lt;/li&gt;
+&lt;li&gt;在sourcetree中配置账户信息&lt;/li&gt;
+&lt;li&gt;github上申请相关token&lt;/li&gt;
+&lt;li&gt;修改mac中&lt;code&gt;钥匙串访问&lt;/code&gt;中的密码为token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;参考链接&#34;&gt;参考链接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ - </description>
+        </item>
     
     
     
@@ -166,14 +193,14 @@ $ git config --global core.autocrlf input
 &lt;ul&gt;
 &lt;li&gt;Stages a single file:
 &lt;code&gt;git add file1.js &lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Stages multiple files :
+&lt;li&gt;Stages multiple files:
 &lt;code&gt;git add file1.js file2.js&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Stages with a pattern :
+&lt;li&gt;Stages with a pattern:
 &lt;code&gt;git add *.js&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Stages the current directory and all its content:
 &lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Viewing the status&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Viewing the status&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Full status:
 &lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
@@ -187,15 +214,15 @@ $ git config --global core.autocrlf input
 &lt;li&gt;Opens the default editor to type a long message:
 &lt;code&gt;git commit&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Skipping the staging area&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Skipping the staging area&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;只对modified的文件有效，对untracked的文件还是需要&lt;code&gt;git add&lt;/code&gt;
 只要加入staging area的文件，git才会去track
 &lt;code&gt;git commit -am &amp;quot;Message&amp;quot;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Removing files&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Removing files&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Removes from working directory and staging area :
+&lt;li&gt;Removes from working directory and staging area:
 &lt;code&gt;git rm file1.js&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Removes from staging area only:
 &lt;code&gt;git rm --cached file1.js&lt;/code&gt;&lt;/li&gt;
@@ -234,9 +261,9 @@ $ git config --global core.autocrlf input
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Viewing the staged/unstaged changes&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Viewing the staged/unstaged changes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Shows unstaged changes 
+&lt;li&gt;Shows unstaged changes
 &lt;code&gt;git diff&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Shows staged changes
 &lt;code&gt;git diff --staged&lt;/code&gt;&lt;/li&gt;
@@ -449,13 +476,13 @@ git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#
     
     
         <item>
-        <title>Dns污染</title>
+        <title>dns污染</title>
         <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
         <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
         <description>源泉的小站 https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/ -&lt;h2 id=&#34;failed-to-connect-to-rawgithubusercontentcom443&#34;&gt;Failed to connect to raw.githubusercontent.com:443&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/image-20210919234059200.png&#34; alt=&#34;image-20210919234059200&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220109234638.png&#34; alt=&#34;dns污染-iterm&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0&lt;/p&gt;
 &lt;p&gt;域名的解析过程是：&lt;/p&gt;
 &lt;p&gt;Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器&lt;/p&gt;
@@ -463,7 +490,7 @@ git config --global https.proxy &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#
 &lt;p&gt;获取真实的ip地址后加到hosts文件中就可以避免dns污染了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat /etc/hosts
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接修改的话比较麻烦，下面这个软件&lt;a href=&#34;https://swh.app/zh/&#34;&gt;SwitchHosts&lt;/a&gt;方便很多&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/image-20210920001132494.png&#34; alt=&#34;image-20210920001132494&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/luxcgo/imgs4md/raw/master/img/20220109235152.png&#34; alt=&#34;dns污染-app&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;方法二在第四步解析时解决问题&#34;&gt;方法二：在第四步解析时解决问题&lt;/h2&gt;
 &lt;p&gt;直接修改本机网络用到的DNS服务器，&lt;/p&gt;
 &lt;p&gt;在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题&lt;/p&gt;
@@ -1190,146 +1217,6 @@ String and slice of bytes (treated equivalently with these verbs):
 &lt;li&gt;&lt;a href=&#34;https://github.com/stretchr/testify&#34;&gt;https://github.com/stretchr/testify&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 - https://luxcgo.github.io/posts/go-test/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>docker基本使用</title>
-        <link>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-        <pubDate>Sat, 13 Mar 2021 16:48:30 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/ -&lt;h1 id=&#34;1-容器的基础命令&#34;&gt;1. 容器的基础命令&lt;/h1&gt;
-&lt;h2 id=&#34;使用docker的好处&#34;&gt;使用docker的好处&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;便于构建各种依赖关系&lt;/li&gt;
-&lt;li&gt;快速构建&lt;/li&gt;
-&lt;li&gt;快速迁移&lt;/li&gt;
-&lt;li&gt;和宿主主机互不影响&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run busybox &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; hello world
-hello world
-
-$ docker run -ti ubuntu
-root@3cc1d9fcadda:/# apt-get update
-root@3cc1d9fcadda:/# apt-get install figlet
-root@3cc1d9fcadda:/# figlet LuxcGo
- _                    ____
-| |   _   ___  _____ / ___| ___
-| |  | | | &lt;span style=&#34;color:#cd5555&#34;&gt;\ \/&lt;/span&gt; / __| |  _ / _ &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;| |__| |_| |&amp;gt;  &amp;lt; (__| |_| | (_) |
-|_____&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;_,_/_/&lt;span style=&#34;color:#cd5555&#34;&gt;\_\_&lt;/span&gt;__|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;___|&lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;__/
-root@3cc1d9fcadda:/# dpkg -l
-root@3cc1d9fcadda:/# dpkg -l | wc -l
-&lt;span style=&#34;color:#b452cd&#34;&gt;98&lt;/span&gt;
-
-lucas@VM-12-4-ubuntu:~$ dpkg -l | wc -l
-&lt;span style=&#34;color:#b452cd&#34;&gt;1877&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;运行一个容器&#34;&gt;运行一个容器&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run jpetazzo/clock
-
-$ sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt; &amp;amp;
-[1] &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt;
-$
-[1]  + &lt;span style=&#34;color:#b452cd&#34;&gt;18495&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;done&lt;/span&gt;       sleep &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 后台创建并启动和sleep命令类似&lt;/span&gt;
-$ docker run -d jpetazzo/clock
-&lt;span style=&#34;color:#228b22&#34;&gt;# 只显示运行着的容器&lt;/span&gt;
-$ docker ps
-&lt;span style=&#34;color:#228b22&#34;&gt;# 显示所有容器&lt;/span&gt;
-$ docker ps -a
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看最后一个启动的容器&lt;/span&gt;
-$ docker ps -l
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看所有正在运行的容器的id（--quiet）&lt;/span&gt;
-$ docker ps -q
-&lt;span style=&#34;color:#228b22&#34;&gt;# 可以同时合并多条命令&lt;/span&gt;
-$ docker ps -ql
-$ docker ps -q -l
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看日志&lt;/span&gt;
-$ docker logs &amp;lt;container ID&amp;gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# --follow&lt;/span&gt;
-$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f
-&lt;span style=&#34;color:#228b22&#34;&gt;# --tail&lt;/span&gt;
-$ docker logs &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; -f -n &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# polite shutdown（传递一个关闭的信号）&lt;/span&gt;
-$ docker stop &lt;span style=&#34;color:#b452cd&#34;&gt;49&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 强制关闭&lt;/span&gt;
-$ docker &lt;span style=&#34;color:#658b00&#34;&gt;kill&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;82&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;48&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;后台运行的容器&#34;&gt;后台运行的容器&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker run -ti ubuntu
-root@3cc1d9fcadda:/# top
-&lt;span style=&#34;color:#228b22&#34;&gt;# 退出容器&lt;/span&gt;
-^p^q
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重新进入容器&lt;/span&gt;
-$ docker attach &lt;span style=&#34;color:#b452cd&#34;&gt;34&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 或者用个 子命令&lt;/span&gt;
-$ docker attach &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 如果想要进入容器输入内容的话使用docker attach &lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 如果只是要查看容器内的输出的内容话最好使用docker logs，如果进入容器看日志后使用了^c实际上是停止了容器&lt;/span&gt;
-$ docker logs --tail &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; --follow &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -ql&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重启停止的容器&lt;/span&gt;
-$ docker start &amp;lt;containerID&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2-构建容器镜像&#34;&gt;2. 构建容器镜像&lt;/h1&gt;
-&lt;h2 id=&#34;简单介绍&#34;&gt;简单介绍&lt;/h2&gt;
-&lt;p&gt;一个容器包含一个底层的只读的镜像层和一个上层的可读可写的容器层
-使用了copy-on-write技术加快启动时间
-多个容器共享一个底层的镜像层，只需要根据需求修改上层的读写层即可
-如果确认修改了可以在此基础上再创建一个image&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker commit
-$ docker build
-$ docker search marathon
-&lt;span style=&#34;color:#228b22&#34;&gt;# version tag&lt;/span&gt;
-$ docker pull debian:jessie
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实际操作&#34;&gt;实际操作&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查看新装了什么内容&lt;/span&gt;
-$ docker diff &amp;lt;containerID&amp;gt; 
-&lt;span style=&#34;color:#228b22&#34;&gt;# 使用修改后的容器新建一个镜像&lt;/span&gt;
-$ docker commit &amp;lt;containerID&amp;gt; 
-&lt;span style=&#34;color:#228b22&#34;&gt;# 为新镜像起名&lt;/span&gt;
-$ docker tag ab580f989221 myfiglet
-&lt;span style=&#34;color:#228b22&#34;&gt;# 直接使用新镜像&lt;/span&gt;
-$ docker run myfiglet figlet hello
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 可以在创建时直接起名&lt;/span&gt;
-$ docker commit ab580f989 newfiglet 
-$ docker run -ti newfiglet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;写dockerfile&#34;&gt;写Dockerfile&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get install figlet&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t figlet .
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 不使用缓存&lt;/span&gt;
-$ docker build --no-cache ...
-
-&lt;span style=&#34;color:#228b22&#34;&gt;# 查看镜像的所有层的内容&lt;/span&gt;
-$ docker &lt;span style=&#34;color:#658b00&#34;&gt;history&lt;/span&gt; figlet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;CMD&lt;/code&gt;和&lt;code&gt;ENTRYPOINT&lt;/code&gt;
-注意要使用json syntax&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt; ubuntu&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;RUN&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apt-get&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;install&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;figlet&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;-f&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;script&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello world&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker build -t myfiglet .
-$ docker run myfiglet
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重写了cmd保留了entrypoint&lt;/span&gt;
-$ docker run myfiglet hola mundo
-&lt;span style=&#34;color:#228b22&#34;&gt;# 重写entrypoint&lt;/span&gt;
-$ docker run -it --entrypoint bash myfiglet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://container.training/intro-selfpaced.yml.html&#34;&gt;container.training&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://education.ardanlabs.com/courses/ultimate-docker&#34;&gt;Ardan Labs - Ultimate Docker&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/ - </description>
         </item>
     
     

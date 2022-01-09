@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>闲谈 on 源泉的小站</title>
+    <link>https://luxcgo.github.io/categories/%E9%97%B2%E8%B0%88/</link>
+    <description>Recent content in 闲谈 on 源泉的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/%E9%97%B2%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何从豆瓣FM转移到网易云音乐？</title>
+      <link>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+      <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+      <description>曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。
+  下载红心歌曲链接，这是一个维护了十年的豆瓣电台加心歌曲爬虫
+  下载红心歌曲，迅雷即可
+  上传到网易云音乐云盘
+  网易云对Mac未开放接口，M1 Mac还不支持X86架构的安卓模拟器，只能用开源API了
+网易云音乐 Node.js API service
+安装好后依赖后，可以直接运行他准备好的code批量上传，他有可能会上传失败，所以多跑几次就好了。
+// /github/NeteaseCloudMusicApi/module_example/multi_song_upload.js node multi_song_upload.js --phone_number=&amp;#34;xx&amp;#34; --password=&amp;#34;xx&amp;#34; --dir=&amp;#39;/Users/xx/Music&amp;#39;   voila
+  </description>
+    </item>
+    
+  </channel>
+</rss>

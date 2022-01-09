@@ -5,9 +5,109 @@
     <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 26 Dec 2021 12:25:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jan 2022 22:16:50 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>博客诞生记</title>
+        <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</link>
+        <pubDate>Sun, 09 Jan 2022 22:16:50 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ -&lt;h2 id=&#34;技术选型&#34;&gt;技术选型&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;前端：静态博客&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主题：参数尽量两种主题都可以使用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;  ---
+  title: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+  date: 2021-11-15T01:39:12+08:00
+  draft: &lt;span style=&#34;color:#658b00&#34;&gt;true&lt;/span&gt;
+
+  title: Git
+  weight: &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;
+  bookToc: &lt;span style=&#34;color:#658b00&#34;&gt;false&lt;/span&gt;
+  bookHidden: &lt;span style=&#34;color:#658b00&#34;&gt;true&lt;/span&gt;
+  bookCollapseSection: &lt;span style=&#34;color:#658b00&#34;&gt;true&lt;/span&gt;
+  ---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/hugo-theme-diary/&#34;&gt;diary&lt;/a&gt;作为日常发布&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-book/&#34;&gt;book&lt;/a&gt;作为整合发布&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;后端：服务器选择&lt;a href=&#34;https://hub.docker.com/_/caddy&#34;&gt;caddy 2&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运维：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://traefik.io/&#34;&gt;traefik&lt;/a&gt;签发证书和反向代理&lt;/li&gt;
+&lt;li&gt;使用deploy脚本自动构建静态文件和推送&lt;/li&gt;
+&lt;li&gt;使用github action在推送时自动构建镜像并分别推送
+&lt;ul&gt;
+&lt;li&gt;使用git submodule&lt;/li&gt;
+&lt;li&gt;luxcgo.github.io&lt;/li&gt;
+&lt;li&gt;luxcgo.com&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用watchtower自动更新网站&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;定制化&#34;&gt;定制化&lt;/h2&gt;
+&lt;h3 id=&#34;评论系统httpssegmentfaultcoma1190000018072952&#34;&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018072952&#34;&gt;评论系统&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;自动化&#34;&gt;自动化&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vim ~/.zshrc
+&lt;span style=&#34;color:#228b22&#34;&gt;# 自动化创建并打开文件&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# hn 文件名 (代表 hugo new posts/文件名.md)&lt;/span&gt;
+&lt;span style=&#34;color:#658b00&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;hn&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;_hn(){ cd /Users/lucas/Documents/blog &amp;amp;&amp;amp; hugo new posts/$1.md &amp;amp;&amp;amp; open -a typora /Users/lucas/Documents/blog/content/posts/$1.md; }; _hn&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;# 自动化部署&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# hd (代表 ./deploy)&lt;/span&gt;
+&lt;span style=&#34;color:#658b00&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;hd&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;_hd(){ cd /Users/lucas/Documents/blog &amp;amp;&amp;amp; ./deploy; }; _hd&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;图片存储&#34;&gt;图片存储&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1722255&#34;&gt;本地储存&lt;/a&gt; + &lt;a href=&#34;https://github.com/dabutvin/Imgbot&#34;&gt;图片压缩&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PicGo自动上传 + &lt;a href=&#34;https://github.com/fhyoga/picgo-plugin-watermark&#34;&gt;水印插件&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://fonts.google.com/specimen/Nanum+Pen+Script?preview.text=@luxcgo&amp;amp;preview.text_type=custom#standard-styles&#34;&gt;字体&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;字号：28px&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;待做&#34;&gt;待做&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;google analytic&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://busuanzi.ibruce.info/&#34;&gt;不蒜子&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;搜索功能&lt;/li&gt;
+&lt;li&gt;gittalk增加定制化label&lt;/li&gt;
+&lt;li&gt;新建comment repo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://unknwon.cn/2020/200419-mew-home-unknwon-cn/&#34;&gt;Unknwon.中文博客搬新家&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://byvoid.com/zhs/&#34;&gt;Beyond the Void&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/BYVoid/hugo-theme-diary&#34;&gt;Diary theme customized&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://orianna-zzo.github.io/series/blog%E5%85%BB%E6%88%90%E8%AE%B0/&#34;&gt;ZHENG Zi&amp;rsquo;ou.Blog养成记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngkin.github.io/post/createafreeblogsite/&#34;&gt;Deploy script&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.typora.io/Use-Typora-From-Shell-or-cmd/&#34;&gt;Use Typora from Shell or Cmd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/23137414&#34;&gt;bash alias怎么解析传入的参数的？&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ - </description>
+        </item>
     
     
     
@@ -408,33 +508,6 @@ c:
         
         <guid>https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
         <description>源泉的小站 https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Sourcetree配置</title>
-        <link>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</link>
-        <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;在mac上配置github账户&#34;&gt;在mac上配置github账户&lt;/h2&gt;
-&lt;p&gt;443时要配置代理&lt;/p&gt;
-&lt;p&gt;403时要解决推送时没有权限问题&lt;/p&gt;
-&lt;p&gt;因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式&lt;/p&gt;
-&lt;ol start=&#34;0&#34;&gt;
-&lt;li&gt;配置proxy&lt;/li&gt;
-&lt;li&gt;删除&lt;code&gt;/Users/lucas/Library/ApplicationSupport/SourceTree&lt;/code&gt;目录下的密码文件&lt;/li&gt;
-&lt;li&gt;在sourcetree中配置账户信息&lt;/li&gt;
-&lt;li&gt;github上申请相关token&lt;/li&gt;
-&lt;li&gt;修改mac中&lt;code&gt;钥匙串访问&lt;/code&gt;中的密码为token&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;参考链接&#34;&gt;参考链接&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://luxcgo.github.io/posts/sourcetree%E9%85%8D%E7%BD%AE/ - </description>
         </item>
     
     

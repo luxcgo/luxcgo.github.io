@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工程 on 源泉的小站</title>
+    <link>https://luxcgo.github.io/categories/%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 工程 on 源泉的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 09 Jan 2022 22:16:50 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客诞生记</title>
+      <link>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</link>
+      <pubDate>Sun, 09 Jan 2022 22:16:50 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</guid>
+      <description>技术选型   前端：静态博客hugo
+  主题：参数尽量两种主题都可以使用
+  --- title: &amp;#34;&amp;#34; date: 2021-11-15T01:39:12+08:00 draft: true title: Git weight: 1 bookToc: false bookHidden: true bookCollapseSection: true ---   diary作为日常发布
+  book作为整合发布
+    后端：服务器选择caddy 2
+  运维：
+ 使用traefik签发证书和反向代理 使用deploy脚本自动构建静态文件和推送 使用github action在推送时自动构建镜像并分别推送  使用git submodule luxcgo.github.io luxcgo.com   使用watchtower自动更新网站    定制化 评论系统 自动化 vim ~/.zshrc # 自动化创建并打开文件 # hn 文件名 (代表 hugo new posts/文件名.</description>
+    </item>
+    
+    <item>
+      <title>dns污染</title>
+      <link>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</link>
+      <pubDate>Sun, 19 Sep 2021 23:40:39 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/dns%E6%B1%A1%E6%9F%93/</guid>
+      <description>Failed to connect to raw.githubusercontent.com:443 下个文件失败了，一看dns解析后直接指向了BlackHole 0.0.0.0
+域名的解析过程是：
+Hosts文件和本地DNS缓存 → 路由器的缓存 → ISP DNS缓存 → 根DNS服务器
+方法一：在第一步解析时解决问题 获取真实的ip地址后加到hosts文件中就可以避免dns污染了
+$ cat /etc/hosts 直接修改的话比较麻烦，下面这个软件SwitchHosts方便很多
+方法二：在第四步解析时解决问题 直接修改本机网络用到的DNS服务器，
+在中国大陆地区的话阿里腾讯的还是比较好用，我在深圳南山用谷歌服务器解析还是有问题
+223.5.5.5 223.6.6.6 119.29.29.29 119.28.28.28 </description>
+    </item>
+    
+  </channel>
+</rss>
