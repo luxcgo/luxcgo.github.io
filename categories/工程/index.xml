@@ -13,7 +13,8 @@
       <pubDate>Sun, 09 Jan 2022 22:16:50 +0800</pubDate>
       
       <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</guid>
-      <description>技术选型   前端：静态博客hugo
+      <description>TL;DR 使用自定义指令hn，含义是hugo deploy。自动构建两个网站luxcgo.github.io和luxcgo.com的静态文件，分别是用于国外和国内访问，然后推送到我的私有仓库中，通过submodule功能同步到公有仓库。随即触发github action构建网站镜像推送到私有镜像仓库中，我的云服务器检测到镜像更新自动拉取完成网站更新。
+技术选型   前端：静态博客hugo
   主题：参数尽量两种主题都可以使用
   --- title: &amp;#34;&amp;#34; date: 2021-11-15T01:39:12+08:00 draft: true title: Git weight: 1 bookToc: false bookHidden: true bookCollapseSection: true ---   diary作为日常发布
   book作为整合发布

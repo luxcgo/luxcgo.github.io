@@ -17,7 +17,8 @@
 
 
 <meta property="og:title" content="博客诞生记" />
-<meta property="og:description" content="技术选型   前端：静态博客hugo
+<meta property="og:description" content="TL;DR 使用自定义指令hn，含义是hugo deploy。自动构建两个网站luxcgo.github.io和luxcgo.com的静态文件，分别是用于国外和国内访问，然后推送到我的私有仓库中，通过submodule功能同步到公有仓库。随即触发github action构建网站镜像推送到私有镜像仓库中，我的云服务器检测到镜像更新自动拉取完成网站更新。
+技术选型   前端：静态博客hugo
   主题：参数尽量两种主题都可以使用
   --- title: &#34;&#34; date: 2021-11-15T01:39:12&#43;08:00 draft: true title: Git weight: 1 bookToc: false bookHidden: true bookCollapseSection: true ---   diary作为日常发布
   book作为整合发布
@@ -36,7 +37,8 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="博客诞生记"/>
-<meta name="twitter:description" content="技术选型   前端：静态博客hugo
+<meta name="twitter:description" content="TL;DR 使用自定义指令hn，含义是hugo deploy。自动构建两个网站luxcgo.github.io和luxcgo.com的静态文件，分别是用于国外和国内访问，然后推送到我的私有仓库中，通过submodule功能同步到公有仓库。随即触发github action构建网站镜像推送到私有镜像仓库中，我的云服务器检测到镜像更新自动拉取完成网站更新。
+技术选型   前端：静态博客hugo
   主题：参数尽量两种主题都可以使用
   --- title: &#34;&#34; date: 2021-11-15T01:39:12&#43;08:00 draft: true title: Git weight: 1 bookToc: false bookHidden: true bookCollapseSection: true ---   diary作为日常发布
   book作为整合发布
@@ -217,6 +219,24 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 									<ul>
 								
 							
+						
+						
+							<li>
+								<a href="#tldr" onclick="onNavClick(`#tldr-nav`)" id="tldr-nav">
+									TL;DR
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
 						
 						
 							<li>
@@ -446,6 +466,24 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 						
 						
 							<li>
+								<a href="#tldr" onclick="onNavClick(`#tldr-nav`)" id="tldr-nav">
+									TL;DR
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#%e6%8a%80%e6%9c%af%e9%80%89%e5%9e%8b" onclick="onNavClick(`#技术选型-nav`)" id="技术选型-nav">
 									技术选型
 								</a>
@@ -660,7 +698,9 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 <div class="post-body" v-pre>
                 
-                    <h2 id="技术选型">技术选型</h2>
+                    <h2 id="tldr">TL;DR</h2>
+<p>使用自定义指令hn，含义是hugo deploy。自动构建两个网站luxcgo.github.io和luxcgo.com的静态文件，分别是用于国外和国内访问，然后推送到我的私有仓库中，通过submodule功能同步到公有仓库。随即触发github action构建网站镜像推送到私有镜像仓库中，我的云服务器检测到镜像更新自动拉取完成网站更新。</p>
+<h2 id="技术选型">技术选型</h2>
 <ul>
 <li>
 <p>前端：静态博客<a href="https://gohugo.io/">hugo</a></p>
