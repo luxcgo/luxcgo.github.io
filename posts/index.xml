@@ -6,6 +6,7 @@
     <description>Recent content in Posts on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <copyright>2020-2022 源泉的小站</copyright>
     <lastBuildDate>Sun, 09 Jan 2022 22:16:50 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>博客诞生记</title>
@@ -20,7 +21,8 @@
   book作为整合发布
     后端：服务器选择caddy 2
   运维：
- 使用traefik签发证书和反向代理 使用deploy脚本自动构建静态文件和推送 使用github action在推送时自动构建镜像并分别推送  使用git submodule luxcgo.github.io luxcgo.com   使用watchtower自动更新网站    定制化 评论系统 自动化 vim ~/.zshrc # 自动化创建并打开文件 # hn 文件名 (代表 hugo new posts/文件名.</description>
+ 使用traefik签发证书和反向代理 使用deploy脚本自动构建静态文件和推送 使用github action在推送时自动构建镜像并分别推送  使用git submodule luxcgo.github.io luxcgo.com   使用watchtower自动更新网站    定制化 评论系统   utteranc
+  gitalk</description>
     </item>
     
     <item>

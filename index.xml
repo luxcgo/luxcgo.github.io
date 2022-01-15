@@ -5,6 +5,7 @@
     <description>Recent content on 源泉的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <copyright>2020-2022 源泉的小站</copyright>
     <lastBuildDate>Sun, 09 Jan 2022 22:16:50 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -68,7 +69,15 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;定制化&#34;&gt;定制化&lt;/h2&gt;
-&lt;h3 id=&#34;评论系统httpssegmentfaultcoma1190000018072952&#34;&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018072952&#34;&gt;评论系统&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;评论系统&#34;&gt;评论系统&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://utteranc.es/&#34;&gt;utteranc&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018072952&#34;&gt;gitalk&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;自动化&#34;&gt;自动化&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vim ~/.zshrc
 &lt;span style=&#34;color:#228b22&#34;&gt;# 自动化创建并打开文件&lt;/span&gt;
@@ -90,13 +99,29 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;待做&#34;&gt;待做&lt;/h2&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;google analytic&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://busuanzi.ibruce.info/&#34;&gt;不蒜子&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;搜索功能&lt;/li&gt;
-&lt;li&gt;gittalk增加定制化label&lt;/li&gt;
-&lt;li&gt;新建comment repo&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://favicon.io/favicon-converter/&#34;&gt;ico&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://analytics.google.com/analytics&#34;&gt;Google Analytics&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://busuanzi.ibruce.info/&#34;&gt;不蒜子&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搜索功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;utterances增加定制化label&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建comment repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文章权重&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
 &lt;ol&gt;
@@ -108,7 +133,7 @@
 &lt;li&gt;&lt;a href=&#34;https://support.typora.io/Use-Typora-From-Shell-or-cmd/&#34;&gt;Use Typora from Shell or Cmd&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/23137414&#34;&gt;bash alias怎么解析传入的参数的？&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ - </description>
+- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -138,7 +163,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;newTestRaft&lt;/span&gt;(id &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;uint64&lt;/span&gt;, peers []&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;uint64&lt;/span&gt;, election, heartbeat &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;, storage Storage) *Raft {
 	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;newRaft&lt;/span&gt;(&lt;span style=&#34;color:#008b45&#34;&gt;newTestConfig&lt;/span&gt;(id, peers, election, heartbeat, storage))
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/ - </description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -151,7 +176,7 @@
         <guid>https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/</guid>
         <description>源泉的小站 https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ -&lt;p&gt;尽管脱胎于paxos的raft算法的主要目的是容易开发者理解和实现，我作为一个分布式小白初读raft论文后还是一头雾水。主要原因我认为一是前置知识欠缺，二是论文中的一些结论的应用场景和由来没有指明，三是论文组织层层交错有一定难度。所以在我还没有被这部分知识诅咒之前，尝试把自己的理解表达出来，希望可以减少消磨一些同学们的意志力帮助理解。如有错误,还请大佬们不吝指正。&lt;/p&gt;
 &lt;p&gt;拆解拆解&lt;/p&gt;
-- https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ - </description>
+- https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -165,7 +190,7 @@
         <description>源泉的小站 https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ -&lt;p&gt;脑裂&lt;/p&gt;
 &lt;p&gt;随机超时时间&lt;/p&gt;
 &lt;p&gt;最高端的系统设计往往只拥有最朴素的实现目标&lt;/p&gt;
-- https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ - </description>
+- https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -198,7 +223,7 @@ node multi_song_upload.js --phone_number=&lt;span style=&#34;color:#cd5555&#34;&
 &lt;p&gt;voila&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - </description>
+- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -448,7 +473,7 @@ c:
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-40-年&#34;&gt;第 40 年&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-41-年&#34;&gt;第 41 年&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-42-年&#34;&gt;第 42 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ - </description>
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -470,7 +495,7 @@ c:
 &lt;/ul&gt;
 &lt;h3 id=&#34;理解可执行文件&#34;&gt;理解可执行文件&lt;/h3&gt;
 &lt;p&gt;成长看得见&lt;/p&gt;
-- https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/ - </description>
+- https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -481,7 +506,7 @@ c:
         <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ -- https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ - </description>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ -- https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -492,7 +517,7 @@ c:
         <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - </description>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - 2020-2022 源泉的小站</description>
         </item>
     
     
@@ -519,7 +544,7 @@ c:
 &lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/ - </description>
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/ - 2020-2022 源泉的小站</description>
         </item>
     
     
