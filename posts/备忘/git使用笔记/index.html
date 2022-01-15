@@ -75,24 +75,6 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="/vendor/js/md5.min.js"></script>
-<script>
-  var gitalk = new Gitalk({
-  clientID: 'a527293cd81df2a6cbb8',
-  clientSecret: '0e8c29bb9db8f136f345c5128c6ad846df4d5162',
-  repo: 'luxcgo.github.io',
-  owner: 'luxcgo',
-  admin: ['luxcgo'],
-  id: md5(location.pathname),
-  distractionFreeMode: 'false'
-  });
-  window.onload = function () {
-        gitalk.render('gitalk-container')
-  }
-</script>
-
 
 
 
@@ -937,7 +919,6 @@ git config --global https.proxy <span style="color:#cd5555">&#39;http://127.0.0.
                 
 
 
-<div id="gitalk-container"></div>
 
 
 
@@ -946,6 +927,14 @@ git config --global https.proxy <span style="color:#cd5555">&#39;http://127.0.0.
 
 
 
+<script src="https://utteranc.es/client.js"
+        repo="luxcgo/blog-comment"
+        issue-term="title"
+        label="luxcgo"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
 
             </div>
         </div>
