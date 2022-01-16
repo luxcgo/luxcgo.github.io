@@ -25,7 +25,7 @@
     后端：服务器选择caddy 2
   运维：
  使用traefik签发证书和反向代理 使用deploy脚本自动构建静态文件和推送 使用github action在推送时自动构建镜像并分别推送  使用git submodule luxcgo.github.io luxcgo.com   使用watchtower自动更新网站    定制化 评论系统   utteranc
-  gitalk" />
+ issue以filepath作为唯一索引    gitalk" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-09T22:16:50+08:00" />
@@ -46,7 +46,7 @@
     后端：服务器选择caddy 2
   运维：
  使用traefik签发证书和反向代理 使用deploy脚本自动构建静态文件和推送 使用github action在推送时自动构建镜像并分别推送  使用git submodule luxcgo.github.io luxcgo.com   使用watchtower自动更新网站    定制化 评论系统   utteranc
-  gitalk"/>
+ issue以filepath作为唯一索引    gitalk"/>
 
 
 
@@ -728,6 +728,9 @@
 <ul>
 <li>
 <p><a href="https://utteranc.es/">utteranc</a></p>
+<ul>
+<li>issue以filepath作为唯一索引</li>
+</ul>
 </li>
 <li>
 <p><a href="https://segmentfault.com/a/1190000018072952">gitalk</a></p>
@@ -800,8 +803,8 @@
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts">
-			Next<br>No newer posts.
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/golang-goroutine-manage/">
+			Next<br>Golang Goroutine Manage
                 </a>
                 
                 
@@ -825,7 +828,7 @@
 
 <script src="https://utteranc.es/client.js"
         repo="luxcgo/blog-comment"
-        issue-term="title"
+        issue-term="pathname"
         label="luxcgo"
         theme="github-light"
         crossorigin="anonymous"

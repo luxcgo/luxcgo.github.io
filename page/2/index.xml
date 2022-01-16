@@ -6,9 +6,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>2020-2022 源泉的小站</copyright>
-    <lastBuildDate>Sun, 09 Jan 2022 22:16:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jan 2022 14:31:07 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Sourcetree配置</title>
+        <link>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Sun, 31 Oct 2021 00:31:44 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/ -&lt;h2 id=&#34;在mac上配置github账户&#34;&gt;在mac上配置github账户&lt;/h2&gt;
+&lt;p&gt;443时要配置代理&lt;/p&gt;
+&lt;p&gt;403时要解决推送时没有权限问题&lt;/p&gt;
+&lt;p&gt;因为github加强了安全认证，不再支持密码用户名的形式登陆，而采用了token形式&lt;/p&gt;
+&lt;ol start=&#34;0&#34;&gt;
+&lt;li&gt;配置proxy&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;/Users/lucas/Library/ApplicationSupport/SourceTree&lt;/code&gt;目录下的密码文件&lt;/li&gt;
+&lt;li&gt;在sourcetree中配置账户信息&lt;/li&gt;
+&lt;li&gt;github上申请相关token&lt;/li&gt;
+&lt;li&gt;修改mac中&lt;code&gt;钥匙串访问&lt;/code&gt;中的密码为token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;参考链接&#34;&gt;参考链接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://howieyoung.medium.com/suffering-from-the-latest-403-error-from-github-on-sourcetree-e04a844efd35&#34;&gt;Suffering from the latest 403 error from GitHub on SourceTree?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66&#34;&gt;Connecting Mac SourceTree with your GitHub account&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://luxcgo.github.io/posts/%E5%A4%87%E5%BF%98/sourcetree%E9%85%8D%E7%BD%AE/ - 2020-2022 源泉的小站</description>
+        </item>
     
     
     

@@ -22,7 +22,7 @@
     后端：服务器选择caddy 2
   运维：
  使用traefik签发证书和反向代理 使用deploy脚本自动构建静态文件和推送 使用github action在推送时自动构建镜像并分别推送  使用git submodule luxcgo.github.io luxcgo.com   使用watchtower自动更新网站    定制化 评论系统   utteranc
-  gitalk</description>
+ issue以filepath作为唯一索引    gitalk</description>
     </item>
     
     <item>
