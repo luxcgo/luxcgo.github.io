@@ -13,12 +13,232 @@
     
     
         <item>
-        <title>Golang Goroutine Manage</title>
-        <link>https://luxcgo.github.io/posts/golang-goroutine-manage/</link>
+        <title>Go语言Goroutine管理</title>
+        <link>https://luxcgo.github.io/posts/go/golang-goroutine-manage/</link>
         <pubDate>Sun, 16 Jan 2022 14:31:07 +0800</pubDate>
         
-        <guid>https://luxcgo.github.io/posts/golang-goroutine-manage/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/golang-goroutine-manage/ -- https://luxcgo.github.io/posts/golang-goroutine-manage/ - 2020-2022 源泉的小站</description>
+        <guid>https://luxcgo.github.io/posts/go/golang-goroutine-manage/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/go/golang-goroutine-manage/ -&lt;h2 id=&#34;goroutine&#34;&gt;Goroutine&lt;/h2&gt;
+&lt;p&gt;操作系统会为该应用程序创建一个进程。作为一个应用程序，它像一个为所有资源而运行的容器。这些资源包括内存地址空间、文件句柄、设备和线程。&lt;/p&gt;
+&lt;p&gt;线程是操作系统调度的一种执行路径，用于在处理器执行我们在函数中编写的代码。一个进程从一个线程开始，即主线程，当该线程终止时，进程终止。这是因为主线程是应用程序的原点。然后，主线程可以依次启动更多的线程，而这些线程可以启动更多的线程。&lt;/p&gt;
+&lt;p&gt;无论线程属于哪个进程，操作系统都会安排线程在可用处理器上运行。每个操作系统都有自己的算法来做出这些决定。&lt;/p&gt;
+&lt;p&gt;Go 语言层面支持的 go 关键字，可以快速的让一个函数创建为 goroutine，我们可以认为 main 函数就是作为 goroutine 执行的。操作系统调度线程在可用处理器上运行，Go运行时调度 goroutines 在绑定到单个操作系统线程的逻辑处理器中运行(P)。即使使用这个单一的逻辑处理器和操作系统线程，也可以调度数十万 goroutine 以惊人的效率和性能并发运行。&lt;/p&gt;
+&lt;h2 id=&#34;如何清真的使用-goroutine&#34;&gt;如何清真的使用 goroutine&lt;/h2&gt;
+&lt;h3 id=&#34;能不用就不用&#34;&gt;能不用就不用&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; main
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;() {
+	http.&lt;span style=&#34;color:#008b45&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;(w http.ResponseWriter, r *http.Request) {
+		fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Fprintln&lt;/span&gt;(w, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello, GopherCon SG&amp;#34;&lt;/span&gt;)
+	})
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;() {
+		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; err := http.&lt;span style=&#34;color:#008b45&#34;&gt;ListenAndServe&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;:8080&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;); err != &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt; {
+			log.&lt;span style=&#34;color:#008b45&#34;&gt;Fatal&lt;/span&gt;(err)
+		}
+	}()
+
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;select&lt;/span&gt; {}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的程序可以看到，为了防止main.main退出，结尾使用了空的select语句阻塞住了主函数。某种意义上来说是一个好的做法因为没有使用for循环或其他浪费CPU的方式防止主进程退出。不过这仍然属于脱裤子放屁。因为在执行ListenAndServe函数的goroutine返回前什么都做不了，那就不如不开启一个goroutine去完成这个任务，直接在主线程里做。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你的 goroutine 在从另一个 goroutine 获得结果之前无法取得进展，那么通常情况下，你自己去做这项工作比委托它( go func() )更简单。这通常消除了将结果从 goroutine 返回到其启动器所需的大量状态跟踪和 chan 操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; main
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;() {
+	http.&lt;span style=&#34;color:#008b45&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;(w http.ResponseWriter, r *http.Request) {
+		fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Fprintln&lt;/span&gt;(w, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello, GopherCon SG&amp;#34;&lt;/span&gt;)
+	})
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; err := http.&lt;span style=&#34;color:#008b45&#34;&gt;ListenAndServe&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;:8080&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;); err != &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt; {
+		log.&lt;span style=&#34;color:#008b45&#34;&gt;Fatal&lt;/span&gt;(err)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;调用者决定是否要并发&#34;&gt;调用者决定是否要并发&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// ListDirectory returns the contents of dir.
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ListDirectory&lt;/span&gt;(dir &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;) ([]&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt;)
+
+&lt;span style=&#34;color:#228b22&#34;&gt;// ListDirectory returns a channel over which
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// directory entries will be published. When the list
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// of entries is exhausted, the channel will be closed.
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;ListDirectory&lt;/span&gt;(dir &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上两个API设计的功能都是要读取所有的目录&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将目录读取到一个 slice 中，然后返回整个切片，或者如果出现错误，则返回错误。这是同步调用的，ListDirectory 的调用方会阻塞，直到读取所有目录条目。根据目录的大小，这可能需要很长时间，并且可能会分配大量内存来构建目录条目名称的 slice。&lt;/li&gt;
+&lt;li&gt;ListDirectory 返回一个 chan string，将通过该 chan 传递目录。当通道关闭时，这表示不再有目录。由于在 ListDirectory 返回后发生通道的填充，ListDirectory 可能内部启动 goroutine 来填充通道。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ListDirectory chan 版本还有两个问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过使用一个关闭的通道作为不再需要处理的项目的信号，ListDirectory 无法告诉调用者通过通道返回的项目集不完整，因为中途遇到了错误。调用方无法区分空目录与完全从目录读取的错误之间的区别。这两种方法都会导致从 ListDirectory 返回的通道会立即关闭。&lt;/li&gt;
+&lt;li&gt;调用者必须继续从通道读取，直到它关闭，因为这是调用者知道开始填充通道的 goroutine 已经停止的唯一方法。这对 ListDirectory 的使用是一个严重的限制，调用者必须花时间从通道读取数据，即使它可能已经收到了它想要的答案。对于大中型目录，它可能在内存使用方面更为高效，但这种方法并不比原始的基于 slice 的方法快。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解决之道是使用回调函数&lt;code&gt;func ListDirectory(dir string, fn func(string)) error&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;filepath.WalkDir 也是类似的模型，如果函数启动 goroutine，则必须向调用方提供显式停止该goroutine 的方法。通常，将异步执行函数的决定权交给该函数的调用方通常更容易。&lt;/p&gt;
+&lt;h3 id=&#34;管理好整个生命周期&#34;&gt;管理好整个生命周期&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// leak is a buggy function. It launches a goroutine that
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// blocks receiving from a channel. Nothing will ever be
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// sent on that channel and the channel is never closed so
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// that goroutine will be blocked forever.
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;leak&lt;/span&gt;() {
+	ch := &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;)
+
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;() {
+		val := &amp;lt;-ch
+		fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;We received a value:&amp;#34;&lt;/span&gt;, val)
+	}()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开启一个goroutine时要知道它何时会结束&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;或者有什么手段可以让它结束&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样就可以确保不会发生goroutine泄漏&lt;/p&gt;
+&lt;h3 id=&#34;超时控制&#34;&gt;超时控制&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; main
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;context&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;time&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;() {
+	tr := &lt;span style=&#34;color:#008b45&#34;&gt;NewTracker&lt;/span&gt;()
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; tr.&lt;span style=&#34;color:#008b45&#34;&gt;Run&lt;/span&gt;()
+	_ = tr.&lt;span style=&#34;color:#008b45&#34;&gt;Event&lt;/span&gt;(context.&lt;span style=&#34;color:#008b45&#34;&gt;Background&lt;/span&gt;(), &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;t1&amp;#34;&lt;/span&gt;)
+	_ = tr.&lt;span style=&#34;color:#008b45&#34;&gt;Event&lt;/span&gt;(context.&lt;span style=&#34;color:#008b45&#34;&gt;Background&lt;/span&gt;(), &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;t2&amp;#34;&lt;/span&gt;)
+	_ = tr.&lt;span style=&#34;color:#008b45&#34;&gt;Event&lt;/span&gt;(context.&lt;span style=&#34;color:#008b45&#34;&gt;Background&lt;/span&gt;(), &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;t3&amp;#34;&lt;/span&gt;)
+	time.&lt;span style=&#34;color:#008b45&#34;&gt;Sleep&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt; * time.Second)
+	ctx, cancel := context.&lt;span style=&#34;color:#008b45&#34;&gt;WithDeadline&lt;/span&gt;(context.&lt;span style=&#34;color:#008b45&#34;&gt;Background&lt;/span&gt;(), time.&lt;span style=&#34;color:#008b45&#34;&gt;Now&lt;/span&gt;().&lt;span style=&#34;color:#008b45&#34;&gt;Add&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;*time.Second))
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;defer&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;cancel&lt;/span&gt;()
+    &lt;span style=&#34;color:#228b22&#34;&gt;// 由写的人去关闭channel
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	tr.&lt;span style=&#34;color:#008b45&#34;&gt;Shutdown&lt;/span&gt;(ctx)
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;NewTracker&lt;/span&gt;() *Tracker {
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &amp;amp;Tracker{
+		ch: &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;),
+	}
+}
+
+&lt;span style=&#34;color:#228b22&#34;&gt;// Tracker knows how to track events for the application.
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;type&lt;/span&gt; Tracker &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
+	ch   &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;
+	stop &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; (t *Tracker) &lt;span style=&#34;color:#008b45&#34;&gt;Event&lt;/span&gt;(ctx context.Context, data &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;select&lt;/span&gt; {
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;case&lt;/span&gt; t.ch &amp;lt;- data:
+		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;case&lt;/span&gt; &amp;lt;-ctx.&lt;span style=&#34;color:#008b45&#34;&gt;Done&lt;/span&gt;():
+		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; ctx.&lt;span style=&#34;color:#008b45&#34;&gt;Err&lt;/span&gt;()
+
+	}
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; (t *Tracker) &lt;span style=&#34;color:#008b45&#34;&gt;Run&lt;/span&gt;() {
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; data := &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;range&lt;/span&gt; t.ch {
+		time.&lt;span style=&#34;color:#008b45&#34;&gt;Sleep&lt;/span&gt;(time.Second)
+		&lt;span style=&#34;color:#658b00&#34;&gt;println&lt;/span&gt;(data)
+	}
+	t.stop &amp;lt;- &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}{}
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; (t *Tracker) &lt;span style=&#34;color:#008b45&#34;&gt;Shutdown&lt;/span&gt;(ctx context.Context) {
+	&lt;span style=&#34;color:#658b00&#34;&gt;close&lt;/span&gt;(t.ch)
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;select&lt;/span&gt; {
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;case&lt;/span&gt; &amp;lt;-t.stop:
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;case&lt;/span&gt; &amp;lt;-ctx.&lt;span style=&#34;color:#008b45&#34;&gt;Done&lt;/span&gt;():
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;一个好点的使用案例&#34;&gt;一个好点的使用案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; main
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;context&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;serve&lt;/span&gt;(addr &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;, handler http.Handler, stop &amp;lt;-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
+	s := http.Server{
+		Addr:    addr,
+		Handler: handler,
+	}
+
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;() {
+		&amp;lt;-stop &lt;span style=&#34;color:#228b22&#34;&gt;// wait for stop signal
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;		s.&lt;span style=&#34;color:#008b45&#34;&gt;Shutdown&lt;/span&gt;(context.&lt;span style=&#34;color:#008b45&#34;&gt;Background&lt;/span&gt;())
+	}()
+
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; s.&lt;span style=&#34;color:#008b45&#34;&gt;ListenAndServe&lt;/span&gt;()
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;serveApp&lt;/span&gt;(stop &amp;lt;-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
+	mux := http.&lt;span style=&#34;color:#008b45&#34;&gt;NewServeMux&lt;/span&gt;()
+	mux.&lt;span style=&#34;color:#008b45&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;(resp http.ResponseWriter, req *http.Request) {
+		fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Fprintln&lt;/span&gt;(resp, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello, QCon!&amp;#34;&lt;/span&gt;)
+	})
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;serve&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;0.0.0.0:8080&amp;#34;&lt;/span&gt;, mux, stop)
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;serveDebug&lt;/span&gt;(stop &amp;lt;-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;serve&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;127.0.0.1:8001&amp;#34;&lt;/span&gt;, http.DefaultServeMux, stop)
+}
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;() {
+	done := &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;)
+	stop := &lt;span style=&#34;color:#658b00&#34;&gt;make&lt;/span&gt;(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;chan&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{})
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;() {
+		done &amp;lt;- &lt;span style=&#34;color:#008b45&#34;&gt;serveDebug&lt;/span&gt;(stop)
+	}()
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt;() {
+		done &amp;lt;- &lt;span style=&#34;color:#008b45&#34;&gt;serveApp&lt;/span&gt;(stop)
+	}()
+
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; stopped &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;bool&lt;/span&gt;
+	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; i := &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span style=&#34;color:#658b00&#34;&gt;cap&lt;/span&gt;(done); i++ {
+		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; err := &amp;lt;-done; err != &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt; {
+			fmt.&lt;span style=&#34;color:#008b45&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;error: %v\n&amp;#34;&lt;/span&gt;, err)
+		}
+		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; !stopped {
+			stopped = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;true&lt;/span&gt;
+			&lt;span style=&#34;color:#658b00&#34;&gt;close&lt;/span&gt;(stop)
+		}
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;管理好了所有goroutine的生命周期，不会有泄露&lt;/li&gt;
+&lt;li&gt;任何一个goroutine出现问题，都会让所有其他的goroutine优雅退出，不会造成任何数据的丢失&lt;/li&gt;
+&lt;li&gt;所有需要后台执行的任务都是由调用者来决定&lt;/li&gt;
+&lt;li&gt;调用者开启goroutine时有结束它的手段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://go.dev/doc/faq#goroutines&#34;&gt;Why goroutines instead of threads?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/practical-go/presentations/qcon-china.html&#34;&gt;Practical Go: Real world advice for writing maintainable Go programs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ardanlabs.com/blog/2018/11/goroutine-leaks-the-forgotten-sender.html&#34;&gt;Goroutine Leaks - The Forgotten Sender&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ardanlabs.com/blog/2019/04/concurrency-trap-2-incomplete-work.html&#34;&gt;Concurrency Trap #2: Incomplete Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/da440dil&#34;&gt;da440dil&lt;/a&gt;/&lt;a href=&#34;https://github.com/da440dil/go-workgroup&#34;&gt;go-workgroup&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+- https://luxcgo.github.io/posts/go/golang-goroutine-manage/ - 2020-2022 源泉的小站</description>
         </item>
     
     

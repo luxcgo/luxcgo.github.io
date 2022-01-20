@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html><head>
+<title>Go语言Goroutine管理</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Go语言Goroutine管理" />
+<meta property="og:description" content="Goroutine 操作系统会为该应用程序创建一个进程。作为一个应用程序，它像一个为所有资源而运行的容器。这些资源包括内存地址空间、文件句柄、设备和线程。
+线程是操作系统调度的一种执行路径，用于在处理器执行我们在函数中编写的代码。一个进程从一个线程开始，即主线程，当该线程终止时，进程终止。这是因为主线程是应用程序的原点。然后，主线程可以依次启动更多的线程，而这些线程可以启动更多的线程。
+无论线程属于哪个进程，操作系统都会安排线程在可用处理器上运行。每个操作系统都有自己的算法来做出这些决定。
+Go 语言层面支持的 go 关键字，可以快速的让一个函数创建为 goroutine，我们可以认为 main 函数就是作为 goroutine 执行的。操作系统调度线程在可用处理器上运行，Go运行时调度 goroutines 在绑定到单个操作系统线程的逻辑处理器中运行(P)。即使使用这个单一的逻辑处理器和操作系统线程，也可以调度数十万 goroutine 以惊人的效率和性能并发运行。
+如何清真的使用 goroutine 能不用就不用 package main import ( &#34;fmt&#34; &#34;log&#34; &#34;net/http&#34; ) func main() { http.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) { fmt.Fprintln(w, &#34;Hello, GopherCon SG&#34;) }) go func() { if err := http.ListenAndServe(&#34;:8080&#34;, nil); err != nil { log.Fatal(err) } }() select {} } 上面的程序可以看到，为了防止main.main退出，结尾使用了空的select语句阻塞住了主函数。某种意义上来说是一个好的做法因为没有使用for循环或其他浪费CPU的方式防止主进程退出。不过这仍然属于脱裤子放屁。因为在执行ListenAndServe函数的goroutine返回前什么都做不了，那就不如不开启一个goroutine去完成这个任务，直接在主线程里做。
+ 如果你的 goroutine 在从另一个 goroutine 获得结果之前无法取得进展，那么通常情况下，你自己去做这项工作比委托它( go func() )更简单。这通常消除了将结果从 goroutine 返回到其启动器所需的大量状态跟踪和 chan 操作。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/go/golang-goroutine-manage/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-16T14:31:07+08:00" />
+<meta property="article:modified_time" content="2022-01-16T14:31:07+08:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go语言Goroutine管理"/>
+<meta name="twitter:description" content="Goroutine 操作系统会为该应用程序创建一个进程。作为一个应用程序，它像一个为所有资源而运行的容器。这些资源包括内存地址空间、文件句柄、设备和线程。
+线程是操作系统调度的一种执行路径，用于在处理器执行我们在函数中编写的代码。一个进程从一个线程开始，即主线程，当该线程终止时，进程终止。这是因为主线程是应用程序的原点。然后，主线程可以依次启动更多的线程，而这些线程可以启动更多的线程。
+无论线程属于哪个进程，操作系统都会安排线程在可用处理器上运行。每个操作系统都有自己的算法来做出这些决定。
+Go 语言层面支持的 go 关键字，可以快速的让一个函数创建为 goroutine，我们可以认为 main 函数就是作为 goroutine 执行的。操作系统调度线程在可用处理器上运行，Go运行时调度 goroutines 在绑定到单个操作系统线程的逻辑处理器中运行(P)。即使使用这个单一的逻辑处理器和操作系统线程，也可以调度数十万 goroutine 以惊人的效率和性能并发运行。
+如何清真的使用 goroutine 能不用就不用 package main import ( &#34;fmt&#34; &#34;log&#34; &#34;net/http&#34; ) func main() { http.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) { fmt.Fprintln(w, &#34;Hello, GopherCon SG&#34;) }) go func() { if err := http.ListenAndServe(&#34;:8080&#34;, nil); err != nil { log.Fatal(err) } }() select {} } 上面的程序可以看到，为了防止main.main退出，结尾使用了空的select语句阻塞住了主函数。某种意义上来说是一个好的做法因为没有使用for循环或其他浪费CPU的方式防止主进程退出。不过这仍然属于脱裤子放屁。因为在执行ListenAndServe函数的goroutine返回前什么都做不了，那就不如不开启一个goroutine去完成这个任务，直接在主线程里做。
+ 如果你的 goroutine 在从另一个 goroutine 获得结果之前无法取得进展，那么通常情况下，你自己去做这项工作比委托它( go func() )更简单。这通常消除了将结果从 goroutine 返回到其启动器所需的大量状态跟踪和 chan 操作。"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://luxcgo.github.io/images/favicon.ico">
+
+
+
+<link rel="stylesheet" href="https://luxcgo.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://luxcgo.github.io/">
+    
+        <div class="nav-title">
+            源泉的小站
+        </div>
+        
+        <div class="nav-subtitle">
+            吾尝终日而思矣,不如须臾之所学也
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        <div id="theme-info" style="display: none;">
+	
+	Theme modified from <a href="https://github.com/amazingrise/hugo-theme-diary" target="_blank" rel="noreferrer noopener">Diary</a> by <a href="https://amazingrise.net" target="_blank" rel="noreferrer noopener">Rise</a>
+	<br>
+	Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+	Generated by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+	<br><br>
+	
+</div>
+&copy;
+	
+	2020-2022 源泉的小站
+	 (<a href="#" onclick="document.getElementById('theme-info').style=''">Diary</a>)
+    <br> 本站遵循 CC-BY-NC 4.0 协议
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#goroutine" onclick="onNavClick(`#goroutine-nav`)" id="goroutine-nav">
+									Goroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%a6%82%e4%bd%95%e6%b8%85%e7%9c%9f%e7%9a%84%e4%bd%bf%e7%94%a8-goroutine" onclick="onNavClick(`#如何清真的使用-goroutine-nav`)" id="如何清真的使用-goroutine-nav">
+									如何清真的使用 goroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%83%bd%e4%b8%8d%e7%94%a8%e5%b0%b1%e4%b8%8d%e7%94%a8" onclick="onNavClick(`#能不用就不用-nav`)" id="能不用就不用-nav">
+									能不用就不用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b0%83%e7%94%a8%e8%80%85%e5%86%b3%e5%ae%9a%e6%98%af%e5%90%a6%e8%a6%81%e5%b9%b6%e5%8f%91" onclick="onNavClick(`#调用者决定是否要并发-nav`)" id="调用者决定是否要并发-nav">
+									调用者决定是否要并发
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%ae%a1%e7%90%86%e5%a5%bd%e6%95%b4%e4%b8%aa%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f" onclick="onNavClick(`#管理好整个生命周期-nav`)" id="管理好整个生命周期-nav">
+									管理好整个生命周期
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b6%85%e6%97%b6%e6%8e%a7%e5%88%b6" onclick="onNavClick(`#超时控制-nav`)" id="超时控制-nav">
+									超时控制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%80%e4%b8%aa%e5%a5%bd%e7%82%b9%e7%9a%84%e4%bd%bf%e7%94%a8%e6%a1%88%e4%be%8b" onclick="onNavClick(`#一个好点的使用案例-nav`)" id="一个好点的使用案例-nav">
+									一个好点的使用案例
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#reference" onclick="onNavClick(`#reference-nav`)" id="reference-nav">
+									Reference
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#goroutine" onclick="onNavClick(`#goroutine-nav`)" id="goroutine-nav">
+									Goroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%a6%82%e4%bd%95%e6%b8%85%e7%9c%9f%e7%9a%84%e4%bd%bf%e7%94%a8-goroutine" onclick="onNavClick(`#如何清真的使用-goroutine-nav`)" id="如何清真的使用-goroutine-nav">
+									如何清真的使用 goroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%83%bd%e4%b8%8d%e7%94%a8%e5%b0%b1%e4%b8%8d%e7%94%a8" onclick="onNavClick(`#能不用就不用-nav`)" id="能不用就不用-nav">
+									能不用就不用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b0%83%e7%94%a8%e8%80%85%e5%86%b3%e5%ae%9a%e6%98%af%e5%90%a6%e8%a6%81%e5%b9%b6%e5%8f%91" onclick="onNavClick(`#调用者决定是否要并发-nav`)" id="调用者决定是否要并发-nav">
+									调用者决定是否要并发
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%ae%a1%e7%90%86%e5%a5%bd%e6%95%b4%e4%b8%aa%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f" onclick="onNavClick(`#管理好整个生命周期-nav`)" id="管理好整个生命周期-nav">
+									管理好整个生命周期
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b6%85%e6%97%b6%e6%8e%a7%e5%88%b6" onclick="onNavClick(`#超时控制-nav`)" id="超时控制-nav">
+									超时控制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%80%e4%b8%aa%e5%a5%bd%e7%82%b9%e7%9a%84%e4%bd%bf%e7%94%a8%e6%a1%88%e4%be%8b" onclick="onNavClick(`#一个好点的使用案例-nav`)" id="一个好点的使用案例-nav">
+									一个好点的使用案例
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#reference" onclick="onNavClick(`#reference-nav`)" id="reference-nav">
+									Reference
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://luxcgo.github.io/">
+            源泉的小站
+        </a>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://luxcgo.github.io/">
+        <div class="single-column-header-title">源泉的小站</div>
+        
+        <div class="single-column-header-subtitle">吾尝终日而思矣,不如须臾之所学也</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://luxcgo.github.io/images/maojian.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    Go语言Goroutine管理
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-01-16 14:31
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/go">Go</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="goroutine">Goroutine</h2>
+<p>操作系统会为该应用程序创建一个进程。作为一个应用程序，它像一个为所有资源而运行的容器。这些资源包括内存地址空间、文件句柄、设备和线程。</p>
+<p>线程是操作系统调度的一种执行路径，用于在处理器执行我们在函数中编写的代码。一个进程从一个线程开始，即主线程，当该线程终止时，进程终止。这是因为主线程是应用程序的原点。然后，主线程可以依次启动更多的线程，而这些线程可以启动更多的线程。</p>
+<p>无论线程属于哪个进程，操作系统都会安排线程在可用处理器上运行。每个操作系统都有自己的算法来做出这些决定。</p>
+<p>Go 语言层面支持的 go 关键字，可以快速的让一个函数创建为 goroutine，我们可以认为 main 函数就是作为 goroutine 执行的。操作系统调度线程在可用处理器上运行，Go运行时调度 goroutines 在绑定到单个操作系统线程的逻辑处理器中运行(P)。即使使用这个单一的逻辑处理器和操作系统线程，也可以调度数十万 goroutine 以惊人的效率和性能并发运行。</p>
+<h2 id="如何清真的使用-goroutine">如何清真的使用 goroutine</h2>
+<h3 id="能不用就不用">能不用就不用</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> main
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+	<span style="color:#cd5555">&#34;log&#34;</span>
+	<span style="color:#cd5555">&#34;net/http&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+	http.<span style="color:#008b45">HandleFunc</span>(<span style="color:#cd5555">&#34;/&#34;</span>, <span style="color:#8b008b;font-weight:bold">func</span>(w http.ResponseWriter, r *http.Request) {
+		fmt.<span style="color:#008b45">Fprintln</span>(w, <span style="color:#cd5555">&#34;Hello, GopherCon SG&#34;</span>)
+	})
+	<span style="color:#8b008b;font-weight:bold">go</span> <span style="color:#8b008b;font-weight:bold">func</span>() {
+		<span style="color:#8b008b;font-weight:bold">if</span> err := http.<span style="color:#008b45">ListenAndServe</span>(<span style="color:#cd5555">&#34;:8080&#34;</span>, <span style="color:#8b008b;font-weight:bold">nil</span>); err != <span style="color:#8b008b;font-weight:bold">nil</span> {
+			log.<span style="color:#008b45">Fatal</span>(err)
+		}
+	}()
+
+	<span style="color:#8b008b;font-weight:bold">select</span> {}
+}
+</code></pre></div><p>上面的程序可以看到，为了防止main.main退出，结尾使用了空的select语句阻塞住了主函数。某种意义上来说是一个好的做法因为没有使用for循环或其他浪费CPU的方式防止主进程退出。不过这仍然属于脱裤子放屁。因为在执行ListenAndServe函数的goroutine返回前什么都做不了，那就不如不开启一个goroutine去完成这个任务，直接在主线程里做。</p>
+<blockquote>
+<p>如果你的 goroutine 在从另一个 goroutine 获得结果之前无法取得进展，那么通常情况下，你自己去做这项工作比委托它( go func() )更简单。这通常消除了将结果从 goroutine 返回到其启动器所需的大量状态跟踪和 chan 操作。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> main
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+	<span style="color:#cd5555">&#34;log&#34;</span>
+	<span style="color:#cd5555">&#34;net/http&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+	http.<span style="color:#008b45">HandleFunc</span>(<span style="color:#cd5555">&#34;/&#34;</span>, <span style="color:#8b008b;font-weight:bold">func</span>(w http.ResponseWriter, r *http.Request) {
+		fmt.<span style="color:#008b45">Fprintln</span>(w, <span style="color:#cd5555">&#34;Hello, GopherCon SG&#34;</span>)
+	})
+	<span style="color:#8b008b;font-weight:bold">if</span> err := http.<span style="color:#008b45">ListenAndServe</span>(<span style="color:#cd5555">&#34;:8080&#34;</span>, <span style="color:#8b008b;font-weight:bold">nil</span>); err != <span style="color:#8b008b;font-weight:bold">nil</span> {
+		log.<span style="color:#008b45">Fatal</span>(err)
+	}
+}
+</code></pre></div><h3 id="调用者决定是否要并发">调用者决定是否要并发</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// ListDirectory returns the contents of dir.
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ListDirectory</span>(dir <span style="color:#00688b;font-weight:bold">string</span>) ([]<span style="color:#00688b;font-weight:bold">string</span>, <span style="color:#00688b;font-weight:bold">error</span>)
+
+<span style="color:#228b22">// ListDirectory returns a channel over which
+</span><span style="color:#228b22">// directory entries will be published. When the list
+</span><span style="color:#228b22">// of entries is exhausted, the channel will be closed.
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">ListDirectory</span>(dir <span style="color:#00688b;font-weight:bold">string</span>) <span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">string</span>
+</code></pre></div><p>以上两个API设计的功能都是要读取所有的目录</p>
+<ol>
+<li>将目录读取到一个 slice 中，然后返回整个切片，或者如果出现错误，则返回错误。这是同步调用的，ListDirectory 的调用方会阻塞，直到读取所有目录条目。根据目录的大小，这可能需要很长时间，并且可能会分配大量内存来构建目录条目名称的 slice。</li>
+<li>ListDirectory 返回一个 chan string，将通过该 chan 传递目录。当通道关闭时，这表示不再有目录。由于在 ListDirectory 返回后发生通道的填充，ListDirectory 可能内部启动 goroutine 来填充通道。</li>
+</ol>
+<p>ListDirectory chan 版本还有两个问题：</p>
+<ul>
+<li>通过使用一个关闭的通道作为不再需要处理的项目的信号，ListDirectory 无法告诉调用者通过通道返回的项目集不完整，因为中途遇到了错误。调用方无法区分空目录与完全从目录读取的错误之间的区别。这两种方法都会导致从 ListDirectory 返回的通道会立即关闭。</li>
+<li>调用者必须继续从通道读取，直到它关闭，因为这是调用者知道开始填充通道的 goroutine 已经停止的唯一方法。这对 ListDirectory 的使用是一个严重的限制，调用者必须花时间从通道读取数据，即使它可能已经收到了它想要的答案。对于大中型目录，它可能在内存使用方面更为高效，但这种方法并不比原始的基于 slice 的方法快。</li>
+</ul>
+<p>解决之道是使用回调函数<code>func ListDirectory(dir string, fn func(string)) error</code></p>
+<p>filepath.WalkDir 也是类似的模型，如果函数启动 goroutine，则必须向调用方提供显式停止该goroutine 的方法。通常，将异步执行函数的决定权交给该函数的调用方通常更容易。</p>
+<h3 id="管理好整个生命周期">管理好整个生命周期</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// leak is a buggy function. It launches a goroutine that
+</span><span style="color:#228b22">// blocks receiving from a channel. Nothing will ever be
+</span><span style="color:#228b22">// sent on that channel and the channel is never closed so
+</span><span style="color:#228b22">// that goroutine will be blocked forever.
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">leak</span>() {
+	ch := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">int</span>)
+
+	<span style="color:#8b008b;font-weight:bold">go</span> <span style="color:#8b008b;font-weight:bold">func</span>() {
+		val := &lt;-ch
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;We received a value:&#34;</span>, val)
+	}()
+}
+</code></pre></div><ul>
+<li>
+<p>开启一个goroutine时要知道它何时会结束</p>
+</li>
+<li>
+<p>或者有什么手段可以让它结束</p>
+</li>
+</ul>
+<p>这样就可以确保不会发生goroutine泄漏</p>
+<h3 id="超时控制">超时控制</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> main
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;context&#34;</span>
+	<span style="color:#cd5555">&#34;time&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+	tr := <span style="color:#008b45">NewTracker</span>()
+	<span style="color:#8b008b;font-weight:bold">go</span> tr.<span style="color:#008b45">Run</span>()
+	_ = tr.<span style="color:#008b45">Event</span>(context.<span style="color:#008b45">Background</span>(), <span style="color:#cd5555">&#34;t1&#34;</span>)
+	_ = tr.<span style="color:#008b45">Event</span>(context.<span style="color:#008b45">Background</span>(), <span style="color:#cd5555">&#34;t2&#34;</span>)
+	_ = tr.<span style="color:#008b45">Event</span>(context.<span style="color:#008b45">Background</span>(), <span style="color:#cd5555">&#34;t3&#34;</span>)
+	time.<span style="color:#008b45">Sleep</span>(<span style="color:#b452cd">3</span> * time.Second)
+	ctx, cancel := context.<span style="color:#008b45">WithDeadline</span>(context.<span style="color:#008b45">Background</span>(), time.<span style="color:#008b45">Now</span>().<span style="color:#008b45">Add</span>(<span style="color:#b452cd">5</span>*time.Second))
+	<span style="color:#8b008b;font-weight:bold">defer</span> <span style="color:#008b45">cancel</span>()
+    <span style="color:#228b22">// 由写的人去关闭channel
+</span><span style="color:#228b22"></span>	tr.<span style="color:#008b45">Shutdown</span>(ctx)
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">NewTracker</span>() *Tracker {
+	<span style="color:#8b008b;font-weight:bold">return</span> &amp;Tracker{
+		ch: <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">string</span>, <span style="color:#b452cd">10</span>),
+	}
+}
+
+<span style="color:#228b22">// Tracker knows how to track events for the application.
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">type</span> Tracker <span style="color:#8b008b;font-weight:bold">struct</span> {
+	ch   <span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">string</span>
+	stop <span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#8b008b;font-weight:bold">struct</span>{}
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> (t *Tracker) <span style="color:#008b45">Event</span>(ctx context.Context, data <span style="color:#00688b;font-weight:bold">string</span>) <span style="color:#00688b;font-weight:bold">error</span> {
+	<span style="color:#8b008b;font-weight:bold">select</span> {
+	<span style="color:#8b008b;font-weight:bold">case</span> t.ch &lt;- data:
+		<span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">nil</span>
+	<span style="color:#8b008b;font-weight:bold">case</span> &lt;-ctx.<span style="color:#008b45">Done</span>():
+		<span style="color:#8b008b;font-weight:bold">return</span> ctx.<span style="color:#008b45">Err</span>()
+
+	}
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> (t *Tracker) <span style="color:#008b45">Run</span>() {
+	<span style="color:#8b008b;font-weight:bold">for</span> data := <span style="color:#8b008b;font-weight:bold">range</span> t.ch {
+		time.<span style="color:#008b45">Sleep</span>(time.Second)
+		<span style="color:#658b00">println</span>(data)
+	}
+	t.stop &lt;- <span style="color:#8b008b;font-weight:bold">struct</span>{}{}
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> (t *Tracker) <span style="color:#008b45">Shutdown</span>(ctx context.Context) {
+	<span style="color:#658b00">close</span>(t.ch)
+	<span style="color:#8b008b;font-weight:bold">select</span> {
+	<span style="color:#8b008b;font-weight:bold">case</span> &lt;-t.stop:
+	<span style="color:#8b008b;font-weight:bold">case</span> &lt;-ctx.<span style="color:#008b45">Done</span>():
+	}
+}
+
+</code></pre></div><h2 id="一个好点的使用案例">一个好点的使用案例</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> main
+
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;context&#34;</span>
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+	<span style="color:#cd5555">&#34;net/http&#34;</span>
+)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">serve</span>(addr <span style="color:#00688b;font-weight:bold">string</span>, handler http.Handler, stop &lt;-<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#8b008b;font-weight:bold">struct</span>{}) <span style="color:#00688b;font-weight:bold">error</span> {
+	s := http.Server{
+		Addr:    addr,
+		Handler: handler,
+	}
+
+	<span style="color:#8b008b;font-weight:bold">go</span> <span style="color:#8b008b;font-weight:bold">func</span>() {
+		&lt;-stop <span style="color:#228b22">// wait for stop signal
+</span><span style="color:#228b22"></span>		s.<span style="color:#008b45">Shutdown</span>(context.<span style="color:#008b45">Background</span>())
+	}()
+
+	<span style="color:#8b008b;font-weight:bold">return</span> s.<span style="color:#008b45">ListenAndServe</span>()
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">serveApp</span>(stop &lt;-<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#8b008b;font-weight:bold">struct</span>{}) <span style="color:#00688b;font-weight:bold">error</span> {
+	mux := http.<span style="color:#008b45">NewServeMux</span>()
+	mux.<span style="color:#008b45">HandleFunc</span>(<span style="color:#cd5555">&#34;/&#34;</span>, <span style="color:#8b008b;font-weight:bold">func</span>(resp http.ResponseWriter, req *http.Request) {
+		fmt.<span style="color:#008b45">Fprintln</span>(resp, <span style="color:#cd5555">&#34;Hello, QCon!&#34;</span>)
+	})
+	<span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#008b45">serve</span>(<span style="color:#cd5555">&#34;0.0.0.0:8080&#34;</span>, mux, stop)
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">serveDebug</span>(stop &lt;-<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#8b008b;font-weight:bold">struct</span>{}) <span style="color:#00688b;font-weight:bold">error</span> {
+	<span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#008b45">serve</span>(<span style="color:#cd5555">&#34;127.0.0.1:8001&#34;</span>, http.DefaultServeMux, stop)
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+	done := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">error</span>, <span style="color:#b452cd">2</span>)
+	stop := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#8b008b;font-weight:bold">struct</span>{})
+	<span style="color:#8b008b;font-weight:bold">go</span> <span style="color:#8b008b;font-weight:bold">func</span>() {
+		done &lt;- <span style="color:#008b45">serveDebug</span>(stop)
+	}()
+	<span style="color:#8b008b;font-weight:bold">go</span> <span style="color:#8b008b;font-weight:bold">func</span>() {
+		done &lt;- <span style="color:#008b45">serveApp</span>(stop)
+	}()
+
+	<span style="color:#8b008b;font-weight:bold">var</span> stopped <span style="color:#00688b;font-weight:bold">bool</span>
+	<span style="color:#8b008b;font-weight:bold">for</span> i := <span style="color:#b452cd">0</span>; i &lt; <span style="color:#658b00">cap</span>(done); i++ {
+		<span style="color:#8b008b;font-weight:bold">if</span> err := &lt;-done; err != <span style="color:#8b008b;font-weight:bold">nil</span> {
+			fmt.<span style="color:#008b45">Printf</span>(<span style="color:#cd5555">&#34;error: %v\n&#34;</span>, err)
+		}
+		<span style="color:#8b008b;font-weight:bold">if</span> !stopped {
+			stopped = <span style="color:#8b008b;font-weight:bold">true</span>
+			<span style="color:#658b00">close</span>(stop)
+		}
+	}
+}
+
+</code></pre></div><p>优点：</p>
+<ul>
+<li>管理好了所有goroutine的生命周期，不会有泄露</li>
+<li>任何一个goroutine出现问题，都会让所有其他的goroutine优雅退出，不会造成任何数据的丢失</li>
+<li>所有需要后台执行的任务都是由调用者来决定</li>
+<li>调用者开启goroutine时有结束它的手段</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ol>
+<li><a href="https://go.dev/doc/faq#goroutines">Why goroutines instead of threads?</a></li>
+<li><a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html">Practical Go: Real world advice for writing maintainable Go programs</a></li>
+<li><a href="https://www.ardanlabs.com/blog/2018/11/goroutine-leaks-the-forgotten-sender.html">Goroutine Leaks - The Forgotten Sender</a></li>
+<li><a href="https://www.ardanlabs.com/blog/2019/04/concurrency-trap-2-incomplete-work.html">Concurrency Trap #2: Incomplete Work</a></li>
+<li><a href="https://github.com/da440dil">da440dil</a>/<a href="https://github.com/da440dil/go-workgroup">go-workgroup</a></li>
+</ol>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2022-01-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/">
+			Previous<br>博客诞生记
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="luxcgo/blog-comment"
+        issue-term="pathname"
+        label="luxcgo"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer"><div id="theme-info" style="display: none;">
+	
+	Theme modified from <a href="https://github.com/amazingrise/hugo-theme-diary" target="_blank" rel="noreferrer noopener">Diary</a> by <a href="https://amazingrise.net" target="_blank" rel="noreferrer noopener">Rise</a>
+	<br>
+	Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+	Generated by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+	<br><br>
+	
+</div>
+&copy;
+	
+	2020-2022 源泉的小站
+	 (<a href="#" onclick="document.getElementById('theme-info').style=''">Diary</a>)
+    <br> 本站遵循 CC-BY-NC 4.0 协议
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

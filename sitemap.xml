@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://luxcgo.github.io/posts/golang-goroutine-manage/</loc>
+    <loc>https://luxcgo.github.io/categories/</loc>
+    <lastmod>2022-01-16T14:31:07+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/categories/go/</loc>
+    <lastmod>2022-01-16T14:31:07+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/go/golang-goroutine-manage/</loc>
     <lastmod>2022-01-16T14:31:07+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/posts/</loc>
@@ -10,9 +16,6 @@
   </url><url>
     <loc>https://luxcgo.github.io/</loc>
     <lastmod>2022-01-16T14:31:07+08:00</lastmod>
-  </url><url>
-    <loc>https://luxcgo.github.io/categories/</loc>
-    <lastmod>2022-01-09T22:16:50+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</loc>
     <lastmod>2022-01-09T22:16:50+08:00</lastmod>
@@ -40,9 +43,6 @@
   </url><url>
     <loc>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</loc>
     <lastmod>2021-11-07T11:51:19+08:00</lastmod>
-  </url><url>
-    <loc>https://luxcgo.github.io/categories/go/</loc>
-    <lastmod>2021-10-31T10:46:40+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</loc>
     <lastmod>2021-10-31T10:46:40+08:00</lastmod>
