@@ -7,7 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>2020-2022 源泉的小站</copyright>
-    <lastBuildDate>Sun, 16 Jan 2022 14:31:07 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 01:21:16 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blrec Flv源码分析</title>
+      <link>https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 12 Apr 2022 01:21:16 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>stream_processor.py </description>
+    </item>
+    
+    <item>
+      <title>Golang Gateway</title>
+      <link>https://luxcgo.github.io/posts/golang-gateway/</link>
+      <pubDate>Sat, 26 Mar 2022 15:59:06 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/golang-gateway/</guid>
+      <description>TCP获取完整数据报文 </description>
+    </item>
+    
+    <item>
+      <title>Rust入门</title>
+      <link>https://luxcgo.github.io/posts/rust-intro/</link>
+      <pubDate>Sat, 26 Feb 2022 20:50:48 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/rust-intro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go语言程序的一生</title>
+      <link>https://luxcgo.github.io/posts/golang-program-lifecycle/</link>
+      <pubDate>Mon, 24 Jan 2022 21:52:19 +0800</pubDate>
+      
+      <guid>https://luxcgo.github.io/posts/golang-program-lifecycle/</guid>
+      <description>理解可执行文件 编译过程 文本 -&amp;gt; 编译 -&amp;gt; 二进制可执行文件
+// 文本 package main func main() { println(&amp;#34;hi&amp;#34;) } // 编译 go build main.go // 二进制可执行文件 main 编译过程详细版 $ go build -x main.go WORK=/tmp/go-build3065476763 mkdir -p $WORK/b001/ cat &amp;gt;$WORK/b001/_gomod_.go &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; # internal package main import _ &amp;#34;unsafe&amp;#34; //go:linkname __debug_modinfo__ runtime.modinfo var __debug_modinfo__ = &amp;#34;0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\tcommand-line-arguments\nmod\tcommand-line-arguments\t(devel)\t\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2&amp;#34; EOF cat &amp;gt;$WORK/b001/importcfg &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; # internal # import config packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a EOF cd /home/lucas/github/go-higher/lifecycle # 编译: 文本代码 -&amp;gt; 目标文件(.</description>
+    </item>
+    
     <item>
       <title>Go语言Goroutine管理</title>
       <link>https://luxcgo.github.io/posts/go/golang-goroutine-manage/</link>

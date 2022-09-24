@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html><head>
+<title>Go语言程序的一生</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Go语言程序的一生" />
+<meta property="og:description" content="理解可执行文件 编译过程 文本 -&gt; 编译 -&gt; 二进制可执行文件
+// 文本 package main func main() { println(&#34;hi&#34;) } // 编译 go build main.go // 二进制可执行文件 main 编译过程详细版 $ go build -x main.go WORK=/tmp/go-build3065476763 mkdir -p $WORK/b001/ cat &gt;$WORK/b001/_gomod_.go &lt;&lt; &#39;EOF&#39; # internal package main import _ &#34;unsafe&#34; //go:linkname __debug_modinfo__ runtime.modinfo var __debug_modinfo__ = &#34;0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\tcommand-line-arguments\nmod\tcommand-line-arguments\t(devel)\t\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2&#34; EOF cat &gt;$WORK/b001/importcfg &lt;&lt; &#39;EOF&#39; # internal # import config packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a EOF cd /home/lucas/github/go-higher/lifecycle # 编译: 文本代码 -&gt; 目标文件(." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luxcgo.github.io/posts/golang-program-lifecycle/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-24T21:52:19+08:00" />
+<meta property="article:modified_time" content="2022-01-24T21:52:19+08:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go语言程序的一生"/>
+<meta name="twitter:description" content="理解可执行文件 编译过程 文本 -&gt; 编译 -&gt; 二进制可执行文件
+// 文本 package main func main() { println(&#34;hi&#34;) } // 编译 go build main.go // 二进制可执行文件 main 编译过程详细版 $ go build -x main.go WORK=/tmp/go-build3065476763 mkdir -p $WORK/b001/ cat &gt;$WORK/b001/_gomod_.go &lt;&lt; &#39;EOF&#39; # internal package main import _ &#34;unsafe&#34; //go:linkname __debug_modinfo__ runtime.modinfo var __debug_modinfo__ = &#34;0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\tcommand-line-arguments\nmod\tcommand-line-arguments\t(devel)\t\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2&#34; EOF cat &gt;$WORK/b001/importcfg &lt;&lt; &#39;EOF&#39; # internal # import config packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a EOF cd /home/lucas/github/go-higher/lifecycle # 编译: 文本代码 -&gt; 目标文件(."/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://luxcgo.github.io/images/favicon.ico">
+
+
+
+<link rel="stylesheet" href="https://luxcgo.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://luxcgo.github.io/">
+    
+        <div class="nav-title">
+            源泉的小站
+        </div>
+        
+        <div class="nav-subtitle">
+            吾尝终日而思矣,不如须臾之所学也
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        <div id="theme-info" style="display: none;">
+  
+  Theme modified from <a href="https://github.com/amazingrise/hugo-theme-diary" target="_blank" rel="noreferrer noopener">Diary</a> by <a href="https://amazingrise.net" target="_blank" rel="noreferrer noopener">Rise</a>
+  <br>
+  Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+  Generated by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+  <br><br>
+  
+</div>
+&copy;
+  
+  2020-2022 源泉的小站
+   (<a href="#" onclick="document.getElementById('theme-info').style=''">Diary</a>)
+    <br> 本站遵循 CC-BY-NC 4.0 协议
+    <br> <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022003253号</a>
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%90%86%e8%a7%a3%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#理解可执行文件-nav`)" id="理解可执行文件-nav">
+									理解可执行文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e8%af%91%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#编译过程-nav`)" id="编译过程-nav">
+									编译过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e8%af%91%e8%bf%87%e7%a8%8b%e8%af%a6%e7%bb%86%e7%89%88" onclick="onNavClick(`#编译过程详细版-nav`)" id="编译过程详细版-nav">
+									编译过程详细版
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#可执行文件-nav`)" id="可执行文件-nav">
+									可执行文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%90%86%e8%a7%a3%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#理解可执行文件-nav`)" id="理解可执行文件-nav">
+									理解可执行文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e8%af%91%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#编译过程-nav`)" id="编译过程-nav">
+									编译过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e8%af%91%e8%bf%87%e7%a8%8b%e8%af%a6%e7%bb%86%e7%89%88" onclick="onNavClick(`#编译过程详细版-nav`)" id="编译过程详细版-nav">
+									编译过程详细版
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e6%89%a7%e8%a1%8c%e6%96%87%e4%bb%b6" onclick="onNavClick(`#可执行文件-nav`)" id="可执行文件-nav">
+									可执行文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://luxcgo.github.io/">
+            源泉的小站
+        </a>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://luxcgo.github.io/">
+        <div class="single-column-header-title">源泉的小站</div>
+        
+        <div class="single-column-header-subtitle">吾尝终日而思矣,不如须臾之所学也</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Go语言程序的一生
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-01-24 21:52
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="理解可执行文件">理解可执行文件</h2>
+<h3 id="编译过程">编译过程</h3>
+<p>文本 -&gt; 编译 -&gt; 二进制可执行文件</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 文本
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">package</span> main
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+	<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;hi&#34;</span>)
+}
+
+<span style="color:#228b22">// 编译
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">go</span> build main.<span style="color:#8b008b;font-weight:bold">go</span>
+
+<span style="color:#228b22">// 二进制可执行文件
+</span><span style="color:#228b22"></span>main
+</code></pre></div><h3 id="编译过程详细版">编译过程详细版</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go build -x main.go
+<span style="color:#00688b">WORK</span>=/tmp/go-build3065476763
+mkdir -p <span style="color:#00688b">$WORK</span>/b001/
+cat &gt;<span style="color:#00688b">$WORK</span>/b001/_gomod_.go <span style="color:#cd5555">&lt;&lt; &#39;EOF&#39; # internal
+</span><span style="color:#cd5555">package main
+</span><span style="color:#cd5555">import _ &#34;unsafe&#34;
+</span><span style="color:#cd5555">//go:linkname __debug_modinfo__ runtime.modinfo
+</span><span style="color:#cd5555">var __debug_modinfo__ = &#34;0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\tcommand-line-arguments\nmod\tcommand-line-arguments\t(devel)\t\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2&#34;
+</span><span style="color:#cd5555">EOF</span>
+cat &gt;<span style="color:#00688b">$WORK</span>/b001/importcfg <span style="color:#cd5555">&lt;&lt; &#39;EOF&#39; # internal
+</span><span style="color:#cd5555"># import config
+</span><span style="color:#cd5555">packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a
+</span><span style="color:#cd5555">EOF</span>
+<span style="color:#658b00">cd</span> /home/lucas/github/go-higher/lifecycle
+<span style="color:#228b22"># 编译: 文本代码 -&gt; 目标文件(.o，.a)</span>
+/usr/lib/go-1.17/pkg/tool/linux_amd64/compile -o <span style="color:#00688b">$WORK</span>/b001/_pkg_.a -trimpath <span style="color:#cd5555">&#34;</span><span style="color:#00688b">$WORK</span><span style="color:#cd5555">/b001=&gt;&#34;</span> -p main -lang=go1.17 -complete -buildid lnP5TiJOsIUwPmLiIfPV/lnP5TiJOsIUwPmLiIfPV -goversion go1.17.5 -D _/home/lucas/github/go-higher/lifecycle -importcfg <span style="color:#00688b">$WORK</span>/b001/importcfg -pack -c=<span style="color:#b452cd">2</span> ./main.go <span style="color:#00688b">$WORK</span>/b001/_gomod_.go
+/usr/lib/go-1.17/pkg/tool/linux_amd64/buildid -w <span style="color:#00688b">$WORK</span>/b001/_pkg_.a <span style="color:#228b22"># internal</span>
+cp <span style="color:#00688b">$WORK</span>/b001/_pkg_.a /home/lucas/.cache/go-build/22/2265575b71ed2f5a520a0c207374b79d322454b578824e8c3c39f6bf10770432-d <span style="color:#228b22"># internal</span>
+cat &gt;<span style="color:#00688b">$WORK</span>/b001/importcfg.link <span style="color:#cd5555">&lt;&lt; &#39;EOF&#39; # internal
+</span><span style="color:#cd5555">packagefile command-line-arguments=$WORK/b001/_pkg_.a
+</span><span style="color:#cd5555">packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a
+</span><span style="color:#cd5555">packagefile internal/abi=/usr/lib/go-1.17/pkg/linux_amd64/internal/abi.a
+</span><span style="color:#cd5555">packagefile internal/bytealg=/usr/lib/go-1.17/pkg/linux_amd64/internal/bytealg.a
+</span><span style="color:#cd5555">packagefile internal/cpu=/usr/lib/go-1.17/pkg/linux_amd64/internal/cpu.a
+</span><span style="color:#cd5555">packagefile internal/goexperiment=/usr/lib/go-1.17/pkg/linux_amd64/internal/goexperiment.a
+</span><span style="color:#cd5555">packagefile runtime/internal/atomic=/usr/lib/go-1.17/pkg/linux_amd64/runtime/internal/atomic.a
+</span><span style="color:#cd5555">packagefile runtime/internal/math=/usr/lib/go-1.17/pkg/linux_amd64/runtime/internal/math.a
+</span><span style="color:#cd5555">packagefile runtime/internal/sys=/usr/lib/go-1.17/pkg/linux_amd64/runtime/internal/sys.a
+</span><span style="color:#cd5555">EOF</span>
+mkdir -p <span style="color:#00688b">$WORK</span>/b001/exe/
+<span style="color:#658b00">cd</span> .
+<span style="color:#228b22"># 链接: 将目标文件合并为可执行文件</span>
+/usr/lib/go-1.17/pkg/tool/linux_amd64/link -o <span style="color:#00688b">$WORK</span>/b001/exe/a.out -importcfg <span style="color:#00688b">$WORK</span>/b001/importcfg.link -buildmode=exe -buildid=G-g9D6X-2ZthM87RLc5o/lnP5TiJOsIUwPmLiIfPV/MZuyVms2pq5r1tYts6Az/G-g9D6X-2ZthM87RLc5o -extld=gcc <span style="color:#00688b">$WORK</span>/b001/_pkg_.a
+/usr/lib/go-1.17/pkg/tool/linux_amd64/buildid -w <span style="color:#00688b">$WORK</span>/b001/exe/a.out <span style="color:#228b22"># internal</span>
+mv <span style="color:#00688b">$WORK</span>/b001/exe/a.out main
+rm -r <span style="color:#00688b">$WORK</span>/b001/
+</code></pre></div><h3 id="可执行文件">可执行文件</h3>
+<p>linux中的可执行文件 ELF(Executable and Linkable Format) 由几部分构成：</p>
+<ul>
+<li>ELF header</li>
+<li>Section header</li>
+<li>Sections</li>
+</ul>
+<p>操作系统执行可执行文件的步骤(以 linux 为例):</p>
+<ol>
+<li>解析 ELF Header</li>
+<li>加载文件内容至内存</li>
+<li>从 entry point 开始执行代码</li>
+</ol>
+<p>通过 entry point 找到 Go 进程的执行入口，使用 readelf</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ readelf -h ./main
+ELF Header:
+  Magic:   7f <span style="color:#b452cd">45</span> 4c <span style="color:#b452cd">46</span> <span style="color:#b452cd">02</span> <span style="color:#b452cd">01</span> <span style="color:#b452cd">01</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span> <span style="color:#b452cd">00</span>
+  Class:                             ELF64
+  Data:                              2<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s complement, little endian
+  Version:                           <span style="color:#b452cd">1</span> (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       <span style="color:#b452cd">0</span>
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  <span style="color:#228b22"># 执行入口</span>
+  Entry point address:               0x453b60
+  Start of program headers:          <span style="color:#b452cd">64</span> (bytes into file)
+  Start of section headers:          <span style="color:#b452cd">456</span> (bytes into file)
+  Flags:                             0x0
+  Size of this header:               <span style="color:#b452cd">64</span> (bytes)
+  Size of program headers:           <span style="color:#b452cd">56</span> (bytes)
+  Number of program headers:         <span style="color:#b452cd">7</span>
+  Size of section headers:           <span style="color:#b452cd">64</span> (bytes)
+  Number of section headers:         <span style="color:#b452cd">23</span>
+  Section header string table index: <span style="color:#b452cd">3</span>
+</code></pre></div><!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2022-01-24</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://luxcgo.github.io/posts/rust-intro/">
+			Next<br>Rust入门
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://luxcgo.github.io/posts/go/golang-goroutine-manage/">
+			Previous<br>Go语言Goroutine管理
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="luxcgo/blog-comment"
+        issue-term="pathname"
+        label="luxcgo"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer"><div id="theme-info" style="display: none;">
+  
+  Theme modified from <a href="https://github.com/amazingrise/hugo-theme-diary" target="_blank" rel="noreferrer noopener">Diary</a> by <a href="https://amazingrise.net" target="_blank" rel="noreferrer noopener">Rise</a>
+  <br>
+  Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+  Generated by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+  <br><br>
+  
+</div>
+&copy;
+  
+  2020-2022 源泉的小站
+   (<a href="#" onclick="document.getElementById('theme-info').style=''">Diary</a>)
+    <br> 本站遵循 CC-BY-NC 4.0 协议
+    <br> <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022003253号</a>
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

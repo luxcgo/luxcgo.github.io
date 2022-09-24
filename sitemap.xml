@@ -2,8 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2022-04-12T01:21:16+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/</loc>
+    <lastmod>2022-04-12T01:21:16+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/</loc>
+    <lastmod>2022-04-12T01:21:16+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/golang-gateway/</loc>
+    <lastmod>2022-03-26T15:59:06+08:00</lastmod>
+  </url><url>
     <loc>https://luxcgo.github.io/categories/</loc>
-    <lastmod>2022-01-16T14:31:07+08:00</lastmod>
+    <lastmod>2022-02-26T20:50:48+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/rust-intro/</loc>
+    <lastmod>2022-02-26T20:50:48+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/categories/%E5%B7%A5%E7%A8%8B/</loc>
+    <lastmod>2022-02-26T20:50:48+08:00</lastmod>
+  </url><url>
+    <loc>https://luxcgo.github.io/posts/golang-program-lifecycle/</loc>
+    <lastmod>2022-01-24T21:52:19+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/categories/go/</loc>
     <lastmod>2022-01-16T14:31:07+08:00</lastmod>
@@ -11,16 +32,7 @@
     <loc>https://luxcgo.github.io/posts/go/golang-goroutine-manage/</loc>
     <lastmod>2022-01-16T14:31:07+08:00</lastmod>
   </url><url>
-    <loc>https://luxcgo.github.io/posts/</loc>
-    <lastmod>2022-01-16T14:31:07+08:00</lastmod>
-  </url><url>
-    <loc>https://luxcgo.github.io/</loc>
-    <lastmod>2022-01-16T14:31:07+08:00</lastmod>
-  </url><url>
     <loc>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</loc>
-    <lastmod>2022-01-09T22:16:50+08:00</lastmod>
-  </url><url>
-    <loc>https://luxcgo.github.io/categories/%E5%B7%A5%E7%A8%8B/</loc>
     <lastmod>2022-01-09T22:16:50+08:00</lastmod>
   </url><url>
     <loc>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</loc>

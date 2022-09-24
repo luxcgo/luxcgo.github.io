@@ -6,9 +6,144 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>2020-2022 源泉的小站</copyright>
-    <lastBuildDate>Sun, 16 Jan 2022 14:31:07 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Apr 2022 01:21:16 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Blrec Flv源码分析</title>
+        <link>https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+        <pubDate>Tue, 12 Apr 2022 01:21:16 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ -&lt;h2 id=&#34;stream_processorpy&#34;&gt;stream_processor.py&lt;/h2&gt;
+- https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ - 2020-2022 源泉的小站</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Golang Gateway</title>
+        <link>https://luxcgo.github.io/posts/golang-gateway/</link>
+        <pubDate>Sat, 26 Mar 2022 15:59:06 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/golang-gateway/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/golang-gateway/ -&lt;h2 id=&#34;tcp获取完整数据报文&#34;&gt;TCP获取完整数据报文&lt;/h2&gt;
+- https://luxcgo.github.io/posts/golang-gateway/ - 2020-2022 源泉的小站</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Rust入门</title>
+        <link>https://luxcgo.github.io/posts/rust-intro/</link>
+        <pubDate>Sat, 26 Feb 2022 20:50:48 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/rust-intro/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/rust-intro/ -- https://luxcgo.github.io/posts/rust-intro/ - 2020-2022 源泉的小站</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go语言程序的一生</title>
+        <link>https://luxcgo.github.io/posts/golang-program-lifecycle/</link>
+        <pubDate>Mon, 24 Jan 2022 21:52:19 +0800</pubDate>
+        
+        <guid>https://luxcgo.github.io/posts/golang-program-lifecycle/</guid>
+        <description>源泉的小站 https://luxcgo.github.io/posts/golang-program-lifecycle/ -&lt;h2 id=&#34;理解可执行文件&#34;&gt;理解可执行文件&lt;/h2&gt;
+&lt;h3 id=&#34;编译过程&#34;&gt;编译过程&lt;/h3&gt;
+&lt;p&gt;文本 -&amp;gt; 编译 -&amp;gt; 二进制可执行文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 文本
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;package&lt;/span&gt; main
+
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;() {
+	&lt;span style=&#34;color:#658b00&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hi&amp;#34;&lt;/span&gt;)
+}
+
+&lt;span style=&#34;color:#228b22&#34;&gt;// 编译
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt; build main.&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;go&lt;/span&gt;
+
+&lt;span style=&#34;color:#228b22&#34;&gt;// 二进制可执行文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;编译过程详细版&#34;&gt;编译过程详细版&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ go build -x main.go
+&lt;span style=&#34;color:#00688b&#34;&gt;WORK&lt;/span&gt;=/tmp/go-build3065476763
+mkdir -p &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/
+cat &amp;gt;&lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/_gomod_.go &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; # internal
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;package main
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;import _ &amp;#34;unsafe&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;//go:linkname __debug_modinfo__ runtime.modinfo
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;var __debug_modinfo__ = &amp;#34;0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\tcommand-line-arguments\nmod\tcommand-line-arguments\t(devel)\t\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;EOF&lt;/span&gt;
+cat &amp;gt;&lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/importcfg &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; # internal
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;# import config
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;EOF&lt;/span&gt;
+&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; /home/lucas/github/go-higher/lifecycle
+&lt;span style=&#34;color:#228b22&#34;&gt;# 编译: 文本代码 -&amp;gt; 目标文件(.o，.a)&lt;/span&gt;
+/usr/lib/go-1.17/pkg/tool/linux_amd64/compile -o &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/_pkg_.a -trimpath &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;/b001=&amp;gt;&amp;#34;&lt;/span&gt; -p main -lang=go1.17 -complete -buildid lnP5TiJOsIUwPmLiIfPV/lnP5TiJOsIUwPmLiIfPV -goversion go1.17.5 -D _/home/lucas/github/go-higher/lifecycle -importcfg &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/importcfg -pack -c=&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; ./main.go &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/_gomod_.go
+/usr/lib/go-1.17/pkg/tool/linux_amd64/buildid -w &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/_pkg_.a &lt;span style=&#34;color:#228b22&#34;&gt;# internal&lt;/span&gt;
+cp &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/_pkg_.a /home/lucas/.cache/go-build/22/2265575b71ed2f5a520a0c207374b79d322454b578824e8c3c39f6bf10770432-d &lt;span style=&#34;color:#228b22&#34;&gt;# internal&lt;/span&gt;
+cat &amp;gt;&lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/importcfg.link &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; # internal
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile command-line-arguments=$WORK/b001/_pkg_.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile runtime=/usr/lib/go-1.17/pkg/linux_amd64/runtime.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile internal/abi=/usr/lib/go-1.17/pkg/linux_amd64/internal/abi.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile internal/bytealg=/usr/lib/go-1.17/pkg/linux_amd64/internal/bytealg.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile internal/cpu=/usr/lib/go-1.17/pkg/linux_amd64/internal/cpu.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile internal/goexperiment=/usr/lib/go-1.17/pkg/linux_amd64/internal/goexperiment.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile runtime/internal/atomic=/usr/lib/go-1.17/pkg/linux_amd64/runtime/internal/atomic.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile runtime/internal/math=/usr/lib/go-1.17/pkg/linux_amd64/runtime/internal/math.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;packagefile runtime/internal/sys=/usr/lib/go-1.17/pkg/linux_amd64/runtime/internal/sys.a
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;EOF&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/exe/
+&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; .
+&lt;span style=&#34;color:#228b22&#34;&gt;# 链接: 将目标文件合并为可执行文件&lt;/span&gt;
+/usr/lib/go-1.17/pkg/tool/linux_amd64/link -o &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/exe/a.out -importcfg &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/importcfg.link -buildmode=exe -buildid=G-g9D6X-2ZthM87RLc5o/lnP5TiJOsIUwPmLiIfPV/MZuyVms2pq5r1tYts6Az/G-g9D6X-2ZthM87RLc5o -extld=gcc &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/_pkg_.a
+/usr/lib/go-1.17/pkg/tool/linux_amd64/buildid -w &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/exe/a.out &lt;span style=&#34;color:#228b22&#34;&gt;# internal&lt;/span&gt;
+mv &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/exe/a.out main
+rm -r &lt;span style=&#34;color:#00688b&#34;&gt;$WORK&lt;/span&gt;/b001/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;可执行文件&#34;&gt;可执行文件&lt;/h3&gt;
+&lt;p&gt;linux中的可执行文件 ELF(Executable and Linkable Format) 由几部分构成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ELF header&lt;/li&gt;
+&lt;li&gt;Section header&lt;/li&gt;
+&lt;li&gt;Sections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;操作系统执行可执行文件的步骤(以 linux 为例):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;解析 ELF Header&lt;/li&gt;
+&lt;li&gt;加载文件内容至内存&lt;/li&gt;
+&lt;li&gt;从 entry point 开始执行代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过 entry point 找到 Go 进程的执行入口，使用 readelf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ readelf -h ./main
+ELF Header:
+  Magic:   7f &lt;span style=&#34;color:#b452cd&#34;&gt;45&lt;/span&gt; 4c &lt;span style=&#34;color:#b452cd&#34;&gt;46&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;02&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;00&lt;/span&gt;
+  Class:                             ELF64
+  Data:                              2&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#39;&lt;/span&gt;s complement, little endian
+  Version:                           &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  &lt;span style=&#34;color:#228b22&#34;&gt;# 执行入口&lt;/span&gt;
+  Entry point address:               0x453b60
+  Start of program headers:          &lt;span style=&#34;color:#b452cd&#34;&gt;64&lt;/span&gt; (bytes into file)
+  Start of section headers:          &lt;span style=&#34;color:#b452cd&#34;&gt;456&lt;/span&gt; (bytes into file)
+  Flags:                             0x0
+  Size of this header:               &lt;span style=&#34;color:#b452cd&#34;&gt;64&lt;/span&gt; (bytes)
+  Size of program headers:           &lt;span style=&#34;color:#b452cd&#34;&gt;56&lt;/span&gt; (bytes)
+  Number of program headers:         &lt;span style=&#34;color:#b452cd&#34;&gt;7&lt;/span&gt;
+  Size of section headers:           &lt;span style=&#34;color:#b452cd&#34;&gt;64&lt;/span&gt; (bytes)
+  Number of section headers:         &lt;span style=&#34;color:#b452cd&#34;&gt;23&lt;/span&gt;
+  Section header string table index: &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+- https://luxcgo.github.io/posts/golang-program-lifecycle/ - 2020-2022 源泉的小站</description>
+        </item>
     
     
     
@@ -445,300 +580,6 @@ node multi_song_upload.js --phone_number=&lt;span style=&#34;color:#cd5555&#34;&
 &lt;/li&gt;
 &lt;/ol&gt;
 - https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - 2020-2022 源泉的小站</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>HRM 人力资源机器</title>
-        <link>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</link>
-        <pubDate>Sun, 07 Nov 2021 16:15:14 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ -&lt;h2 id=&#34;体积速度&#34;&gt;体积！速度！&lt;/h2&gt;
-&lt;h3 id=&#34;第-1-年&#34;&gt;第 1 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-    INBOX   
-    OUTBOX  
-    INBOX   
-    OUTBOX  
-    INBOX   
-    OUTBOX  
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-2-年&#34;&gt;第 2 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    OUTBOX  
-    INBOX   
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-3-年&#34;&gt;第 3 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-    COPYFROM 4
-    OUTBOX  
-    COPYFROM 0
-    OUTBOX  
-    COPYFROM 3
-    OUTBOX  
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-4-年&#34;&gt;第 4 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    COPYTO   0
-    INBOX   
-    OUTBOX  
-    COPYFROM 0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-5-年&#34;&gt;第 5 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 咖啡时间
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-6-年&#34;&gt;第 6 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    COPYTO   0
-    INBOX   
-    ADD      0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-7-年&#34;&gt;第 7 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-b:
-    INBOX   
-    JUMPZ    b
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-8-年&#34;&gt;第 8 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    COPYTO   0
-    ADD      0
-    ADD      0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-9-年&#34;&gt;第 9 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-    JUMP     c
-a:
-    OUTBOX  
-b:
-c:
-    INBOX   
-    JUMPZ    a
-    JUMP     b
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-10-年&#34;&gt;第 10 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    COPYTO   0
-    ADD      0
-    COPYTO   0
-    ADD      0
-    COPYTO   0
-    ADD      0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-11-年&#34;&gt;第 11 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    COPYTO   0
-    INBOX   
-    COPYTO   1
-    SUB      0
-    OUTBOX  
-    COPYFROM 0
-    SUB      1
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-12-年&#34;&gt;第 12 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;-- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-    INBOX   
-    COPYTO   0
-    ADD      0
-    COPYTO   1
-    ADD      1
-    ADD      0
-    COPYTO   0
-    ADD      0
-    COPYTO   0
-    ADD      0
-    COPYTO   0
-    ADD      0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-13-年&#34;&gt;第 13 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 运算步数需要优化
--- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-b:
-    INBOX   
-    COPYTO   0
-    INBOX   
-    SUB      0
-    JUMPZ    c
-    JUMP     b
-c:
-    COPYFROM 0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-14-年&#34;&gt;第 14 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 代码行数需要优化
-// 运算步数需要优化
--- HUMAN RESOURCE MACHINE PROGRAM --
-
-a:
-b:
-    INBOX   
-    COPYTO   0
-    INBOX   
-    COPYTO   1
-    SUB      0
-    JUMPN    c
-    COPYFROM 1
-    OUTBOX  
-    JUMP     b
-c:
-    COPYFROM 0
-    OUTBOX  
-    JUMP     a
-
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-15-年&#34;&gt;第 15 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;// 斗志注入
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-16-年&#34;&gt;第 16 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-17-年&#34;&gt;第 17 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-18-年&#34;&gt;第 18 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-19-年&#34;&gt;第 19 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-20-年&#34;&gt;第 20 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-21-年&#34;&gt;第 21 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-22-年&#34;&gt;第 22 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-23-年&#34;&gt;第 23 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-24-年&#34;&gt;第 24 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-25-年&#34;&gt;第 25 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-26-年&#34;&gt;第 26 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-27-年&#34;&gt;第 27 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-28-年&#34;&gt;第 28 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-29-年&#34;&gt;第 29 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-30-年&#34;&gt;第 30 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-31-年&#34;&gt;第 31 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-32-年&#34;&gt;第 32 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-33-年&#34;&gt;第 33 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-34-年&#34;&gt;第 34 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-35-年&#34;&gt;第 35 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-36-年&#34;&gt;第 36 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-37-年&#34;&gt;第 37 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-38-年&#34;&gt;第 38 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-39-年&#34;&gt;第 39 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-40-年&#34;&gt;第 40 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-41-年&#34;&gt;第 41 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;第-42-年&#34;&gt;第 42 年&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;&lt;/code&gt;&lt;/pre&gt;- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/hrm-%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E6%9C%BA%E5%99%A8/ - 2020-2022 源泉的小站</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Go程序是怎么跑起来的</title>
-        <link>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</link>
-        <pubDate>Sun, 07 Nov 2021 11:51:19 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/ -&lt;h2 id=&#34;go-的启动和执行流程&#34;&gt;Go 的启动和执行流程&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;理解可执行文件 01&lt;/li&gt;
-&lt;li&gt;Go 进程的启动与初始化 02&lt;/li&gt;
-&lt;li&gt;调度组件与调度循环 03&lt;/li&gt;
-&lt;li&gt;处理阻塞 04&lt;/li&gt;
-&lt;li&gt;调度器的发展历史 05&lt;/li&gt;
-&lt;li&gt;与调度有关的常⻅问题&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;理解可执行文件&#34;&gt;理解可执行文件&lt;/h3&gt;
-&lt;p&gt;成长看得见&lt;/p&gt;
-- https://luxcgo.github.io/posts/go%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/ - 2020-2022 源泉的小站</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Go Spec学习摘要</title>
-        <link>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</link>
-        <pubDate>Sun, 31 Oct 2021 10:46:40 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ -- https://luxcgo.github.io/posts/go/go-spec%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/ - 2020-2022 源泉的小站</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Delve Golang专属的debugger</title>
-        <link>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</link>
-        <pubDate>Sun, 31 Oct 2021 00:45:41 +0800</pubDate>
-        
-        <guid>https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ -- https://luxcgo.github.io/posts/go/delve-golang%E4%B8%93%E5%B1%9E%E7%9A%84debugger/ - 2020-2022 源泉的小站</description>
         </item>
     
     
