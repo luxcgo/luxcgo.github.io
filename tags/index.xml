@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 源泉的小站</title>
+    <title>Tags on Go猜想录</title>
     <link>https://luxcgo.github.io/tags/</link>
-    <description>Recent content in Tags on 源泉的小站</description>
+    <description>Recent content in Tags on Go猜想录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>2020-2022 源泉的小站</copyright><atom:link href="https://luxcgo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2020-2022 Go猜想录</copyright><atom:link href="https://luxcgo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

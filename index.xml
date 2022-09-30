@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>源泉的小站</title>
+    <title>Go猜想录</title>
     <link>https://luxcgo.github.io/</link>
-    <description>Recent content on 源泉的小站</description>
+    <description>Recent content on Go猜想录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>2020-2022 源泉的小站</copyright>
+    <copyright>2020-2022 Go猜想录</copyright>
     <lastBuildDate>Tue, 12 Apr 2022 01:21:16 +0800</lastBuildDate>
     
         <atom:link href="https://luxcgo.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +18,8 @@
         <pubDate>Tue, 12 Apr 2022 01:21:16 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ -&lt;h2 id=&#34;stream_processorpy&#34;&gt;stream_processor.py&lt;/h2&gt;
-- https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ - 2020-2022 源泉的小站</description>
+        <description>Go猜想录 https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ -&lt;h2 id=&#34;stream_processorpy&#34;&gt;stream_processor.py&lt;/h2&gt;
+- https://luxcgo.github.io/posts/blrec-flv%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -30,8 +30,8 @@
         <pubDate>Sat, 26 Mar 2022 15:59:06 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/golang-gateway/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/golang-gateway/ -&lt;h2 id=&#34;tcp获取完整数据报文&#34;&gt;TCP获取完整数据报文&lt;/h2&gt;
-- https://luxcgo.github.io/posts/golang-gateway/ - 2020-2022 源泉的小站</description>
+        <description>Go猜想录 https://luxcgo.github.io/posts/golang-gateway/ -&lt;h2 id=&#34;tcp获取完整数据报文&#34;&gt;TCP获取完整数据报文&lt;/h2&gt;
+- https://luxcgo.github.io/posts/golang-gateway/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -42,7 +42,7 @@
         <pubDate>Sat, 26 Feb 2022 20:50:48 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/rust-intro/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/rust-intro/ -- https://luxcgo.github.io/posts/rust-intro/ - 2020-2022 源泉的小站</description>
+        <description>Go猜想录 https://luxcgo.github.io/posts/rust-intro/ -- https://luxcgo.github.io/posts/rust-intro/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -53,7 +53,7 @@
         <pubDate>Mon, 24 Jan 2022 21:52:19 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/golang-program-lifecycle/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/golang-program-lifecycle/ -&lt;h2 id=&#34;理解可执行文件&#34;&gt;理解可执行文件&lt;/h2&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/golang-program-lifecycle/ -&lt;h2 id=&#34;理解可执行文件&#34;&gt;理解可执行文件&lt;/h2&gt;
 &lt;h3 id=&#34;编译过程&#34;&gt;编译过程&lt;/h3&gt;
 &lt;p&gt;文本 -&amp;gt; 编译 -&amp;gt; 二进制可执行文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// 文本
@@ -142,7 +142,7 @@ ELF Header:
   Number of section headers:         &lt;span style=&#34;color:#b452cd&#34;&gt;23&lt;/span&gt;
   Section header string table index: &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
-- https://luxcgo.github.io/posts/golang-program-lifecycle/ - 2020-2022 源泉的小站</description>
+- https://luxcgo.github.io/posts/golang-program-lifecycle/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -153,7 +153,7 @@ ELF Header:
         <pubDate>Sun, 16 Jan 2022 14:31:07 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/go/golang-goroutine-manage/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/go/golang-goroutine-manage/ -&lt;h2 id=&#34;goroutine&#34;&gt;Goroutine&lt;/h2&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/go/golang-goroutine-manage/ -&lt;h2 id=&#34;goroutine&#34;&gt;Goroutine&lt;/h2&gt;
 &lt;p&gt;操作系统会为该应用程序创建一个进程。作为一个应用程序，它像一个为所有资源而运行的容器。这些资源包括内存地址空间、文件句柄、设备和线程。&lt;/p&gt;
 &lt;p&gt;线程是操作系统调度的一种执行路径，用于在处理器执行我们在函数中编写的代码。一个进程从一个线程开始，即主线程，当该线程终止时，进程终止。这是因为主线程是应用程序的原点。然后，主线程可以依次启动更多的线程，而这些线程可以启动更多的线程。&lt;/p&gt;
 &lt;p&gt;无论线程属于哪个进程，操作系统都会安排线程在可用处理器上运行。每个操作系统都有自己的算法来做出这些决定。&lt;/p&gt;
@@ -373,7 +373,7 @@ ELF Header:
 &lt;li&gt;&lt;a href=&#34;https://www.ardanlabs.com/blog/2019/04/concurrency-trap-2-incomplete-work.html&#34;&gt;Concurrency Trap #2: Incomplete Work&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/da440dil&#34;&gt;da440dil&lt;/a&gt;/&lt;a href=&#34;https://github.com/da440dil/go-workgroup&#34;&gt;go-workgroup&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-- https://luxcgo.github.io/posts/go/golang-goroutine-manage/ - 2020-2022 源泉的小站</description>
+- https://luxcgo.github.io/posts/go/golang-goroutine-manage/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -384,7 +384,7 @@ ELF Header:
         <pubDate>Sun, 09 Jan 2022 22:16:50 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ -&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ -&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;
 &lt;p&gt;使用自定义指令hn，含义是hugo deploy。自动构建两个网站luxcgo.github.io和luxcgo.com的静态文件，分别是用于国外和国内访问，然后推送到我的私有仓库中，通过submodule功能同步到公有仓库。随即触发github action构建网站镜像推送到私有镜像仓库中，我的云服务器检测到镜像更新自动拉取完成网站更新。&lt;/p&gt;
 &lt;h2 id=&#34;技术选型&#34;&gt;技术选型&lt;/h2&gt;
 &lt;ul&gt;
@@ -489,7 +489,7 @@ ELF Header:
 &lt;li&gt;&lt;a href=&#34;https://support.typora.io/Use-Typora-From-Shell-or-cmd/&#34;&gt;Use Typora from Shell or Cmd&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/23137414&#34;&gt;bash alias怎么解析传入的参数的？&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ - 2020-2022 源泉的小站</description>
+- https://luxcgo.github.io/posts/%E5%B7%A5%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E8%AE%B0/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -500,7 +500,7 @@ ELF Header:
         <pubDate>Sun, 12 Dec 2021 17:41:03 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/ -&lt;h1 id=&#34;project2a-实现raft算法&#34;&gt;Project2A 实现Raft算法&lt;/h1&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/ -&lt;h1 id=&#34;project2a-实现raft算法&#34;&gt;Project2A 实现Raft算法&lt;/h1&gt;
 &lt;h2 id=&#34;数据结构&#34;&gt;数据结构&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// Prs map[uint64]*Progress
 &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// leader用来维护所有follower的日志进度信息
@@ -519,7 +519,7 @@ ELF Header:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;newTestRaft&lt;/span&gt;(id &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;uint64&lt;/span&gt;, peers []&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;uint64&lt;/span&gt;, election, heartbeat &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;, storage Storage) *Raft {
 	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;newRaft&lt;/span&gt;(&lt;span style=&#34;color:#008b45&#34;&gt;newTestConfig&lt;/span&gt;(id, peers, election, heartbeat, storage))
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/ - 2020-2022 源泉的小站</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://luxcgo.github.io/posts/tinykv%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8C%87%E5%AF%BC%E4%B9%A6/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -530,9 +530,9 @@ ELF Header:
         <pubDate>Thu, 02 Dec 2021 01:49:21 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ -&lt;p&gt;尽管脱胎于paxos的raft算法的主要目的是容易开发者理解和实现，我作为一个分布式小白初读raft论文后还是一头雾水。主要原因我认为一是前置知识欠缺，二是论文中的一些结论的应用场景和由来没有指明，三是论文组织层层交错有一定难度。所以在我还没有被这部分知识诅咒之前，尝试把自己的理解表达出来，希望可以减少消磨一些同学们的意志力帮助理解。如有错误,还请大佬们不吝指正。&lt;/p&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ -&lt;p&gt;尽管脱胎于paxos的raft算法的主要目的是容易开发者理解和实现，我作为一个分布式小白初读raft论文后还是一头雾水。主要原因我认为一是前置知识欠缺，二是论文中的一些结论的应用场景和由来没有指明，三是论文组织层层交错有一定难度。所以在我还没有被这部分知识诅咒之前，尝试把自己的理解表达出来，希望可以减少消磨一些同学们的意志力帮助理解。如有错误,还请大佬们不吝指正。&lt;/p&gt;
 &lt;p&gt;拆解拆解&lt;/p&gt;
-- https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ - 2020-2022 源泉的小站</description>
+- https://luxcgo.github.io/posts/%E5%AF%BB%E6%89%BE%E4%B8%80%E7%A7%8D%E6%98%93%E4%BA%8E%E7%90%86%E8%A7%A3%E7%9A%84raft%E7%AE%97%E6%B3%95%E7%9A%84%E8%A7%A3%E8%AF%BB/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -543,10 +543,10 @@ ELF Header:
         <pubDate>Tue, 23 Nov 2021 23:44:34 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ -&lt;p&gt;脑裂&lt;/p&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ -&lt;p&gt;脑裂&lt;/p&gt;
 &lt;p&gt;随机超时时间&lt;/p&gt;
 &lt;p&gt;最高端的系统设计往往只拥有最朴素的实现目标&lt;/p&gt;
-- https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ - 2020-2022 源泉的小站</description>
+- https://luxcgo.github.io/posts/raft%E7%AE%97%E6%B3%95%E8%A7%A3%E8%AF%BB%E4%B8%8E%E5%AE%9E%E7%8E%B0/ - 2020-2022 Go猜想录</description>
         </item>
     
     
@@ -557,7 +557,7 @@ ELF Header:
         <pubDate>Mon, 15 Nov 2021 01:39:12 +0800</pubDate>
         
         <guid>https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
-        <description>源泉的小站 https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ -&lt;p&gt;曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。&lt;/p&gt;
+        <description>Go猜想录 https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ -&lt;p&gt;曾几何时，我是爱着豆瓣fm的，我在上面听了将近两万首歌，红心了近两千首歌曲。但最近她的推荐算法没那么好用的，过去的红心歌曲因为版权能听的也只有寥寥一百余首了。是时候逃离了。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;下载红心歌曲链接，这是一个维护了十年的&lt;a href=&#34;https://github.com/loveunk/douban-favorite-music-parser&#34;&gt;豆瓣电台加心歌曲爬虫&lt;/a&gt;&lt;/p&gt;
@@ -579,7 +579,7 @@ node multi_song_upload.js --phone_number=&lt;span style=&#34;color:#cd5555&#34;&
 &lt;p&gt;voila&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - 2020-2022 源泉的小站</description>
+- https://luxcgo.github.io/posts/%E9%97%B2%E8%B0%88/%E5%A6%82%E4%BD%95%E4%BB%8E%E8%B1%86%E7%93%A3fm%E8%BD%AC%E7%A7%BB%E5%88%B0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/ - 2020-2022 Go猜想录</description>
         </item>
     
     

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>闲谈 on 源泉的小站</title>
+    <title>闲谈 on Go猜想录</title>
     <link>https://luxcgo.github.io/categories/%E9%97%B2%E8%B0%88/</link>
-    <description>Recent content in 闲谈 on 源泉的小站</description>
+    <description>Recent content in 闲谈 on Go猜想录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>2020-2022 源泉的小站</copyright>
+    <copyright>2020-2022 Go猜想录</copyright>
     <lastBuildDate>Mon, 15 Nov 2021 01:39:12 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/%E9%97%B2%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何从豆瓣FM转移到网易云音乐？</title>

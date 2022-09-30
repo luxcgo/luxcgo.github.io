@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>备忘 on 源泉的小站</title>
+    <title>备忘 on Go猜想录</title>
     <link>https://luxcgo.github.io/categories/%E5%A4%87%E5%BF%98/</link>
-    <description>Recent content in 备忘 on 源泉的小站</description>
+    <description>Recent content in 备忘 on Go猜想录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>2020-2022 源泉的小站</copyright>
+    <copyright>2020-2022 Go猜想录</copyright>
     <lastBuildDate>Sun, 31 Oct 2021 00:31:44 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/categories/%E5%A4%87%E5%BF%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sourcetree配置</title>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 源泉的小站</title>
+    <title>Posts on Go猜想录</title>
     <link>https://luxcgo.github.io/posts/</link>
-    <description>Recent content in Posts on 源泉的小站</description>
+    <description>Recent content in Posts on Go猜想录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>2020-2022 源泉的小站</copyright>
+    <copyright>2020-2022 Go猜想录</copyright>
     <lastBuildDate>Tue, 12 Apr 2022 01:21:16 +0800</lastBuildDate><atom:link href="https://luxcgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blrec Flv源码分析</title>
